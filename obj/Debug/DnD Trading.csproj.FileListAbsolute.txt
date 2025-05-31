@@ -1,0 +1,16 @@
+C:\Users\arjuu\source\repos\DnD Trading\bin\Debug\DnD Trading.exe.config
+C:\Users\arjuu\source\repos\DnD Trading\bin\Debug\DnD Trading.exe
+C:\Users\arjuu\source\repos\DnD Trading\bin\Debug\DnD Trading.pdb
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD Trading.csproj.AssemblyReference.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Parent.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Properties.Resources.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD Trading.csproj.GenerateResource.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD Trading.csproj.CoreCompileInputs.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD Trading.exe
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD Trading.pdb
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Order.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Reports.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Product.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Client.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.AddClient.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.CreateOrder.resources
