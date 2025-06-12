@@ -2631,6 +2631,13 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SupplierRow FindBySupplierID(int SupplierID) {
+                return ((SupplierRow)(this.Rows.Find(new object[] {
+                            SupplierID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 SupplierDataTable cln = ((SupplierDataTable)(base.Clone()));
                 cln.InitVars();
@@ -2666,11 +2673,14 @@ namespace DnD_Trading {
                 base.Columns.Add(this.columnSupplierEmail);
                 this.columnSupplierOptOut = new global::System.Data.DataColumn("SupplierOptOut", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSupplierOptOut);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSupplierID}, true));
                 this.columnSupplierID.AutoIncrement = true;
                 this.columnSupplierID.AutoIncrementSeed = -1;
                 this.columnSupplierID.AutoIncrementStep = -1;
                 this.columnSupplierID.AllowDBNull = false;
                 this.columnSupplierID.ReadOnly = true;
+                this.columnSupplierID.Unique = true;
                 this.columnSupplierName.AllowDBNull = false;
                 this.columnSupplierName.MaxLength = 50;
                 this.columnSupplierPhoneNumber.AllowDBNull = false;
@@ -3100,15 +3110,13 @@ namespace DnD_Trading {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class UserDataTable : global::System.Data.TypedTableBase<UserRow> {
             
-            private global::System.Data.DataColumn columnUserID;
+            private global::System.Data.DataColumn columnUserName;
             
             private global::System.Data.DataColumn columnUserFirstName;
             
             private global::System.Data.DataColumn columnUserLastName;
             
             private global::System.Data.DataColumn columnUserType;
-            
-            private global::System.Data.DataColumn columnUserName;
             
             private global::System.Data.DataColumn columnUserPassword;
             
@@ -3149,9 +3157,9 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn UserIDColumn {
+            public global::System.Data.DataColumn UserNameColumn {
                 get {
-                    return this.columnUserID;
+                    return this.columnUserName;
                 }
             }
             
@@ -3176,14 +3184,6 @@ namespace DnD_Trading {
             public global::System.Data.DataColumn UserTypeColumn {
                 get {
                     return this.columnUserType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn UserNameColumn {
-                get {
-                    return this.columnUserName;
                 }
             }
             
@@ -3240,14 +3240,13 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow AddUserRow(string UserFirstName, string UserLastName, string UserType, string UserName, string UserPassword, bool UserOptOut) {
+            public UserRow AddUserRow(string UserName, string UserFirstName, string UserLastName, bool UserType, string UserPassword, bool UserOptOut) {
                 UserRow rowUserRow = ((UserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        UserName,
                         UserFirstName,
                         UserLastName,
                         UserType,
-                        UserName,
                         UserPassword,
                         UserOptOut};
                 rowUserRow.ItemArray = columnValuesArray;
@@ -3257,9 +3256,9 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow FindByUserID(int UserID) {
+            public UserRow FindByUserName(string UserName) {
                 return ((UserRow)(this.Rows.Find(new object[] {
-                            UserID})));
+                            UserName})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3279,11 +3278,10 @@ namespace DnD_Trading {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnUserID = base.Columns["UserID"];
+                this.columnUserName = base.Columns["UserName"];
                 this.columnUserFirstName = base.Columns["UserFirstName"];
                 this.columnUserLastName = base.Columns["UserLastName"];
                 this.columnUserType = base.Columns["UserType"];
-                this.columnUserName = base.Columns["UserName"];
                 this.columnUserPassword = base.Columns["UserPassword"];
                 this.columnUserOptOut = base.Columns["UserOptOut"];
             }
@@ -3291,36 +3289,28 @@ namespace DnD_Trading {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserID);
+                this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserName);
                 this.columnUserFirstName = new global::System.Data.DataColumn("UserFirstName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserFirstName);
                 this.columnUserLastName = new global::System.Data.DataColumn("UserLastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserLastName);
-                this.columnUserType = new global::System.Data.DataColumn("UserType", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnUserType = new global::System.Data.DataColumn("UserType", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserType);
-                this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserName);
                 this.columnUserPassword = new global::System.Data.DataColumn("UserPassword", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserPassword);
                 this.columnUserOptOut = new global::System.Data.DataColumn("UserOptOut", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserOptOut);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnUserID}, true));
-                this.columnUserID.AutoIncrement = true;
-                this.columnUserID.AutoIncrementSeed = -1;
-                this.columnUserID.AutoIncrementStep = -1;
-                this.columnUserID.AllowDBNull = false;
-                this.columnUserID.ReadOnly = true;
-                this.columnUserID.Unique = true;
+                                this.columnUserName}, true));
+                this.columnUserName.AllowDBNull = false;
+                this.columnUserName.Unique = true;
+                this.columnUserName.MaxLength = 50;
                 this.columnUserFirstName.AllowDBNull = false;
                 this.columnUserFirstName.MaxLength = 50;
                 this.columnUserLastName.AllowDBNull = false;
                 this.columnUserLastName.MaxLength = 50;
                 this.columnUserType.AllowDBNull = false;
-                this.columnUserType.MaxLength = 50;
-                this.columnUserName.AllowDBNull = false;
-                this.columnUserName.MaxLength = 50;
                 this.columnUserPassword.AllowDBNull = false;
                 this.columnUserPassword.MaxLength = 50;
                 this.columnUserOptOut.AllowDBNull = false;
@@ -4004,12 +3994,12 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int UserID {
+            public string UserName {
                 get {
-                    return ((int)(this[this.tableUser.UserIDColumn]));
+                    return ((string)(this[this.tableUser.UserNameColumn]));
                 }
                 set {
-                    this[this.tableUser.UserIDColumn] = value;
+                    this[this.tableUser.UserNameColumn] = value;
                 }
             }
             
@@ -4037,23 +4027,12 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string UserType {
+            public bool UserType {
                 get {
-                    return ((string)(this[this.tableUser.UserTypeColumn]));
+                    return ((bool)(this[this.tableUser.UserTypeColumn]));
                 }
                 set {
                     this[this.tableUser.UserTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string UserName {
-                get {
-                    return ((string)(this[this.tableUser.UserNameColumn]));
-                }
-                set {
-                    this[this.tableUser.UserNameColumn] = value;
                 }
             }
             
@@ -4562,7 +4541,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM db" +
@@ -4570,13 +4549,31 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[Client] ([ClientName], [ClientPhoneNumber], [ClientEmail], [ClientOptOut]) VALUES (@ClientName, @ClientPhoneNumber, @ClientEmail, @ClientOptOut);
-SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM Client WHERE (ClientID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
+                " Client\r\nWHERE (ClientEmail LIKE \'%\' + @email + \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientEmail", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
+                " Client\r\nWHERE (ClientName LIKE \'%\' + @name + \'%\')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
+                " Client\r\nWHERE (ClientPhoneNumber LIKE \'%\' + @phonenumber + \'%\')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phonenumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"INSERT INTO [dbo].[Client] ([ClientName], [ClientPhoneNumber], [ClientEmail], [ClientOptOut]) VALUES (@ClientName, @ClientPhoneNumber, @ClientEmail, @ClientOptOut);
+SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM Client WHERE (ClientID = SCOPE_IDENTITY())";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientEmail", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4598,6 +4595,114 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp22DataSet.ClientDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByEmail(WstGrp22DataSet.ClientDataTable dataTable, string email) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((email == null)) {
+                throw new global::System.ArgumentNullException("email");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(email));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ClientDataTable GetDataBy3(string email) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((email == null)) {
+                throw new global::System.ArgumentNullException("email");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(email));
+            }
+            WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName(WstGrp22DataSet.ClientDataTable dataTable, string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ClientDataTable GetDataBy1(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPhoneNumber(WstGrp22DataSet.ClientDataTable dataTable, string phonenumber) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((phonenumber == null)) {
+                throw new global::System.ArgumentNullException("phonenumber");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(phonenumber));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ClientDataTable GetDataBy2(string phonenumber) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((phonenumber == null)) {
+                throw new global::System.ArgumentNullException("phonenumber");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(phonenumber));
+            }
             WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4787,7 +4892,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string ClientName, string ClientPhoneNumber, string ClientEmail, bool ClientOptOut) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((ClientName == null)) {
                 throw new global::System.ArgumentNullException("ClientName");
             }
@@ -6328,11 +6433,17 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ProductID, ProductName, ProductSurcharge FROM dbo.Product";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ProductID, ProductName, ProductSurcharge\r\nFROM   Product\r\nWHERE (ProductNa" +
+                "me LIKE \'%\' + @productname + \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productname", global::System.Data.SqlDbType.VarChar, 70, global::System.Data.ParameterDirection.Input, 0, 0, "ProductName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6354,6 +6465,42 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp22DataSet.ProductDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WstGrp22DataSet.ProductDataTable dataTable = new WstGrp22DataSet.ProductDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProduct(WstGrp22DataSet.ProductDataTable dataTable, string productname) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((productname == null)) {
+                throw new global::System.ArgumentNullException("productname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(productname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ProductDataTable GetDataBy(string productname) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((productname == null)) {
+                throw new global::System.ArgumentNullException("productname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(productname));
+            }
             WstGrp22DataSet.ProductDataTable dataTable = new WstGrp22DataSet.ProductDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6618,16 +6765,38 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
             tableMapping.ColumnMappings.Add("SupplierEmail", "SupplierEmail");
             tableMapping.ColumnMappings.Add("SupplierOptOut", "SupplierOptOut");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Supplier] WHERE (([SupplierID] = @Original_SupplierID) AND ([SupplierName] = @Original_SupplierName) AND ([SupplierPhoneNumber] = @Original_SupplierPhoneNumber) AND ([SupplierEmail] = @Original_SupplierEmail) AND ([SupplierOptOut] = @Original_SupplierOptOut))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierPhoneNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierPhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierEmail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierEmail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierOptOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Supplier] ([SupplierName], [SupplierPhoneNumber], [SupplierEma" +
-                "il], [SupplierOptOut]) VALUES (@SupplierName, @SupplierPhoneNumber, @SupplierEma" +
-                "il, @SupplierOptOut)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Supplier] ([SupplierName], [SupplierPhoneNumber], [SupplierEmail], [" +
+                "SupplierOptOut]) VALUES (@SupplierName, @SupplierPhoneNumber, @SupplierEmail, @S" +
+                "upplierOptOut)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierPhoneNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierEmail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Supplier] SET [SupplierName] = @SupplierName, [SupplierPhoneNumber] = @SupplierPhoneNumber, [SupplierEmail] = @SupplierEmail, [SupplierOptOut] = @SupplierOptOut WHERE (([SupplierID] = @Original_SupplierID) AND ([SupplierName] = @Original_SupplierName) AND ([SupplierPhoneNumber] = @Original_SupplierPhoneNumber) AND ([SupplierEmail] = @Original_SupplierEmail) AND ([SupplierOptOut] = @Original_SupplierOptOut))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierPhoneNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierEmail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SupplierOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierPhoneNumber", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierPhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierEmail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierEmail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SupplierOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierOptOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6640,12 +6809,18 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT SupplierID, SupplierName, SupplierPhoneNumber, SupplierEmail, SupplierOptO" +
-                "ut FROM dbo.Supplier";
+                "ut\r\nFROM   Supplier";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT SupplierID, SupplierName, SupplierPhoneNumber, SupplierEmail, SupplierOptO" +
+                "ut\r\nFROM   Supplier\r\nWHERE (SupplierName LIKE \'%\' + @supplier + \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SupplierName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6667,6 +6842,42 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp22DataSet.SupplierDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WstGrp22DataSet.SupplierDataTable dataTable = new WstGrp22DataSet.SupplierDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySupplierName(WstGrp22DataSet.SupplierDataTable dataTable, string supplier) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((supplier == null)) {
+                throw new global::System.ArgumentNullException("supplier");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(supplier));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.SupplierDataTable GetDataBy(string supplier) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((supplier == null)) {
+                throw new global::System.ArgumentNullException("supplier");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(supplier));
+            }
             WstGrp22DataSet.SupplierDataTable dataTable = new WstGrp22DataSet.SupplierDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6699,6 +6910,47 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_SupplierID, string Original_SupplierName, string Original_SupplierPhoneNumber, string Original_SupplierEmail, bool Original_SupplierOptOut) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SupplierID));
+            if ((Original_SupplierName == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_SupplierName));
+            }
+            if ((Original_SupplierPhoneNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierPhoneNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SupplierPhoneNumber));
+            }
+            if ((Original_SupplierEmail == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierEmail");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_SupplierEmail));
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_SupplierOptOut));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6737,6 +6989,66 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string SupplierName, string SupplierPhoneNumber, string SupplierEmail, bool SupplierOptOut, int Original_SupplierID, string Original_SupplierName, string Original_SupplierPhoneNumber, string Original_SupplierEmail, bool Original_SupplierOptOut) {
+            if ((SupplierName == null)) {
+                throw new global::System.ArgumentNullException("SupplierName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(SupplierName));
+            }
+            if ((SupplierPhoneNumber == null)) {
+                throw new global::System.ArgumentNullException("SupplierPhoneNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SupplierPhoneNumber));
+            }
+            if ((SupplierEmail == null)) {
+                throw new global::System.ArgumentNullException("SupplierEmail");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SupplierEmail));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(SupplierOptOut));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_SupplierID));
+            if ((Original_SupplierName == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_SupplierName));
+            }
+            if ((Original_SupplierPhoneNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierPhoneNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_SupplierPhoneNumber));
+            }
+            if ((Original_SupplierEmail == null)) {
+                throw new global::System.ArgumentNullException("Original_SupplierEmail");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_SupplierEmail));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Original_SupplierOptOut));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
@@ -7172,55 +7484,51 @@ SELECT ProductID, SupplierID, SupplierProductPrice FROM SupplierProduct WHERE (P
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "User";
-            tableMapping.ColumnMappings.Add("UserID", "UserID");
+            tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("UserFirstName", "UserFirstName");
             tableMapping.ColumnMappings.Add("UserLastName", "UserLastName");
             tableMapping.ColumnMappings.Add("UserType", "UserType");
-            tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("UserPassword", "UserPassword");
             tableMapping.ColumnMappings.Add("UserOptOut", "UserOptOut");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[User] WHERE (([UserID] = @Original_UserID) AND ([UserFirstName] = @Original_UserFirstName) AND ([UserLastName] = @Original_UserLastName) AND ([UserType] = @Original_UserType) AND ([UserName] = @Original_UserName) AND ([UserPassword] = @Original_UserPassword) AND ([UserOptOut] = @Original_UserOptOut))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [User] WHERE (([UserName] = @Original_UserName) AND ([UserFirstName] = @Original_UserFirstName) AND ([UserLastName] = @Original_UserLastName) AND ([UserType] = @Original_UserType) AND ([UserPassword] = @Original_UserPassword) AND ([UserOptOut] = @Original_UserOptOut))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserFirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserFirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserLastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserLastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserPassword", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserOptOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[User] ([UserFirstName], [UserLastName], [UserType], [UserName], [UserPassword], [UserOptOut]) VALUES (@UserFirstName, @UserLastName, @UserType, @UserName, @UserPassword, @UserOptOut);
-SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, UserOptOut FROM [User] WHERE (UserID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [User] ([UserName], [UserFirstName], [UserLastName], [UserType], [UserPassword], [UserOptOut]) VALUES (@UserName, @UserFirstName, @UserLastName, @UserType, @UserPassword, @UserOptOut);
+SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut FROM [User] WHERE (UserName = @UserName)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserFirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserFirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserLastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserLastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserPassword", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[User] SET [UserFirstName] = @UserFirstName, [UserLastName] = @UserLastName, [UserType] = @UserType, [UserName] = @UserName, [UserPassword] = @UserPassword, [UserOptOut] = @UserOptOut WHERE (([UserID] = @Original_UserID) AND ([UserFirstName] = @Original_UserFirstName) AND ([UserLastName] = @Original_UserLastName) AND ([UserType] = @Original_UserType) AND ([UserName] = @Original_UserName) AND ([UserPassword] = @Original_UserPassword) AND ([UserOptOut] = @Original_UserOptOut));
-SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, UserOptOut FROM [User] WHERE (UserID = @UserID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [User] SET [UserName] = @UserName, [UserFirstName] = @UserFirstName, [UserLastName] = @UserLastName, [UserType] = @UserType, [UserPassword] = @UserPassword, [UserOptOut] = @UserOptOut WHERE (([UserName] = @Original_UserName) AND ([UserFirstName] = @Original_UserFirstName) AND ([UserLastName] = @Original_UserLastName) AND ([UserType] = @Original_UserType) AND ([UserPassword] = @Original_UserPassword) AND ([UserOptOut] = @Original_UserOptOut));
+SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut FROM [User] WHERE (UserName = @UserName)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserFirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserFirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserLastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserLastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserPassword", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserFirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserFirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserLastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserLastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserType", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserPassword", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserOptOut", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserOptOut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7233,12 +7541,29 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Use" +
-                "rOptOut FROM dbo.[User]";
+            this._commandCollection[0].CommandText = "SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut\r" +
+                "\nFROM   [User]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut\r" +
+                "\nFROM   [User]\r\nWHERE (UserName COLLATE Latin1_General_CS_AS = @username) AND (U" +
+                "serPassword COLLATE Latin1_General_CS_AS = @password)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"UPDATE [User]
+SET       UserPassword = @UserPassword
+WHERE (UserName COLLATE Latin1_General_CS_AS = @UserName);  
+SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut FROM [User] WHERE (UserName COLLATE Latin1_General_CS_AS = @UserName)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserPassword", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserPassword", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7260,6 +7585,54 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WstGrp22DataSet.UserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WstGrp22DataSet.UserDataTable dataTable = new WstGrp22DataSet.UserDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUsernameAndPassword(WstGrp22DataSet.UserDataTable dataTable, string username, string password) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
+            }
+            if ((password == null)) {
+                throw new global::System.ArgumentNullException("password");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.UserDataTable GetDataBy(string username, string password) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
+            }
+            if ((password == null)) {
+                throw new global::System.ArgumentNullException("password");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
+            }
             WstGrp22DataSet.UserDataTable dataTable = new WstGrp22DataSet.UserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7298,8 +7671,13 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_UserID, string Original_UserFirstName, string Original_UserLastName, string Original_UserType, string Original_UserName, string Original_UserPassword, bool Original_UserOptOut) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UserID));
+        public virtual int Delete(string Original_UserName, string Original_UserFirstName, string Original_UserLastName, bool Original_UserType, string Original_UserPassword, bool Original_UserOptOut) {
+            if ((Original_UserName == null)) {
+                throw new global::System.ArgumentNullException("Original_UserName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_UserName));
+            }
             if ((Original_UserFirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserFirstName");
             }
@@ -7312,25 +7690,14 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_UserLastName));
             }
-            if ((Original_UserType == null)) {
-                throw new global::System.ArgumentNullException("Original_UserType");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_UserType));
-            }
-            if ((Original_UserName == null)) {
-                throw new global::System.ArgumentNullException("Original_UserName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_UserName));
-            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_UserType));
             if ((Original_UserPassword == null)) {
                 throw new global::System.ArgumentNullException("Original_UserPassword");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_UserPassword));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_UserPassword));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_UserOptOut));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_UserOptOut));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7351,31 +7718,26 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string UserFirstName, string UserLastName, string UserType, string UserName, string UserPassword, bool UserOptOut) {
+        public virtual int Insert(string UserName, string UserFirstName, string UserLastName, bool UserType, string UserPassword, bool UserOptOut) {
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UserName));
+            }
             if ((UserFirstName == null)) {
                 throw new global::System.ArgumentNullException("UserFirstName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UserFirstName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(UserFirstName));
             }
             if ((UserLastName == null)) {
                 throw new global::System.ArgumentNullException("UserLastName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(UserLastName));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UserLastName));
             }
-            if ((UserType == null)) {
-                throw new global::System.ArgumentNullException("UserType");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UserType));
-            }
-            if ((UserName == null)) {
-                throw new global::System.ArgumentNullException("UserName");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(UserName));
-            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(UserType));
             if ((UserPassword == null)) {
                 throw new global::System.ArgumentNullException("UserPassword");
             }
@@ -7403,31 +7765,26 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserFirstName, string UserLastName, string UserType, string UserName, string UserPassword, bool UserOptOut, int Original_UserID, string Original_UserFirstName, string Original_UserLastName, string Original_UserType, string Original_UserName, string Original_UserPassword, bool Original_UserOptOut, int UserID) {
+        public virtual int Update(string UserName, string UserFirstName, string UserLastName, bool UserType, string UserPassword, bool UserOptOut, string Original_UserName, string Original_UserFirstName, string Original_UserLastName, bool Original_UserType, string Original_UserPassword, bool Original_UserOptOut) {
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserName));
+            }
             if ((UserFirstName == null)) {
                 throw new global::System.ArgumentNullException("UserFirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserFirstName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(UserFirstName));
             }
             if ((UserLastName == null)) {
                 throw new global::System.ArgumentNullException("UserLastName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(UserLastName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(UserLastName));
             }
-            if ((UserType == null)) {
-                throw new global::System.ArgumentNullException("UserType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(UserType));
-            }
-            if ((UserName == null)) {
-                throw new global::System.ArgumentNullException("UserName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(UserName));
-            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(UserType));
             if ((UserPassword == null)) {
                 throw new global::System.ArgumentNullException("UserPassword");
             }
@@ -7435,7 +7792,12 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(UserPassword));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(UserOptOut));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_UserID));
+            if ((Original_UserName == null)) {
+                throw new global::System.ArgumentNullException("Original_UserName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_UserName));
+            }
             if ((Original_UserFirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserFirstName");
             }
@@ -7448,26 +7810,14 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_UserLastName));
             }
-            if ((Original_UserType == null)) {
-                throw new global::System.ArgumentNullException("Original_UserType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_UserType));
-            }
-            if ((Original_UserName == null)) {
-                throw new global::System.ArgumentNullException("Original_UserName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_UserName));
-            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_UserType));
             if ((Original_UserPassword == null)) {
                 throw new global::System.ArgumentNullException("Original_UserPassword");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_UserPassword));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_UserPassword));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_UserOptOut));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(UserID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_UserOptOut));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7488,8 +7838,43 @@ SELECT UserID, UserFirstName, UserLastName, UserType, UserName, UserPassword, Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string UserFirstName, string UserLastName, string UserType, string UserName, string UserPassword, bool UserOptOut, int Original_UserID, string Original_UserFirstName, string Original_UserLastName, string Original_UserType, string Original_UserName, string Original_UserPassword, bool Original_UserOptOut) {
-            return this.Update(UserFirstName, UserLastName, UserType, UserName, UserPassword, UserOptOut, Original_UserID, Original_UserFirstName, Original_UserLastName, Original_UserType, Original_UserName, Original_UserPassword, Original_UserOptOut, Original_UserID);
+        public virtual int Update(string UserFirstName, string UserLastName, bool UserType, string UserPassword, bool UserOptOut, string Original_UserName, string Original_UserFirstName, string Original_UserLastName, bool Original_UserType, string Original_UserPassword, bool Original_UserOptOut) {
+            return this.Update(Original_UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut, Original_UserName, Original_UserFirstName, Original_UserLastName, Original_UserType, Original_UserPassword, Original_UserOptOut);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string UserPassword, string UserName) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((UserPassword == null)) {
+                throw new global::System.ArgumentNullException("UserPassword");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserPassword));
+            }
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(UserName));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

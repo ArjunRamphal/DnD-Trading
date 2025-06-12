@@ -21,5 +21,18 @@ namespace DnD_Trading
         {
 
         }
+
+        private void Product_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.wstGrp22DataSet.Supplier);
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
+        }
+
+        private void txtProduct_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

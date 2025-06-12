@@ -16,5 +16,33 @@ namespace DnD_Trading
         {
             InitializeComponent();
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            clientTableAdapter.FillByName(this.wstGrp22DataSet.Client, txtName.Text.Trim());
+            txtPhoneNumber.Clear();
+            txtEmail.Clear();
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            clientTableAdapter.FillByPhoneNumber(this.wstGrp22DataSet.Client, txtPhoneNumber.Text.Trim());
+            txtName.Clear();
+            txtEmail.Clear();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            clientTableAdapter.FillByEmail(this.wstGrp22DataSet.Client, txtEmail.Text.Trim());
+            txtName.Clear();
+            txtPhoneNumber.Clear();
+        }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Client' table. You can move, or remove it, as needed.
+            this.clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
+
+        }
     }
 }
