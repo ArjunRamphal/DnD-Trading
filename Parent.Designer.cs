@@ -37,6 +37,7 @@
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchForOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createOrderRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +66,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).BeginInit();
@@ -85,7 +87,8 @@
             this.orderToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.reportsToolStripMenuItem,
-            this.supplierToolStripMenuItem});
+            this.supplierToolStripMenuItem,
+            this.paymentToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(952, 33);
@@ -127,6 +130,7 @@
             // 
             this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchForOrderToolStripMenuItem,
+            this.createOrderRequestToolStripMenuItem,
             this.createOrderToolStripMenuItem});
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
@@ -136,14 +140,21 @@
             // searchForOrderToolStripMenuItem
             // 
             this.searchForOrderToolStripMenuItem.Name = "searchForOrderToolStripMenuItem";
-            this.searchForOrderToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
+            this.searchForOrderToolStripMenuItem.Size = new System.Drawing.Size(276, 34);
             this.searchForOrderToolStripMenuItem.Text = "Search for order";
             this.searchForOrderToolStripMenuItem.Click += new System.EventHandler(this.searchForOrderToolStripMenuItem_Click);
+            // 
+            // createOrderRequestToolStripMenuItem
+            // 
+            this.createOrderRequestToolStripMenuItem.Name = "createOrderRequestToolStripMenuItem";
+            this.createOrderRequestToolStripMenuItem.Size = new System.Drawing.Size(276, 34);
+            this.createOrderRequestToolStripMenuItem.Text = "Create order request";
+            this.createOrderRequestToolStripMenuItem.Click += new System.EventHandler(this.createOrderRequestToolStripMenuItem_Click);
             // 
             // createOrderToolStripMenuItem
             // 
             this.createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
-            this.createOrderToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
+            this.createOrderToolStripMenuItem.Size = new System.Drawing.Size(276, 34);
             this.createOrderToolStripMenuItem.Text = "Create order";
             this.createOrderToolStripMenuItem.Click += new System.EventHandler(this.createOrderToolStripMenuItem_Click);
             // 
@@ -415,6 +426,13 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -478,6 +496,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn userOptOutDataGridViewCheckBoxColumn;
         private System.Windows.Forms.PictureBox pbReEnterPassword;
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createOrderRequestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
     }
 }
 

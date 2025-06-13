@@ -13,9 +13,12 @@ namespace DnD_Trading
 {
     public partial class Supplier: Form
     {
-        public Supplier()
+        private Parent mainForm;
+
+        public Supplier(Parent p )
         {
             InitializeComponent();
+            mainForm=p;
         }
 
         private void Supplier_Load(object sender, EventArgs e)
@@ -94,6 +97,14 @@ namespace DnD_Trading
             {
                 return false;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Hide();
+            
+
         }
     }
 }

@@ -12,9 +12,18 @@ namespace DnD_Trading
 {
     public partial class Reports: Form
     {
-        public Reports()
+        private Parent mainForm;
+        public Reports(Parent p)
         {
             InitializeComponent();
+            mainForm=p;
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

@@ -13,9 +13,11 @@ namespace DnD_Trading
 {
     public partial class AddClient: Form
     {
-        public AddClient()
+        private Parent mainForm;
+        public AddClient(Parent p)
         {
             InitializeComponent();
+            mainForm=p;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,9 +102,9 @@ namespace DnD_Trading
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Parent parent = new Parent();
             this.Hide();
-            parent.Show();
+            mainForm.Show();
+           
         }
     }
 }

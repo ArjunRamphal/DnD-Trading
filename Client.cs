@@ -12,9 +12,12 @@ namespace DnD_Trading
 {
     public partial class Client: Form
     {
-        public Client()
+        private Parent mainForm;
+        public Client(Parent p)
         {
+            
             InitializeComponent();
+            mainForm=p;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -42,6 +45,13 @@ namespace DnD_Trading
         {
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Hide();
 
         }
     }

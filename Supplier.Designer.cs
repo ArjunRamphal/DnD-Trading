@@ -49,10 +49,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
             this.grpAddSupplier.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -229,11 +231,24 @@
             this.lblSupplierName.TabIndex = 0;
             this.lblSupplierName.Text = "Supplier Name:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 716);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 801);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpAddSupplier);
             this.Controls.Add(this.txtSupplier);
             this.Controls.Add(this.lblSupplier);
@@ -247,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
             this.grpAddSupplier.ResumeLayout(false);
             this.grpAddSupplier.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +290,6 @@
         private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

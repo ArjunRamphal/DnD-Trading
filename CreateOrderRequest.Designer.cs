@@ -1,0 +1,532 @@
+﻿namespace DnD_Trading
+{
+    partial class CreateOrderRequest
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clientOrderProductIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientOrderProductNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientOrderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
+            this.clientOrderProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ClientOrderProductTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtProdDesc = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtProdQuantity = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientOptOutDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ClientTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.OrderTableAdapter();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.paymentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paymentTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(521, 68);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Create Order Request";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientOrderProductIDDataGridViewTextBoxColumn,
+            this.orderIDDataGridViewTextBoxColumn,
+            this.clientIDDataGridViewTextBoxColumn,
+            this.clientOrderProductNameDataGridViewTextBoxColumn,
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.clientOrderProductBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 462);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(916, 185);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // clientOrderProductIDDataGridViewTextBoxColumn
+            // 
+            this.clientOrderProductIDDataGridViewTextBoxColumn.DataPropertyName = "ClientOrderProductID";
+            this.clientOrderProductIDDataGridViewTextBoxColumn.HeaderText = "ClientOrderProductID";
+            this.clientOrderProductIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientOrderProductIDDataGridViewTextBoxColumn.Name = "clientOrderProductIDDataGridViewTextBoxColumn";
+            this.clientOrderProductIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientOrderProductIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientOrderProductNameDataGridViewTextBoxColumn
+            // 
+            this.clientOrderProductNameDataGridViewTextBoxColumn.DataPropertyName = "ClientOrderProductName";
+            this.clientOrderProductNameDataGridViewTextBoxColumn.HeaderText = "ClientOrderProductName";
+            this.clientOrderProductNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientOrderProductNameDataGridViewTextBoxColumn.Name = "clientOrderProductNameDataGridViewTextBoxColumn";
+            this.clientOrderProductNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientOrderProductQuantityDataGridViewTextBoxColumn
+            // 
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn.DataPropertyName = "ClientOrderProductQuantity";
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn.HeaderText = "ClientOrderProductQuantity";
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn.Name = "clientOrderProductQuantityDataGridViewTextBoxColumn";
+            this.clientOrderProductQuantityDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientOrderProductBindingSource
+            // 
+            this.clientOrderProductBindingSource.DataMember = "ClientOrderProduct";
+            this.clientOrderProductBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // wstGrp22DataSet
+            // 
+            this.wstGrp22DataSet.DataSetName = "WstGrp22DataSet";
+            this.wstGrp22DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientOrderProductTableAdapter
+            // 
+            this.clientOrderProductTableAdapter.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(195, 653);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Enter product description:";
+            // 
+            // txtProdDesc
+            // 
+            this.txtProdDesc.Location = new System.Drawing.Point(428, 653);
+            this.txtProdDesc.Name = "txtProdDesc";
+            this.txtProdDesc.Size = new System.Drawing.Size(213, 26);
+            this.txtProdDesc.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 687);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(170, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Enter product quantity:";
+            // 
+            // txtProdQuantity
+            // 
+            this.txtProdQuantity.Location = new System.Drawing.Point(428, 687);
+            this.txtProdQuantity.Name = "txtProdQuantity";
+            this.txtProdQuantity.Size = new System.Drawing.Size(213, 26);
+            this.txtProdQuantity.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(272, 725);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 64);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Enter product record";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientIDDataGridViewTextBoxColumn1,
+            this.clientNameDataGridViewTextBoxColumn,
+            this.clientPhoneNumberDataGridViewTextBoxColumn,
+            this.clientEmailDataGridViewTextBoxColumn,
+            this.clientOptOutDataGridViewCheckBoxColumn});
+            this.dataGridView2.DataSource = this.clientBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(24, 93);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(916, 276);
+            this.dataGridView2.TabIndex = 7;
+            this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
+            // 
+            // clientIDDataGridViewTextBoxColumn1
+            // 
+            this.clientIDDataGridViewTextBoxColumn1.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn1.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
+            this.clientIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // clientNameDataGridViewTextBoxColumn
+            // 
+            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
+            this.clientNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientPhoneNumberDataGridViewTextBoxColumn
+            // 
+            this.clientPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "ClientPhoneNumber";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientEmailDataGridViewTextBoxColumn
+            // 
+            this.clientEmailDataGridViewTextBoxColumn.DataPropertyName = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
+            this.clientEmailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // clientOptOutDataGridViewCheckBoxColumn
+            // 
+            this.clientOptOutDataGridViewCheckBoxColumn.DataPropertyName = "ClientOptOut";
+            this.clientOptOutDataGridViewCheckBoxColumn.HeaderText = "ClientOptOut";
+            this.clientOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.clientOptOutDataGridViewCheckBoxColumn.Name = "clientOptOutDataGridViewCheckBoxColumn";
+            this.clientOptOutDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "Client";
+            this.clientBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(351, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(213, 45);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Make new order instance";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn1,
+            this.clientIDDataGridViewTextBoxColumn2,
+            this.paymentIDDataGridViewTextBoxColumn,
+            this.orderDateDataGridViewTextBoxColumn,
+            this.orderAmountDataGridViewTextBoxColumn,
+            this.orderStatusDataGridViewCheckBoxColumn});
+            this.dataGridView3.DataSource = this.orderBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(679, 668);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(261, 121);
+            this.dataGridView3.TabIndex = 9;
+            this.dataGridView3.Visible = false;
+            // 
+            // orderIDDataGridViewTextBoxColumn1
+            // 
+            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
+            this.orderIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.orderIDDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // clientIDDataGridViewTextBoxColumn2
+            // 
+            this.clientIDDataGridViewTextBoxColumn2.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn2.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.clientIDDataGridViewTextBoxColumn2.Name = "clientIDDataGridViewTextBoxColumn2";
+            this.clientIDDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // paymentIDDataGridViewTextBoxColumn
+            // 
+            this.paymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn.HeaderText = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
+            this.paymentIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            this.orderDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderAmountDataGridViewTextBoxColumn
+            // 
+            this.orderAmountDataGridViewTextBoxColumn.DataPropertyName = "OrderAmount";
+            this.orderAmountDataGridViewTextBoxColumn.HeaderText = "OrderAmount";
+            this.orderAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderAmountDataGridViewTextBoxColumn.Name = "orderAmountDataGridViewTextBoxColumn";
+            this.orderAmountDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderStatusDataGridViewCheckBoxColumn
+            // 
+            this.orderStatusDataGridViewCheckBoxColumn.DataPropertyName = "OrderStatus";
+            this.orderStatusDataGridViewCheckBoxColumn.HeaderText = "OrderStatus";
+            this.orderStatusDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.orderStatusDataGridViewCheckBoxColumn.Name = "orderStatusDataGridViewCheckBoxColumn";
+            this.orderStatusDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "Order";
+            this.orderBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentIDDataGridViewTextBoxColumn1,
+            this.orderIDDataGridViewTextBoxColumn2,
+            this.paymentAmountDataGridViewTextBoxColumn,
+            this.paymentStatusDataGridViewCheckBoxColumn});
+            this.dataGridView4.DataSource = this.paymentBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(679, 306);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView4.TabIndex = 10;
+            this.dataGridView4.Visible = false;
+            // 
+            // paymentIDDataGridViewTextBoxColumn1
+            // 
+            this.paymentIDDataGridViewTextBoxColumn1.DataPropertyName = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn1.HeaderText = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.paymentIDDataGridViewTextBoxColumn1.Name = "paymentIDDataGridViewTextBoxColumn1";
+            this.paymentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.paymentIDDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // orderIDDataGridViewTextBoxColumn2
+            // 
+            this.orderIDDataGridViewTextBoxColumn2.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn2.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.orderIDDataGridViewTextBoxColumn2.Name = "orderIDDataGridViewTextBoxColumn2";
+            this.orderIDDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // paymentAmountDataGridViewTextBoxColumn
+            // 
+            this.paymentAmountDataGridViewTextBoxColumn.DataPropertyName = "PaymentAmount";
+            this.paymentAmountDataGridViewTextBoxColumn.HeaderText = "PaymentAmount";
+            this.paymentAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.paymentAmountDataGridViewTextBoxColumn.Name = "paymentAmountDataGridViewTextBoxColumn";
+            this.paymentAmountDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // paymentStatusDataGridViewCheckBoxColumn
+            // 
+            this.paymentStatusDataGridViewCheckBoxColumn.DataPropertyName = "PaymentStatus";
+            this.paymentStatusDataGridViewCheckBoxColumn.HeaderText = "PaymentStatus";
+            this.paymentStatusDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.paymentStatusDataGridViewCheckBoxColumn.Name = "paymentStatusDataGridViewCheckBoxColumn";
+            this.paymentStatusDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // paymentBindingSource
+            // 
+            this.paymentBindingSource.DataMember = "Payment";
+            this.paymentBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // paymentTableAdapter
+            // 
+            this.paymentTableAdapter.ClearBeforeFill = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(481, 725);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(192, 64);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Go to create order form";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 715);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // CreateOrderRequest
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(952, 801);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtProdQuantity);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtProdDesc);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Name = "CreateOrderRequest";
+            this.Text = "DnD Trading - Create Order Request";
+            this.Load += new System.EventHandler(this.CreateOrderRequest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private WstGrp22DataSet wstGrp22DataSet;
+        private System.Windows.Forms.BindingSource clientOrderProductBindingSource;
+        private WstGrp22DataSetTableAdapters.ClientOrderProductTableAdapter clientOrderProductTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientOrderProductIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientOrderProductNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientOrderProductQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtProdDesc;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtProdQuantity;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private WstGrp22DataSetTableAdapters.ClientTableAdapter clientTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clientOptOutDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+        private WstGrp22DataSetTableAdapters.OrderTableAdapter orderTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn repIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn orderStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.BindingSource paymentBindingSource;
+        private WstGrp22DataSetTableAdapters.PaymentTableAdapter paymentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn paymentStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+    }
+}

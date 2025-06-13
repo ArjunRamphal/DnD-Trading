@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Net.Mail;
 
 namespace DnD_Trading
 {
@@ -37,14 +38,14 @@ namespace DnD_Trading
 
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
+            Product product = new Product(this);
             product.Show();
             this.Hide();
         }
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reports reports = new Reports();
+            Reports reports = new Reports(this);
             reports.Show();
             this.Hide();
         }
@@ -56,28 +57,28 @@ namespace DnD_Trading
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddClient addClient = new AddClient();
+            AddClient addClient = new AddClient(this);
             addClient.Show();
             this.Hide();
         }
 
         private void searchForClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Client client = new Client();
+            Client client = new Client(this);
             client.Show();
             this.Hide();
         }
 
         private void searchForOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Order order = new Order();
+            Order order = new Order(this);
             order.Show();
             this.Hide();
         }
 
         private void createOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateOrder createOrder = new CreateOrder();
+            CreateOrder createOrder = new CreateOrder(this);
             createOrder.Show();
             this.Hide();
         }
@@ -105,8 +106,30 @@ namespace DnD_Trading
                         menuStrip1.Items[4].Visible = true;
                         menuStrip1.Items[5].Visible = true;
                     }
-                        // User exists, proceed to the main application  
-                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    // User exists, proceed to the main application  
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    globalvar.userName = txtUsername.Text.Trim();
+                    globalvar.userFirstName = userRow["UserFirstName"].ToString();
+                    globalvar.userSurname = userRow["UserLastName"].ToString();
+                    txtUsername.Clear();
+                    txtPassword.Clear();   
+                    txtUsername.Visible = false;
+                    txtPassword.Visible = false;
+                    btnLogin.Visible = false;
+                    lblForgotPassword.Visible = false;
+                    lblReEnter.Visible = false;
+                    txtReEnterPassword.Visible = false;
+                    btnChangePassword.Visible = false;
+                    pbBack.Visible = false;
+                    pbReEnterPassword.Visible = false;
+                    label1.Visible = false;
+                    label2.Visible = false;
+                    pbShowPassword.Visible = false;
+                    lblLogin.Visible = true;
+                    lblLogin.Location = new Point(12, 9); // Adjust the position as needed
+
+                    lblLogin.Text = "Welcome, " + globalvar.userFirstName + " " + globalvar.userSurname + "!";
                 }
                 else
                 {
@@ -160,6 +183,18 @@ namespace DnD_Trading
                 if (affectedRows > 0)
                 {
                     MessageBox.Show("Password changed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    txtReEnterPassword.Clear();
+                    lblReEnter.Visible = false;
+                    txtReEnterPassword.Visible = false;
+                    btnChangePassword.Visible = false;
+                    pbReEnterPassword.Visible = false;
+                    pbBack.Visible = false;
+                    btnLogin.Visible = true;
+                    lblForgotPassword.Visible = true;
+                    label2.Text = "Password:";
+
                 }
                 else
                 {
@@ -214,8 +249,22 @@ namespace DnD_Trading
 
         private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Supplier supplier = new Supplier();
+            Supplier supplier = new Supplier(this);
             supplier.Show();
+            this.Hide();
+        }
+
+        private void createOrderRequestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateOrderRequest createOrderRequest = new CreateOrderRequest(this);
+            createOrderRequest.Show();
+            this.Hide();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment(this);
+            payment.Show();
             this.Hide();
         }
     }
