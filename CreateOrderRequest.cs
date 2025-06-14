@@ -23,13 +23,13 @@ namespace DnD_Trading
         private void CreateOrderRequest_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
-            this.paymentTableAdapter.Fill(this.wstGrp22DataSet.Payment);
+            this.paymentTableAdapter.FillByDESC(this.wstGrp22DataSet.Payment);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.wstGrp22DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.ClientOrderProduct' table. You can move, or remove it, as needed.
-            this.clientOrderProductTableAdapter.Fill(this.wstGrp22DataSet.ClientOrderProduct);
+            //this.clientOrderProductTableAdapter.Fill(this.wstGrp22DataSet.ClientOrderProduct);
 
         }
 
@@ -44,7 +44,7 @@ namespace DnD_Trading
                     return;
                 }
                 // Validate Product Quantity
-                if (!int.TryParse(txtProdQuantity.Text.Trim(), out int quantity) || quantity <= 0)
+                if (!int.TryParse(numericUpDown1.Text.Trim(), out int quantity) || quantity <= 0)
                 {
                     MessageBox.Show("Product quantity must be a positive integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -54,14 +54,14 @@ namespace DnD_Trading
                     globalvar.orderID,
                     globalvar.clientID,
                     txtProdDesc.Text.Trim(),
-                    Convert.ToInt32(txtProdQuantity.Text.Trim())
+                    Convert.ToInt32(numericUpDown1.Text.Trim())
                 );
 
                 MessageBox.Show("Product added to order successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Optionally, you can clear the input fields after adding
                 txtProdDesc.Clear();
-                txtProdQuantity.Clear();
+                numericUpDown1.Value = 0;
 
                 clientOrderProductTableAdapter.FillByOrderID(this.wstGrp22DataSet.ClientOrderProduct, globalvar.orderID);
             }
@@ -78,24 +78,30 @@ namespace DnD_Trading
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //orderTableAdapter.FillByDESC(this.wstGrp22DataSet.Order);
+            
+            if (globalvar.clientID == 0)
+            {
+                MessageBox.Show("Please select a client before creating an order.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             //globalvar.orderID = Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value) + 1;
 
             int paymentID;
 
             if (dataGridView3.Rows.Count > 0 && dataGridView3.Rows[0].Cells[0].Value != null)
             {
-                paymentID = Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value);
+                paymentID = Convert.ToInt32(dataGridView4.Rows[0].Cells[0].Value) + 1;
             }
             else
             {
-                paymentID = 0;
+                paymentID = 1;
             }
 
             DialogResult result = MessageBox.Show("Create new order record?", "New Order", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                globalvar.orderID = orderTableAdapter.Insert(
+                orderTableAdapter.Insert(
                     globalvar.clientID, // ClientID
                     paymentID, // PaymentID
                     globalvar.userName, // UserName
@@ -104,6 +110,17 @@ namespace DnD_Trading
                     false // OrderComplete
                 );
                 MessageBox.Show("Order created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                orderTableAdapter.FillByDESC(this.wstGrp22DataSet.Order);
+                globalvar.orderID = dataGridView3.Rows[0].Cells[0].Value != null ? Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value) : 0;
+                groupBox1.Visible = true;
+                groupBox2.Visible = false;
+                paymentTableAdapter.Insert(
+                    globalvar.orderID, // PaymentID
+                    false, 
+                    0,
+                    0,
+                    0
+                );
             }
             else
             {
@@ -113,13 +130,20 @@ namespace DnD_Trading
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            CreateOrder createOrder = new CreateOrder(mainForm);
+            createOrder.Show();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             mainForm.Show();
             this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            clientTableAdapter.FillByName(this.wstGrp22DataSet.Client, textBox1.Text.Trim());
         }
     }
 

@@ -52,6 +52,7 @@
             this.clientOrderTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ClientOrderTableAdapter();
             this.orderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet1)).BeginInit();
@@ -238,11 +239,22 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(388, 554);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 52);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Reset filter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 801);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox2);
@@ -292,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn orderStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

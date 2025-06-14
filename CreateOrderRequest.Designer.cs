@@ -42,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdDesc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtProdQuantity = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +70,11 @@
             this.paymentTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -81,6 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -89,13 +96,14 @@
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(521, 68);
+            this.label1.Size = new System.Drawing.Size(742, 68);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Create Order Request";
+            this.label1.Text = "Create Order Request - Step 1/2";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clientOrderProductIDDataGridViewTextBoxColumn,
@@ -104,11 +112,11 @@
             this.clientOrderProductNameDataGridViewTextBoxColumn,
             this.clientOrderProductQuantityDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clientOrderProductBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 462);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(916, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(1460, 409);
             this.dataGridView1.TabIndex = 1;
             // 
             // clientOrderProductIDDataGridViewTextBoxColumn
@@ -118,7 +126,6 @@
             this.clientOrderProductIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientOrderProductIDDataGridViewTextBoxColumn.Name = "clientOrderProductIDDataGridViewTextBoxColumn";
             this.clientOrderProductIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientOrderProductIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -126,7 +133,6 @@
             this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
             this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientIDDataGridViewTextBoxColumn
             // 
@@ -134,7 +140,6 @@
             this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientOrderProductNameDataGridViewTextBoxColumn
             // 
@@ -142,7 +147,6 @@
             this.clientOrderProductNameDataGridViewTextBoxColumn.HeaderText = "ClientOrderProductName";
             this.clientOrderProductNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientOrderProductNameDataGridViewTextBoxColumn.Name = "clientOrderProductNameDataGridViewTextBoxColumn";
-            this.clientOrderProductNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientOrderProductQuantityDataGridViewTextBoxColumn
             // 
@@ -150,7 +154,6 @@
             this.clientOrderProductQuantityDataGridViewTextBoxColumn.HeaderText = "ClientOrderProductQuantity";
             this.clientOrderProductQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientOrderProductQuantityDataGridViewTextBoxColumn.Name = "clientOrderProductQuantityDataGridViewTextBoxColumn";
-            this.clientOrderProductQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientOrderProductBindingSource
             // 
@@ -169,40 +172,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(195, 653);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 476);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 20);
+            this.label2.Size = new System.Drawing.Size(383, 37);
             this.label2.TabIndex = 2;
             this.label2.Text = "Enter product description:";
             // 
             // txtProdDesc
             // 
-            this.txtProdDesc.Location = new System.Drawing.Point(428, 653);
+            this.txtProdDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdDesc.Location = new System.Drawing.Point(400, 473);
+            this.txtProdDesc.Multiline = true;
             this.txtProdDesc.Name = "txtProdDesc";
-            this.txtProdDesc.Size = new System.Drawing.Size(213, 26);
+            this.txtProdDesc.Size = new System.Drawing.Size(962, 61);
             this.txtProdDesc.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 687);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 583);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 20);
+            this.label3.Size = new System.Drawing.Size(340, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "Enter product quantity:";
             // 
-            // txtProdQuantity
-            // 
-            this.txtProdQuantity.Location = new System.Drawing.Point(428, 687);
-            this.txtProdQuantity.Name = "txtProdQuantity";
-            this.txtProdQuantity.Size = new System.Drawing.Size(213, 26);
-            this.txtProdQuantity.TabIndex = 5;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(272, 725);
+            this.button1.Location = new System.Drawing.Point(459, 662);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 64);
+            this.button1.Size = new System.Drawing.Size(301, 64);
             this.button1.TabIndex = 6;
             this.button1.Text = "Enter product record";
             this.button1.UseVisualStyleBackColor = true;
@@ -211,6 +211,7 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clientIDDataGridViewTextBoxColumn1,
@@ -219,11 +220,11 @@
             this.clientEmailDataGridViewTextBoxColumn,
             this.clientOptOutDataGridViewCheckBoxColumn});
             this.dataGridView2.DataSource = this.clientBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 93);
+            this.dataGridView2.Location = new System.Drawing.Point(18, 25);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(916, 276);
+            this.dataGridView2.Size = new System.Drawing.Size(1317, 276);
             this.dataGridView2.TabIndex = 7;
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
             // 
@@ -234,7 +235,6 @@
             this.clientIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
             this.clientIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.clientIDDataGridViewTextBoxColumn1.Width = 150;
             // 
             // clientNameDataGridViewTextBoxColumn
             // 
@@ -242,7 +242,6 @@
             this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
             this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
-            this.clientNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientPhoneNumberDataGridViewTextBoxColumn
             // 
@@ -250,7 +249,6 @@
             this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
             this.clientPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
-            this.clientPhoneNumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientEmailDataGridViewTextBoxColumn
             // 
@@ -258,7 +256,6 @@
             this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
             this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
-            this.clientEmailDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientOptOutDataGridViewCheckBoxColumn
             // 
@@ -266,7 +263,6 @@
             this.clientOptOutDataGridViewCheckBoxColumn.HeaderText = "ClientOptOut";
             this.clientOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.clientOptOutDataGridViewCheckBoxColumn.Name = "clientOptOutDataGridViewCheckBoxColumn";
-            this.clientOptOutDataGridViewCheckBoxColumn.Width = 150;
             // 
             // clientBindingSource
             // 
@@ -279,11 +275,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(351, 387);
+            this.button2.Location = new System.Drawing.Point(1369, 336);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(213, 45);
+            this.button2.Size = new System.Drawing.Size(259, 61);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Make new order instance";
+            this.button2.Text = "Create order request";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -299,11 +295,11 @@
             this.orderAmountDataGridViewTextBoxColumn,
             this.orderStatusDataGridViewCheckBoxColumn});
             this.dataGridView3.DataSource = this.orderBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(679, 668);
+            this.dataGridView3.Location = new System.Drawing.Point(24, 934);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(261, 121);
+            this.dataGridView3.Size = new System.Drawing.Size(240, 121);
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.Visible = false;
             // 
@@ -375,7 +371,7 @@
             this.paymentAmountDataGridViewTextBoxColumn,
             this.paymentStatusDataGridViewCheckBoxColumn});
             this.dataGridView4.DataSource = this.paymentBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(679, 306);
+            this.dataGridView4.Location = new System.Drawing.Point(24, 1084);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.RowTemplate.Height = 28;
@@ -427,9 +423,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(481, 725);
+            this.button3.Location = new System.Drawing.Point(766, 662);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(192, 64);
+            this.button3.Size = new System.Drawing.Size(278, 64);
             this.button3.TabIndex = 11;
             this.button3.Text = "Go to create order form";
             this.button3.UseVisualStyleBackColor = true;
@@ -439,7 +435,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 715);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1257);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -447,23 +443,75 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(400, 588);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(213, 32);
+            this.numericUpDown1.TabIndex = 13;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtProdDesc);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(449, 574);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(2017, 758);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Enter order request";
+            this.groupBox1.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(449, 112);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1642, 423);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Select client by double clicking";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(400, 336);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(935, 61);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(11, 349);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(388, 37);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Search for client by name:";
+            // 
             // CreateOrderRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 801);
+            this.ClientSize = new System.Drawing.Size(2478, 1344);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtProdQuantity);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtProdDesc);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "CreateOrderRequest";
             this.Text = "DnD Trading - Create Order Request";
@@ -478,6 +526,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,7 +551,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdDesc;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtProdQuantity;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource clientBindingSource;
@@ -528,5 +580,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn paymentStatusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

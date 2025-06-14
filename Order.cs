@@ -41,6 +41,7 @@ namespace DnD_Trading
             this.clientOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientOrder);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.wstGrp22DataSet.Order);
+            comboBox2.Text = "";
 
         }
 
@@ -52,6 +53,13 @@ namespace DnD_Trading
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             clientOrderTableAdapter.FillBySupplierName(this.wstGrp22DataSet1.ClientOrder, comboBox2.Text.Trim());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.clientOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientOrder);
+            textBox1.Clear();
+            comboBox2.Text = "";
         }
     }
 }

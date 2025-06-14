@@ -25,5 +25,12 @@ namespace DnD_Trading
             mainForm.Show();
             this.Hide();
         }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
+            this.paymentTableAdapter.Fill(this.wstGrp22DataSet.Payment);
+
+        }
     }
 }

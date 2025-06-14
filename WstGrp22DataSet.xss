@@ -10,13 +10,13 @@
     <Shape ID="DesignTable:ClientOrderProduct" ZOrder="8" X="81" Y="438" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:Order" ZOrder="5" X="93" Y="722" Height="317" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
     <Shape ID="DesignTable:OrderSupplierProduct" ZOrder="11" X="431" Y="363" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:Payment" ZOrder="1" X="837" Y="58" Height="290" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
-    <Shape ID="DesignTable:Product" ZOrder="4" X="419" Y="92" Height="236" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
+    <Shape ID="DesignTable:Payment" ZOrder="1" X="850" Y="11" Height="344" Width="275" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:Product" ZOrder="2" X="425" Y="47" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
     <Shape ID="DesignTable:Supplier" ZOrder="9" X="428" Y="674" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:SupplierProduct" ZOrder="10" X="848" Y="380" Height="182" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
     <Shape ID="DesignTable:User" ZOrder="6" X="849" Y="622" Height="317" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:ClientOrder" ZOrder="3" X="1173" Y="150" Height="317" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:SearchAddProduct" ZOrder="2" X="1183" Y="518" Height="209" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
+    <Shape ID="DesignTable:ClientOrder" ZOrder="4" X="1173" Y="150" Height="317" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:SearchAddProduct" ZOrder="3" X="1183" Y="518" Height="209" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

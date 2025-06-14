@@ -63,12 +63,14 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.supplierProductPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchAddProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.supplierProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.SupplierProductTableAdapter();
             this.searchAddProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.SearchAddProductTableAdapter();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierProductPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -396,8 +398,11 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.SupplierName,
             this.supplierProductPriceDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.searchAddProductBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(12, 83);
@@ -406,14 +411,6 @@
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(926, 484);
             this.dataGridView2.TabIndex = 24;
-            // 
-            // supplierProductPriceDataGridViewTextBoxColumn
-            // 
-            this.supplierProductPriceDataGridViewTextBoxColumn.DataPropertyName = "SupplierProductPrice";
-            this.supplierProductPriceDataGridViewTextBoxColumn.HeaderText = "SupplierProductPrice";
-            this.supplierProductPriceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.supplierProductPriceDataGridViewTextBoxColumn.Name = "supplierProductPriceDataGridViewTextBoxColumn";
-            this.supplierProductPriceDataGridViewTextBoxColumn.Width = 150;
             // 
             // searchAddProductBindingSource
             // 
@@ -444,6 +441,27 @@
             // searchAddProductTableAdapter
             // 
             this.searchAddProductTableAdapter.ClearBeforeFill = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.MinimumWidth = 8;
+            this.ProductName.Name = "ProductName";
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.HeaderText = "SupplierName";
+            this.SupplierName.MinimumWidth = 8;
+            this.SupplierName.Name = "SupplierName";
+            // 
+            // supplierProductPriceDataGridViewTextBoxColumn
+            // 
+            this.supplierProductPriceDataGridViewTextBoxColumn.DataPropertyName = "SupplierProductPrice";
+            this.supplierProductPriceDataGridViewTextBoxColumn.HeaderText = "SupplierProductPrice";
+            this.supplierProductPriceDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.supplierProductPriceDataGridViewTextBoxColumn.Name = "supplierProductPriceDataGridViewTextBoxColumn";
             // 
             // Product
             // 
@@ -518,9 +536,11 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource supplierProductBindingSource;
         private WstGrp22DataSetTableAdapters.SupplierProductTableAdapter supplierProductTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierProductPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource searchAddProductBindingSource;
         private WstGrp22DataSetTableAdapters.SearchAddProductTableAdapter searchAddProductTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierProductPriceDataGridViewTextBoxColumn;
     }
 }

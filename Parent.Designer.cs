@@ -42,6 +42,7 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbReEnterPassword = new System.Windows.Forms.PictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
@@ -66,7 +67,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
-            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).BeginInit();
@@ -179,10 +180,18 @@
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pbReEnterPassword);
             this.panel1.Controls.Add(this.pbBack);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -199,7 +208,7 @@
             this.panel1.Controls.Add(this.lblLogin);
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(952, 764);
+            this.panel1.Size = new System.Drawing.Size(2586, 1466);
             this.panel1.TabIndex = 0;
             // 
             // pbReEnterPassword
@@ -207,9 +216,9 @@
             this.pbReEnterPassword.BackColor = System.Drawing.Color.Transparent;
             this.pbReEnterPassword.Image = global::DnD_Trading.Properties.Resources.ShowPassword;
             this.pbReEnterPassword.InitialImage = null;
-            this.pbReEnterPassword.Location = new System.Drawing.Point(553, 638);
+            this.pbReEnterPassword.Location = new System.Drawing.Point(1447, 1163);
             this.pbReEnterPassword.Name = "pbReEnterPassword";
-            this.pbReEnterPassword.Size = new System.Drawing.Size(50, 44);
+            this.pbReEnterPassword.Size = new System.Drawing.Size(65, 60);
             this.pbReEnterPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbReEnterPassword.TabIndex = 12;
             this.pbReEnterPassword.TabStop = false;
@@ -223,7 +232,7 @@
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.BackgroundImage = global::DnD_Trading.Properties.Resources.back;
             this.pbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbBack.Location = new System.Drawing.Point(3, 655);
+            this.pbBack.Location = new System.Drawing.Point(3, 1268);
             this.pbBack.Name = "pbBack";
             this.pbBack.Size = new System.Drawing.Size(117, 106);
             this.pbBack.TabIndex = 11;
@@ -311,10 +320,10 @@
             // 
             // txtReEnterPassword
             // 
-            this.txtReEnterPassword.Location = new System.Drawing.Point(384, 644);
+            this.txtReEnterPassword.Location = new System.Drawing.Point(1244, 1178);
             this.txtReEnterPassword.Name = "txtReEnterPassword";
             this.txtReEnterPassword.PasswordChar = '*';
-            this.txtReEnterPassword.Size = new System.Drawing.Size(163, 26);
+            this.txtReEnterPassword.Size = new System.Drawing.Size(197, 26);
             this.txtReEnterPassword.TabIndex = 9;
             this.txtReEnterPassword.Visible = false;
             // 
@@ -322,18 +331,19 @@
             // 
             this.lblReEnter.AutoSize = true;
             this.lblReEnter.BackColor = System.Drawing.Color.Transparent;
-            this.lblReEnter.Location = new System.Drawing.Point(227, 650);
+            this.lblReEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReEnter.Location = new System.Drawing.Point(783, 1162);
             this.lblReEnter.Name = "lblReEnter";
-            this.lblReEnter.Size = new System.Drawing.Size(151, 20);
+            this.lblReEnter.Size = new System.Drawing.Size(455, 55);
             this.lblReEnter.TabIndex = 8;
             this.lblReEnter.Text = "Re-Enter Password:";
             this.lblReEnter.Visible = false;
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(388, 680);
+            this.btnChangePassword.Location = new System.Drawing.Point(1176, 1231);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(152, 38);
+            this.btnChangePassword.Size = new System.Drawing.Size(196, 94);
             this.btnChangePassword.TabIndex = 7;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -344,9 +354,10 @@
             // 
             this.lblForgotPassword.AutoSize = true;
             this.lblForgotPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblForgotPassword.Location = new System.Drawing.Point(403, 689);
+            this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassword.Location = new System.Drawing.Point(1123, 1268);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(137, 20);
+            this.lblForgotPassword.Size = new System.Drawing.Size(275, 37);
             this.lblForgotPassword.TabIndex = 6;
             this.lblForgotPassword.TabStop = true;
             this.lblForgotPassword.Text = "Forgot password?";
@@ -355,9 +366,9 @@
             // btnLogin
             // 
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.Location = new System.Drawing.Point(421, 629);
+            this.btnLogin.Location = new System.Drawing.Point(1176, 1159);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(99, 41);
+            this.btnLogin.Size = new System.Drawing.Size(196, 94);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -367,9 +378,9 @@
             // 
             this.pbShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.pbShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbShowPassword.Image")));
-            this.pbShowPassword.Location = new System.Drawing.Point(553, 588);
+            this.pbShowPassword.Location = new System.Drawing.Point(1447, 1101);
             this.pbShowPassword.Name = "pbShowPassword";
-            this.pbShowPassword.Size = new System.Drawing.Size(50, 44);
+            this.pbShowPassword.Size = new System.Drawing.Size(65, 60);
             this.pbShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbShowPassword.TabIndex = 5;
             this.pbShowPassword.TabStop = false;
@@ -380,9 +391,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(296, 603);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(989, 1101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
+            this.label2.Size = new System.Drawing.Size(249, 55);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password:";
             // 
@@ -390,35 +402,36 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(291, 551);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(978, 1029);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.Size = new System.Drawing.Size(260, 55);
             this.label1.TabIndex = 3;
             this.label1.Text = "Username:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(384, 597);
+            this.txtPassword.Location = new System.Drawing.Point(1244, 1120);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(163, 26);
+            this.txtPassword.Size = new System.Drawing.Size(197, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(384, 551);
+            this.txtUsername.Location = new System.Drawing.Point(1244, 1049);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(163, 26);
+            this.txtUsername.Size = new System.Drawing.Size(197, 26);
             this.txtUsername.TabIndex = 0;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogin.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(395, 82);
+            this.lblLogin.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(1110, 279);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(152, 68);
+            this.lblLogin.Size = new System.Drawing.Size(262, 117);
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login";
             // 
@@ -426,20 +439,26 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
-            // paymentToolStripMenuItem
+            // label3
             // 
-            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
-            this.paymentToolStripMenuItem.Text = "Payment";
-            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(884, 1101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 55);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "New password:";
+            this.label3.Visible = false;
             // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 801);
+            this.ClientSize = new System.Drawing.Size(2564, 1410);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Parent";
             this.Text = "DnD Trading - Login";
@@ -498,6 +517,7 @@
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createOrderRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -65,6 +65,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clientIDDataGridViewTextBoxColumn,
@@ -87,7 +88,6 @@
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientNameDataGridViewTextBoxColumn
             // 
@@ -95,7 +95,6 @@
             this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
             this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
-            this.clientNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientPhoneNumberDataGridViewTextBoxColumn
             // 
@@ -103,7 +102,6 @@
             this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
             this.clientPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
-            this.clientPhoneNumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientEmailDataGridViewTextBoxColumn
             // 
@@ -111,7 +109,6 @@
             this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
             this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
-            this.clientEmailDataGridViewTextBoxColumn.Width = 150;
             // 
             // clientOptOutDataGridViewCheckBoxColumn
             // 
@@ -119,7 +116,6 @@
             this.clientOptOutDataGridViewCheckBoxColumn.HeaderText = "ClientOptOut";
             this.clientOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.clientOptOutDataGridViewCheckBoxColumn.Name = "clientOptOutDataGridViewCheckBoxColumn";
-            this.clientOptOutDataGridViewCheckBoxColumn.Width = 150;
             // 
             // clientBindingSource
             // 

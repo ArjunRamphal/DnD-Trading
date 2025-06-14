@@ -60,6 +60,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.paymentIDDataGridViewTextBoxColumn,
@@ -81,7 +82,6 @@
             this.paymentIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
             this.paymentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.paymentIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -89,7 +89,6 @@
             this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
             this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // paymentAmountDataGridViewTextBoxColumn
             // 
@@ -97,7 +96,6 @@
             this.paymentAmountDataGridViewTextBoxColumn.HeaderText = "PaymentAmount";
             this.paymentAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.paymentAmountDataGridViewTextBoxColumn.Name = "paymentAmountDataGridViewTextBoxColumn";
-            this.paymentAmountDataGridViewTextBoxColumn.Width = 150;
             // 
             // paymentStatusDataGridViewCheckBoxColumn
             // 
@@ -105,7 +103,6 @@
             this.paymentStatusDataGridViewCheckBoxColumn.HeaderText = "PaymentStatus";
             this.paymentStatusDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.paymentStatusDataGridViewCheckBoxColumn.Name = "paymentStatusDataGridViewCheckBoxColumn";
-            this.paymentStatusDataGridViewCheckBoxColumn.Width = 150;
             // 
             // paymentBindingSource
             // 
@@ -136,7 +133,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(385, 500);
+            this.checkBox1.Location = new System.Drawing.Point(385, 502);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(150, 24);
             this.checkBox1.TabIndex = 3;
@@ -146,11 +143,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(417, 553);
+            this.button1.Location = new System.Drawing.Point(397, 545);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 39);
+            this.button1.Size = new System.Drawing.Size(138, 39);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Reset";
+            this.button1.Text = "Reset filter";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

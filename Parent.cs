@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Net.Mail;
+using System.Net.Sockets;
 
 namespace DnD_Trading
 {
@@ -39,15 +40,21 @@ namespace DnD_Trading
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Product product = new Product(this);
+            FormSetup(product); // Set up the form as an MDI child
+            product.MdiParent = this; //display the child window //maximize the child window
+            product.WindowState = FormWindowState.Maximized;
             product.Show();
-            this.Hide();
+            panel1.Visible = false; // Hide the login panel when navigating to the inventory form
         }
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reports reports = new Reports(this);
+            FormSetup(reports); // Set up the form as an MDI child
+            reports.MdiParent = this; //display the child window //maximize the child window
+            reports.WindowState = FormWindowState.Maximized;
             reports.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,29 +65,41 @@ namespace DnD_Trading
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddClient addClient = new AddClient(this);
+            FormSetup(addClient); // Set up the form as an MDI child
+            addClient.MdiParent = this; //display the child window //maximize the child window
+            addClient.WindowState = FormWindowState.Maximized;
             addClient.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void searchForClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Client client = new Client(this);
+            FormSetup(client); // Set up the form as an MDI child
+            client.MdiParent = this; //display the child window //maximize the child window
+            client.WindowState = FormWindowState.Maximized;
             client.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void searchForOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Order order = new Order(this);
+            FormSetup(order); // Set up the form as an MDI child
+            order.MdiParent = this; //display the child window //maximize the child window
+            order.WindowState = FormWindowState.Maximized;
             order.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void createOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateOrder createOrder = new CreateOrder(this);
+            FormSetup(createOrder); // Set up the form as an MDI child
+            createOrder.MdiParent = this; //display the child window //maximize the child window
+            createOrder.WindowState = FormWindowState.Maximized;
             createOrder.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -155,7 +174,7 @@ namespace DnD_Trading
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
-            label2.Text = "New password:";
+            label3.Visible = true;
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -193,8 +212,7 @@ namespace DnD_Trading
                     pbBack.Visible = false;
                     btnLogin.Visible = true;
                     lblForgotPassword.Visible = true;
-                    label2.Text = "Password:";
-
+                    label3.Visible = false;
                 }
                 else
                 {
@@ -213,6 +231,7 @@ namespace DnD_Trading
         {
             // TODO: This line of code loads data into the 'wstGrp22DataSet.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.wstGrp22DataSet.User);
+            this.WindowState = FormWindowState.Maximized; // Set the form to maximized state
         }
 
         private void pbBack_Click(object sender, EventArgs e)
@@ -227,7 +246,7 @@ namespace DnD_Trading
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
-            label2.Text = "Password:";
+            label3.Visible = false;
         }
 
         private void pbReEnterPassword_Click(object sender, EventArgs e)
@@ -250,22 +269,40 @@ namespace DnD_Trading
         private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Supplier supplier = new Supplier(this);
+            FormSetup(supplier); // Set up the form as an MDI child
+            supplier.MdiParent = this; //display the child window //maximize the child window
+            supplier.WindowState = FormWindowState.Maximized;
             supplier.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void createOrderRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateOrderRequest createOrderRequest = new CreateOrderRequest(this);
+            FormSetup(createOrderRequest); // Set up the form as an MDI child
+            createOrderRequest.MdiParent = this; //display the child window //maximize the child window
+            createOrderRequest.WindowState = FormWindowState.Maximized;
             createOrderRequest.Show();
-            this.Hide();
+            panel1.Visible = false;
         }
 
         private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Payment payment = new Payment(this);
+            FormSetup(payment); // Set up the form as an MDI child
+            payment.MdiParent = this; //display the child window //maximize the child window
+            payment.WindowState = FormWindowState.Maximized;
             payment.Show();
-            this.Hide();
+            panel1.Visible = false;
+        }
+
+        public void FormSetup(Form myForm)
+        { 
+            //if a childform exists, close it
+            if (this.ActiveMdiChild != null)
+            { 
+                this.ActiveMdiChild.Close();
+            }
         }
     }
 }

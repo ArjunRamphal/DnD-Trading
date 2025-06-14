@@ -1971,9 +1971,13 @@ namespace DnD_Trading {
             
             private global::System.Data.DataColumn columnOrderID;
             
-            private global::System.Data.DataColumn columnPaymentAmount;
-            
             private global::System.Data.DataColumn columnPaymentStatus;
+            
+            private global::System.Data.DataColumn columnPaymentTotal;
+            
+            private global::System.Data.DataColumn columnPaymentDue;
+            
+            private global::System.Data.DataColumn columnPaymentSurplus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2026,17 +2030,33 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PaymentAmountColumn {
+            public global::System.Data.DataColumn PaymentStatusColumn {
                 get {
-                    return this.columnPaymentAmount;
+                    return this.columnPaymentStatus;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PaymentStatusColumn {
+            public global::System.Data.DataColumn PaymentTotalColumn {
                 get {
-                    return this.columnPaymentStatus;
+                    return this.columnPaymentTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaymentDueColumn {
+                get {
+                    return this.columnPaymentDue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaymentSurplusColumn {
+                get {
+                    return this.columnPaymentSurplus;
                 }
             }
             
@@ -2077,13 +2097,15 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PaymentRow AddPaymentRow(int OrderID, int PaymentAmount, bool PaymentStatus) {
+            public PaymentRow AddPaymentRow(int OrderID, bool PaymentStatus, decimal PaymentTotal, decimal PaymentDue, decimal PaymentSurplus) {
                 PaymentRow rowPaymentRow = ((PaymentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         OrderID,
-                        PaymentAmount,
-                        PaymentStatus};
+                        PaymentStatus,
+                        PaymentTotal,
+                        PaymentDue,
+                        PaymentSurplus};
                 rowPaymentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPaymentRow);
                 return rowPaymentRow;
@@ -2115,8 +2137,10 @@ namespace DnD_Trading {
             internal void InitVars() {
                 this.columnPaymentID = base.Columns["PaymentID"];
                 this.columnOrderID = base.Columns["OrderID"];
-                this.columnPaymentAmount = base.Columns["PaymentAmount"];
                 this.columnPaymentStatus = base.Columns["PaymentStatus"];
+                this.columnPaymentTotal = base.Columns["PaymentTotal"];
+                this.columnPaymentDue = base.Columns["PaymentDue"];
+                this.columnPaymentSurplus = base.Columns["PaymentSurplus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2126,10 +2150,14 @@ namespace DnD_Trading {
                 base.Columns.Add(this.columnPaymentID);
                 this.columnOrderID = new global::System.Data.DataColumn("OrderID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderID);
-                this.columnPaymentAmount = new global::System.Data.DataColumn("PaymentAmount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaymentAmount);
                 this.columnPaymentStatus = new global::System.Data.DataColumn("PaymentStatus", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPaymentStatus);
+                this.columnPaymentTotal = new global::System.Data.DataColumn("PaymentTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentTotal);
+                this.columnPaymentDue = new global::System.Data.DataColumn("PaymentDue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentDue);
+                this.columnPaymentSurplus = new global::System.Data.DataColumn("PaymentSurplus", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentSurplus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPaymentID}, true));
                 this.columnPaymentID.AutoIncrement = true;
@@ -2139,8 +2167,10 @@ namespace DnD_Trading {
                 this.columnPaymentID.ReadOnly = true;
                 this.columnPaymentID.Unique = true;
                 this.columnOrderID.AllowDBNull = false;
-                this.columnPaymentAmount.AllowDBNull = false;
                 this.columnPaymentStatus.AllowDBNull = false;
+                this.columnPaymentTotal.AllowDBNull = false;
+                this.columnPaymentDue.AllowDBNull = false;
+                this.columnPaymentSurplus.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4481,23 +4511,45 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int PaymentAmount {
-                get {
-                    return ((int)(this[this.tablePayment.PaymentAmountColumn]));
-                }
-                set {
-                    this[this.tablePayment.PaymentAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool PaymentStatus {
                 get {
                     return ((bool)(this[this.tablePayment.PaymentStatusColumn]));
                 }
                 set {
                     this[this.tablePayment.PaymentStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal PaymentTotal {
+                get {
+                    return ((decimal)(this[this.tablePayment.PaymentTotalColumn]));
+                }
+                set {
+                    this[this.tablePayment.PaymentTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal PaymentDue {
+                get {
+                    return ((decimal)(this[this.tablePayment.PaymentDueColumn]));
+                }
+                set {
+                    this[this.tablePayment.PaymentDueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal PaymentSurplus {
+                get {
+                    return ((decimal)(this[this.tablePayment.PaymentSurplusColumn]));
+                }
+                set {
+                    this[this.tablePayment.PaymentSurplusColumn] = value;
                 }
             }
         }
@@ -7042,40 +7094,47 @@ SELECT OrderID, ProductID, SupplierID, OrderSupplierProductQuantity, OrderSuppli
             tableMapping.DataSetTable = "Payment";
             tableMapping.ColumnMappings.Add("PaymentID", "PaymentID");
             tableMapping.ColumnMappings.Add("OrderID", "OrderID");
-            tableMapping.ColumnMappings.Add("PaymentAmount", "PaymentAmount");
             tableMapping.ColumnMappings.Add("PaymentStatus", "PaymentStatus");
+            tableMapping.ColumnMappings.Add("PaymentTotal", "PaymentTotal");
+            tableMapping.ColumnMappings.Add("PaymentDue", "PaymentDue");
+            tableMapping.ColumnMappings.Add("PaymentSurplus", "PaymentSurplus");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Payment] WHERE (([PaymentID] = @Original_PaymentID) AND ([Orde" +
-                "rID] = @Original_OrderID) AND ([PaymentAmount] = @Original_PaymentAmount) AND ([" +
-                "PaymentStatus] = @Original_PaymentStatus))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Payment] WHERE (([PaymentID] = @Original_PaymentID) AND ([OrderID] = @Original_OrderID) AND ([PaymentStatus] = @Original_PaymentStatus) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([PaymentDue] = @Original_PaymentDue) AND ([PaymentSurplus] = @Original_PaymentSurplus))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentAmount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentAmount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentDue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentDue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentSurplus", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentSurplus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Payment] ([OrderID], [PaymentAmount], [PaymentStatus]) VALUES " +
-                "(@OrderID, @PaymentAmount, @PaymentStatus);\r\nSELECT PaymentID, OrderID, PaymentA" +
-                "mount, PaymentStatus FROM Payment WHERE (PaymentID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Payment] ([OrderID], [PaymentStatus], [PaymentTotal], [PaymentDue], [PaymentSurplus]) VALUES (@OrderID, @PaymentStatus, @PaymentTotal, @PaymentDue, @PaymentSurplus);
+SELECT PaymentID, OrderID, PaymentStatus, PaymentTotal, PaymentDue, PaymentSurplus FROM Payment WHERE (PaymentID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentAmount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentAmount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentSurplus", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentSurplus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Payment] SET [OrderID] = @OrderID, [PaymentAmount] = @PaymentAmount, [PaymentStatus] = @PaymentStatus WHERE (([PaymentID] = @Original_PaymentID) AND ([OrderID] = @Original_OrderID) AND ([PaymentAmount] = @Original_PaymentAmount) AND ([PaymentStatus] = @Original_PaymentStatus));
-SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (PaymentID = @PaymentID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Payment] SET [OrderID] = @OrderID, [PaymentStatus] = @PaymentStatus, [PaymentTotal] = @PaymentTotal, [PaymentDue] = @PaymentDue, [PaymentSurplus] = @PaymentSurplus WHERE (([PaymentID] = @Original_PaymentID) AND ([OrderID] = @Original_OrderID) AND ([PaymentStatus] = @Original_PaymentStatus) AND ([PaymentTotal] = @Original_PaymentTotal) AND ([PaymentDue] = @Original_PaymentDue) AND ([PaymentSurplus] = @Original_PaymentSurplus));
+SELECT PaymentID, OrderID, PaymentStatus, PaymentTotal, PaymentDue, PaymentSurplus FROM Payment WHERE (PaymentID = @PaymentID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentAmount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentAmount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentSurplus", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentSurplus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentAmount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentAmount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentDue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentDue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentSurplus", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PaymentSurplus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7092,22 +7151,23 @@ SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (Paym
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM dbo.Payment";
+            this._commandCollection[0].CommandText = "SELECT PaymentID, OrderID, PaymentStatus, PaymentTotal, PaymentDue, PaymentSurplu" +
+                "s\r\nFROM   Payment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus\r\nFROM   Payment\r\nORDER BY" +
-                " PaymentID DESC";
+            this._commandCollection[1].CommandText = "SELECT OrderID, PaymentDue, PaymentID, PaymentStatus, PaymentSurplus, PaymentTota" +
+                "l\r\nFROM   Payment\r\nORDER BY PaymentID DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus\r\nFROM   Payment\r\nWHERE (P" +
-                "aymentStatus = 0)";
+            this._commandCollection[2].CommandText = "SELECT OrderID, PaymentDue, PaymentID, PaymentStatus, PaymentSurplus, PaymentTota" +
+                "l FROM Payment WHERE (PaymentStatus = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus\r\nFROM   Payment\r\nWHERE (P" +
-                "aymentStatus = 1)";
+            this._commandCollection[3].CommandText = "SELECT OrderID, PaymentDue, PaymentID, PaymentStatus, PaymentSurplus, PaymentTota" +
+                "l FROM Payment WHERE (PaymentStatus = 1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7240,11 +7300,13 @@ SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (Paym
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PaymentID, int Original_OrderID, int Original_PaymentAmount, bool Original_PaymentStatus) {
+        public virtual int Delete(int Original_PaymentID, int Original_OrderID, bool Original_PaymentStatus, decimal Original_PaymentTotal, decimal Original_PaymentDue, decimal Original_PaymentSurplus) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PaymentID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_OrderID));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_PaymentAmount));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_PaymentStatus));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_PaymentStatus));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_PaymentTotal));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_PaymentDue));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_PaymentSurplus));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7265,10 +7327,12 @@ SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (Paym
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int OrderID, int PaymentAmount, bool PaymentStatus) {
+        public virtual int Insert(int OrderID, bool PaymentStatus, decimal PaymentTotal, decimal PaymentDue, decimal PaymentSurplus) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(OrderID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PaymentAmount));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(PaymentStatus));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(PaymentStatus));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(PaymentTotal));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(PaymentDue));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(PaymentSurplus));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7289,15 +7353,19 @@ SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (Paym
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int OrderID, int PaymentAmount, bool PaymentStatus, int Original_PaymentID, int Original_OrderID, int Original_PaymentAmount, bool Original_PaymentStatus, int PaymentID) {
+        public virtual int Update(int OrderID, bool PaymentStatus, decimal PaymentTotal, decimal PaymentDue, decimal PaymentSurplus, int Original_PaymentID, int Original_OrderID, bool Original_PaymentStatus, decimal Original_PaymentTotal, decimal Original_PaymentDue, decimal Original_PaymentSurplus, int PaymentID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(OrderID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PaymentAmount));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(PaymentStatus));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_PaymentID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_OrderID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PaymentAmount));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Original_PaymentStatus));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(PaymentID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((bool)(PaymentStatus));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(PaymentTotal));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(PaymentDue));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(PaymentSurplus));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PaymentID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_OrderID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_PaymentStatus));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_PaymentTotal));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_PaymentDue));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_PaymentSurplus));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(PaymentID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7318,8 +7386,8 @@ SELECT PaymentID, OrderID, PaymentAmount, PaymentStatus FROM Payment WHERE (Paym
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int OrderID, int PaymentAmount, bool PaymentStatus, int Original_PaymentID, int Original_OrderID, int Original_PaymentAmount, bool Original_PaymentStatus) {
-            return this.Update(OrderID, PaymentAmount, PaymentStatus, Original_PaymentID, Original_OrderID, Original_PaymentAmount, Original_PaymentStatus, Original_PaymentID);
+        public virtual int Update(int OrderID, bool PaymentStatus, decimal PaymentTotal, decimal PaymentDue, decimal PaymentSurplus, int Original_PaymentID, int Original_OrderID, bool Original_PaymentStatus, decimal Original_PaymentTotal, decimal Original_PaymentDue, decimal Original_PaymentSurplus) {
+            return this.Update(OrderID, PaymentStatus, PaymentTotal, PaymentDue, PaymentSurplus, Original_PaymentID, Original_OrderID, Original_PaymentStatus, Original_PaymentTotal, Original_PaymentDue, Original_PaymentSurplus, Original_PaymentID);
         }
     }
     
@@ -7488,7 +7556,7 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ProductID, ProductName, ProductSurcharge FROM dbo.Product";
@@ -7501,12 +7569,18 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productname", global::System.Data.SqlDbType.VarChar, 70, global::System.Data.ParameterDirection.Input, 0, 0, "ProductName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE Product\r\nSET       ProductSurcharge = @ProductSurcharge\r\nWHERE (ProductID " +
+            this._commandCollection[2].CommandText = "SELECT ProductID, ProductName, ProductSurcharge\r\nFROM   Product\r\nWHERE (ProductID" +
+                " = @productid)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProductID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE Product\r\nSET       ProductSurcharge = @ProductSurcharge\r\nWHERE (ProductID " +
                 "= @ProductID); \r\nSELECT ProductID, ProductName, ProductSurcharge FROM Product WH" +
                 "ERE (ProductID = @ProductID)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductSurcharge", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, "ProductSurcharge", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProductID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductSurcharge", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, "ProductSurcharge", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProductID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7564,6 +7638,32 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(productname));
             }
+            WstGrp22DataSet.ProductDataTable dataTable = new WstGrp22DataSet.ProductDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProductSurcharge(WstGrp22DataSet.ProductDataTable dataTable, int productid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(productid));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ProductDataTable GetDataBy2(int productid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(productid));
             WstGrp22DataSet.ProductDataTable dataTable = new WstGrp22DataSet.ProductDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7705,7 +7805,7 @@ SELECT ProductID, ProductName, ProductSurcharge FROM Product WHERE (ProductID = 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(decimal ProductSurcharge, int ProductID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((decimal)(ProductSurcharge));
             command.Parameters[1].Value = ((int)(ProductID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -9366,9 +9466,10 @@ SELECT UserName, UserFirstName, UserLastName, UserType, UserPassword, UserOptOut
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Product.ProductName, Supplier.SupplierName, SupplierProduct.SupplierProduc" +
-                "tPrice\r\nFROM   Product INNER JOIN\r\n             SupplierProduct ON Product.Produ" +
-                "ctID = SupplierProduct.ProductID CROSS JOIN\r\n             Supplier";
+            this._commandCollection[0].CommandText = @"SELECT Product.ProductName, Supplier.SupplierName, SupplierProduct.SupplierProductPrice
+FROM   Product INNER JOIN
+             SupplierProduct ON Product.ProductID = SupplierProduct.ProductID INNER JOIN
+             Supplier ON SupplierProduct.SupplierID = Supplier.SupplierID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

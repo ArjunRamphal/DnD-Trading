@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblReport = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
@@ -41,8 +42,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
+            this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paymentTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentTableAdapter();
+            this.paymentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReport
@@ -57,7 +67,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentIDDataGridViewTextBoxColumn,
+            this.orderIDDataGridViewTextBoxColumn,
+            this.paymentAmountDataGridViewTextBoxColumn,
+            this.paymentStatusDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.paymentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -162,11 +180,54 @@
             this.comboBox2.Size = new System.Drawing.Size(172, 28);
             this.comboBox2.TabIndex = 12;
             // 
+            // wstGrp22DataSet
+            // 
+            this.wstGrp22DataSet.DataSetName = "WstGrp22DataSet";
+            this.wstGrp22DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // paymentBindingSource
+            // 
+            this.paymentBindingSource.DataMember = "Payment";
+            this.paymentBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // paymentTableAdapter
+            // 
+            this.paymentTableAdapter.ClearBeforeFill = true;
+            // 
+            // paymentIDDataGridViewTextBoxColumn
+            // 
+            this.paymentIDDataGridViewTextBoxColumn.DataPropertyName = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn.HeaderText = "PaymentID";
+            this.paymentIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
+            this.paymentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            // 
+            // paymentAmountDataGridViewTextBoxColumn
+            // 
+            this.paymentAmountDataGridViewTextBoxColumn.DataPropertyName = "PaymentAmount";
+            this.paymentAmountDataGridViewTextBoxColumn.HeaderText = "PaymentAmount";
+            this.paymentAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.paymentAmountDataGridViewTextBoxColumn.Name = "paymentAmountDataGridViewTextBoxColumn";
+            // 
+            // paymentStatusDataGridViewCheckBoxColumn
+            // 
+            this.paymentStatusDataGridViewCheckBoxColumn.DataPropertyName = "PaymentStatus";
+            this.paymentStatusDataGridViewCheckBoxColumn.HeaderText = "PaymentStatus";
+            this.paymentStatusDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.paymentStatusDataGridViewCheckBoxColumn.Name = "paymentStatusDataGridViewCheckBoxColumn";
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 801);
+            this.ClientSize = new System.Drawing.Size(2564, 1410);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -182,8 +243,11 @@
             this.Controls.Add(this.lblReport);
             this.Name = "Reports";
             this.Text = "DnD Trading - Reports";
+            this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +268,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private WstGrp22DataSet wstGrp22DataSet;
+        private System.Windows.Forms.BindingSource paymentBindingSource;
+        private WstGrp22DataSetTableAdapters.PaymentTableAdapter paymentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn paymentStatusDataGridViewCheckBoxColumn;
     }
 }
