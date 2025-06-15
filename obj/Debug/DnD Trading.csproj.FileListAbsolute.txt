@@ -17,3 +17,5 @@ C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Supplier.resources
 C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Parent.resources
 C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.CreateOrderRequest.resources
 C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.Payment.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.AddUser.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Debug\DnD_Trading.User.resources

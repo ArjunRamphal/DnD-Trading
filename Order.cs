@@ -24,6 +24,7 @@ namespace DnD_Trading
         {
             mainForm.Show();
             this.Hide();
+            mainForm.Panel1.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +43,6 @@ namespace DnD_Trading
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.wstGrp22DataSet.Order);
             comboBox2.Text = "";
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

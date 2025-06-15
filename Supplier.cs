@@ -15,10 +15,22 @@ namespace DnD_Trading
     {
         private Parent mainForm;
 
-        public Supplier(Parent p )
+        private Product productForm;
+
+        private bool isMainForm = false;
+        private bool isProductForm = false;
+        public Supplier(Parent p)
         {
             InitializeComponent();
             mainForm=p;
+            isMainForm = true;
+        }
+
+        public Supplier(Product p)
+        {
+            InitializeComponent();
+            productForm = p;
+            isProductForm = true;
         }
 
         private void Supplier_Load(object sender, EventArgs e)
@@ -70,6 +82,13 @@ namespace DnD_Trading
             MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.supplierTableAdapter.Fill(this.wstGrp22DataSet.Supplier);
+
+            if (isProductForm)
+            {
+                productForm.Show();
+                this.Hide();
+                productForm.WindowState = FormWindowState.Maximized;
+            }
         }
 
         bool IsValidPhoneNumber(string number)
@@ -101,10 +120,28 @@ namespace DnD_Trading
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            mainForm.Show();
-            this.Hide();
-            
+            if (isMainForm)
+            {
+                mainForm.Show();
+                this.Hide();
+                mainForm.Panel1.Visible = true;
+            }
+            else if (isProductForm)
+            {
+                productForm.Show();
+                this.Hide();
+                productForm.WindowState = FormWindowState.Maximized;
+            }
+                
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Product productForm = new Product(this);
+            productForm.Show();
+            productForm.WindowState = FormWindowState.Maximized;
+            productForm.TabControl1.SelectedIndex = 1; // Switch to the first tab
+            this.Hide();
         }
     }
 }

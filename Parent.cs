@@ -15,9 +15,13 @@ namespace DnD_Trading
 {
     public partial class Parent: Form
     {
+
+        public Panel Panel1;
+
         public Parent()
         {
             InitializeComponent();
+            Panel1 = this.panel1;
         }
 
         private void pbShowPassword_MouseDown(object sender, MouseEventArgs e)
@@ -117,13 +121,13 @@ namespace DnD_Trading
                     DataRow userRow = wstGrp22DataSet.User.Rows[0];
                     if (userRow["UserType"].ToString() == "False")
                     {
-                        menuStrip1.Items[4].Visible = false;
-                        menuStrip1.Items[5].Visible = false;
+                        menuStrip1.Items[6].Visible = false;
+                        menuStrip1.Items[7].Visible = false;
                     }
                     else
                     {
-                        menuStrip1.Items[4].Visible = true;
-                        menuStrip1.Items[5].Visible = true;
+                        menuStrip1.Items[6].Visible = true;
+                        menuStrip1.Items[7].Visible = true;
                     }
                     
                     // User exists, proceed to the main application  
@@ -303,6 +307,52 @@ namespace DnD_Trading
             { 
                 this.ActiveMdiChild.Close();
             }
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuStrip1.Visible = false;
+            txtUsername.Visible = true;
+            txtPassword.Visible = true;
+            btnLogin.Visible = true;
+            lblForgotPassword.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            pbShowPassword.Visible = true;
+            label3.Visible = true;
+            globalvar.userName = string.Empty; // Clear the global variable
+            globalvar.userFirstName = string.Empty; // Clear the global variable
+            globalvar.userSurname = string.Empty; // Clear the global variable
+            globalvar.clientID = 0; // Reset client ID
+            globalvar.orderID = 0; // Reset order ID
+            globalvar.paymentID = 0; // Reset payment ID
+            lblLogin.Visible = true;
+            lblLogin.Text = "Login";
+            lblLogin.Location = new Point(900, 300); // Adjust the position as needed
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtReEnterPassword.Clear();
+
+        }
+
+        private void addUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser(this);
+            FormSetup(addUser); // Set up the form as an MDI child
+            addUser.MdiParent = this; //display the child window //maximize the child window
+            addUser.WindowState = FormWindowState.Maximized;
+            addUser.Show();
+            panel1.Visible = false;
+        }
+
+        private void searchForUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            User User = new User(this);
+            FormSetup(User); // Set up the form as an MDI child
+            User.MdiParent = this; //display the child window //maximize the child window
+            User.WindowState = FormWindowState.Maximized;
+            User.Show();
+            panel1.Visible = false;
         }
     }
 }

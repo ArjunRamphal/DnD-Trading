@@ -104,7 +104,7 @@ namespace DnD_Trading
         {
             this.Hide();
             mainForm.Show();
-           
+            mainForm.Panel1.Visible = true;
         }
     }
 }

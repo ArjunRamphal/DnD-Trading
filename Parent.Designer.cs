@@ -40,10 +40,15 @@
             this.createOrderRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchForUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pbReEnterPassword = new System.Windows.Forms.PictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -67,7 +72,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
-            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).BeginInit();
@@ -87,12 +91,14 @@
             this.clientsToolStripMenuItem,
             this.orderToolStripMenuItem,
             this.inventoryToolStripMenuItem,
-            this.reportsToolStripMenuItem,
             this.supplierToolStripMenuItem,
-            this.paymentToolStripMenuItem});
+            this.paymentToolStripMenuItem,
+            this.reportsToolStripMenuItem,
+            this.usersToolStripMenuItem,
+            this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(952, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(2564, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -166,13 +172,6 @@
             this.inventoryToolStripMenuItem.Text = "Products";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
-            // 
             // supplierToolStripMenuItem
             // 
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
@@ -186,6 +185,43 @@
             this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
+            // usersToolStripMenuItem
+            // 
+            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUsersToolStripMenuItem,
+            this.searchForUsersToolStripMenuItem});
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
+            this.usersToolStripMenuItem.Text = "Users";
+            // 
+            // addUsersToolStripMenuItem
+            // 
+            this.addUsersToolStripMenuItem.Name = "addUsersToolStripMenuItem";
+            this.addUsersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addUsersToolStripMenuItem.Text = "Add users";
+            this.addUsersToolStripMenuItem.Click += new System.EventHandler(this.addUsersToolStripMenuItem_Click);
+            // 
+            // searchForUsersToolStripMenuItem
+            // 
+            this.searchForUsersToolStripMenuItem.Name = "searchForUsersToolStripMenuItem";
+            this.searchForUsersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.searchForUsersToolStripMenuItem.Text = "Search for users";
+            this.searchForUsersToolStripMenuItem.Click += new System.EventHandler(this.searchForUsersToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -210,6 +246,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2586, 1466);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(884, 1101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 55);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "New password:";
+            this.label3.Visible = false;
             // 
             // pbReEnterPassword
             // 
@@ -439,18 +487,6 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(884, 1101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 55);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "New password:";
-            this.label3.Visible = false;
-            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -461,7 +497,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Parent";
-            this.Text = "DnD Trading - Login";
+            this.Text = "DnD Trading";
             this.Load += new System.EventHandler(this.Parent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -518,6 +554,10 @@
         private System.Windows.Forms.ToolStripMenuItem createOrderRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchForUsersToolStripMenuItem;
     }
 }
 

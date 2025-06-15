@@ -49,11 +49,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
             this.grpAddSupplier.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,11 +70,11 @@
             this.supplierEmailDataGridViewTextBoxColumn,
             this.supplierOptOutDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.supplierBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 139);
+            this.dataGridView1.Location = new System.Drawing.Point(670, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(845, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(1272, 533);
             this.dataGridView1.TabIndex = 0;
             // 
             // supplierIDDataGridViewTextBoxColumn
@@ -134,7 +136,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 47);
+            this.label1.Location = new System.Drawing.Point(1207, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 68);
             this.label1.TabIndex = 1;
@@ -143,17 +145,17 @@
             // lblSupplier
             // 
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(27, 475);
+            this.lblSupplier.Location = new System.Drawing.Point(6, 42);
             this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(146, 20);
+            this.lblSupplier.Size = new System.Drawing.Size(210, 20);
             this.lblSupplier.TabIndex = 2;
-            this.lblSupplier.Text = "Search for supplier:";
+            this.lblSupplier.Text = "Search for supplier by name:";
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(179, 472);
+            this.txtSupplier.Location = new System.Drawing.Point(222, 39);
             this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(221, 26);
+            this.txtSupplier.Size = new System.Drawing.Size(315, 26);
             this.txtSupplier.TabIndex = 3;
             this.txtSupplier.TextChanged += new System.EventHandler(this.txtSupplier_TextChanged);
             // 
@@ -166,16 +168,16 @@
             this.grpAddSupplier.Controls.Add(this.label3);
             this.grpAddSupplier.Controls.Add(this.txtSupplierName);
             this.grpAddSupplier.Controls.Add(this.lblSupplierName);
-            this.grpAddSupplier.Location = new System.Drawing.Point(438, 456);
+            this.grpAddSupplier.Location = new System.Drawing.Point(1219, 753);
             this.grpAddSupplier.Name = "grpAddSupplier";
-            this.grpAddSupplier.Size = new System.Drawing.Size(502, 274);
+            this.grpAddSupplier.Size = new System.Drawing.Size(723, 274);
             this.grpAddSupplier.TabIndex = 4;
             this.grpAddSupplier.TabStop = false;
             this.grpAddSupplier.Text = "Add Supplier";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(157, 212);
+            this.btnAdd.Location = new System.Drawing.Point(359, 206);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 42);
             this.btnAdd.TabIndex = 6;
@@ -185,22 +187,22 @@
             // 
             // txtSupplierEmail
             // 
-            this.txtSupplierEmail.Location = new System.Drawing.Point(217, 164);
+            this.txtSupplierEmail.Location = new System.Drawing.Point(322, 158);
             this.txtSupplierEmail.Name = "txtSupplierEmail";
-            this.txtSupplierEmail.Size = new System.Drawing.Size(167, 26);
+            this.txtSupplierEmail.Size = new System.Drawing.Size(221, 26);
             this.txtSupplierEmail.TabIndex = 5;
             // 
             // txtSupplierPhoneNumber
             // 
-            this.txtSupplierPhoneNumber.Location = new System.Drawing.Point(217, 106);
+            this.txtSupplierPhoneNumber.Location = new System.Drawing.Point(322, 100);
             this.txtSupplierPhoneNumber.Name = "txtSupplierPhoneNumber";
-            this.txtSupplierPhoneNumber.Size = new System.Drawing.Size(167, 26);
+            this.txtSupplierPhoneNumber.Size = new System.Drawing.Size(221, 26);
             this.txtSupplierPhoneNumber.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 167);
+            this.label4.Location = new System.Drawing.Point(135, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 3;
@@ -209,7 +211,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 106);
+            this.label3.Location = new System.Drawing.Point(135, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(181, 20);
             this.label3.TabIndex = 2;
@@ -217,25 +219,36 @@
             // 
             // txtSupplierName
             // 
-            this.txtSupplierName.Location = new System.Drawing.Point(216, 45);
+            this.txtSupplierName.Location = new System.Drawing.Point(321, 39);
             this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(167, 26);
+            this.txtSupplierName.Size = new System.Drawing.Size(222, 26);
             this.txtSupplierName.TabIndex = 1;
             // 
             // lblSupplierName
             // 
             this.lblSupplierName.AutoSize = true;
-            this.lblSupplierName.Location = new System.Drawing.Point(30, 51);
+            this.lblSupplierName.Location = new System.Drawing.Point(135, 45);
             this.lblSupplierName.Name = "lblSupplierName";
             this.lblSupplierName.Size = new System.Drawing.Size(117, 20);
             this.lblSupplierName.TabIndex = 0;
             this.lblSupplierName.Text = "Supplier Name:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblSupplier);
+            this.groupBox1.Controls.Add(this.txtSupplier);
+            this.groupBox1.Location = new System.Drawing.Point(670, 753);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(543, 274);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 716);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1260);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,11 +260,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 801);
+            this.ClientSize = new System.Drawing.Size(2478, 1344);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpAddSupplier);
-            this.Controls.Add(this.txtSupplier);
-            this.Controls.Add(this.lblSupplier);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Supplier";
@@ -262,6 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
             this.grpAddSupplier.ResumeLayout(false);
             this.grpAddSupplier.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,5 +305,6 @@
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

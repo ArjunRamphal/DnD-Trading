@@ -27,7 +27,7 @@ namespace DnD_Trading
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.wstGrp22DataSet.Order);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Client' table. You can move, or remove it, as needed.
-            this.clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
+            this.clientTableAdapter.FillByOptOutFalse(this.wstGrp22DataSet.Client);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.ClientOrderProduct' table. You can move, or remove it, as needed.
             //this.clientOrderProductTableAdapter.Fill(this.wstGrp22DataSet.ClientOrderProduct);
 
@@ -36,25 +36,30 @@ namespace DnD_Trading
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Add new product to order?", "New Product", MessageBoxButtons.OKCancel);
+
             if (result == DialogResult.OK) {
+
                 // Validate Product Description
                 if (string.IsNullOrWhiteSpace(txtProdDesc.Text))
                 {
                     MessageBox.Show("Product description is required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 // Validate Product Quantity
                 if (!int.TryParse(numericUpDown1.Text.Trim(), out int quantity) || quantity <= 0)
                 {
                     MessageBox.Show("Product quantity must be a positive integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 // Insert the product into the order
                 clientOrderProductTableAdapter.Insert(
                     globalvar.orderID,
                     globalvar.clientID,
                     txtProdDesc.Text.Trim(),
-                    Convert.ToInt32(numericUpDown1.Text.Trim())
+                    Convert.ToInt32(numericUpDown1.Text.Trim()),
+                    false
                 );
 
                 MessageBox.Show("Product added to order successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,24 +108,29 @@ namespace DnD_Trading
             {
                 orderTableAdapter.Insert(
                     globalvar.clientID, // ClientID
-                    paymentID, // PaymentID
                     globalvar.userName, // UserName
                     DateTime.Now, // OrderDate
                     0, // OrderTotal
                     false // OrderComplete
                 );
+
                 MessageBox.Show("Order created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 orderTableAdapter.FillByDESC(this.wstGrp22DataSet.Order);
+
                 globalvar.orderID = dataGridView3.Rows[0].Cells[0].Value != null ? Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value) : 0;
                 groupBox1.Visible = true;
                 groupBox2.Visible = false;
                 paymentTableAdapter.Insert(
                     globalvar.orderID, // PaymentID
-                    false, 
+                    false,
                     0,
                     0,
                     0
                 );
+
+                this.paymentTableAdapter.FillByDESC(this.wstGrp22DataSet.Payment);
+                globalvar.paymentID = dataGridView4.Rows[0].Cells[0].Value != null ? Convert.ToInt32(dataGridView4.Rows[0].Cells[0].Value) : 0;
             }
             else
             {
@@ -133,12 +143,14 @@ namespace DnD_Trading
             CreateOrder createOrder = new CreateOrder(mainForm);
             createOrder.Show();
             this.Hide();
+            createOrder.WindowState = FormWindowState.Maximized;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             mainForm.Show();
             this.Hide();
+            mainForm.Panel1.Visible = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -155,5 +167,6 @@ namespace DnD_Trading
         public static int orderID = 0;
         public static int clientID = 0;
         public static int productID = 0;
+        public static int paymentID = 0;
     }
 }
