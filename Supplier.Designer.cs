@@ -62,6 +62,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.supplierIDDataGridViewTextBoxColumn,
@@ -76,6 +77,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1272, 533);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // supplierIDDataGridViewTextBoxColumn
             // 
@@ -84,7 +86,6 @@
             this.supplierIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierIDDataGridViewTextBoxColumn.Name = "supplierIDDataGridViewTextBoxColumn";
             this.supplierIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.supplierIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // supplierNameDataGridViewTextBoxColumn
             // 
@@ -92,7 +93,6 @@
             this.supplierNameDataGridViewTextBoxColumn.HeaderText = "SupplierName";
             this.supplierNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
-            this.supplierNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // supplierPhoneNumberDataGridViewTextBoxColumn
             // 
@@ -100,7 +100,6 @@
             this.supplierPhoneNumberDataGridViewTextBoxColumn.HeaderText = "SupplierPhoneNumber";
             this.supplierPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierPhoneNumberDataGridViewTextBoxColumn.Name = "supplierPhoneNumberDataGridViewTextBoxColumn";
-            this.supplierPhoneNumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // supplierEmailDataGridViewTextBoxColumn
             // 
@@ -108,7 +107,6 @@
             this.supplierEmailDataGridViewTextBoxColumn.HeaderText = "SupplierEmail";
             this.supplierEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierEmailDataGridViewTextBoxColumn.Name = "supplierEmailDataGridViewTextBoxColumn";
-            this.supplierEmailDataGridViewTextBoxColumn.Width = 150;
             // 
             // supplierOptOutDataGridViewCheckBoxColumn
             // 
@@ -116,7 +114,6 @@
             this.supplierOptOutDataGridViewCheckBoxColumn.HeaderText = "SupplierOptOut";
             this.supplierOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.supplierOptOutDataGridViewCheckBoxColumn.Name = "supplierOptOutDataGridViewCheckBoxColumn";
-            this.supplierOptOutDataGridViewCheckBoxColumn.Width = 150;
             // 
             // supplierBindingSource
             // 

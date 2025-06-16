@@ -25,6 +25,7 @@ namespace DnD_Trading
             mainForm.Show();
             this.Hide();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void Reports_Load(object sender, EventArgs e)

@@ -61,7 +61,7 @@
             // 
             this.lblReport.AutoSize = true;
             this.lblReport.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReport.Location = new System.Drawing.Point(12, 9);
+            this.lblReport.Location = new System.Drawing.Point(1185, 55);
             this.lblReport.Name = "lblReport";
             this.lblReport.Size = new System.Drawing.Size(210, 68);
             this.lblReport.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.PaymentSurplus,
             this.paymentStatusDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.paymentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(851, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -143,14 +143,14 @@
             // cmbMonth
             // 
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(131, 633);
+            this.cmbMonth.Location = new System.Drawing.Point(970, 691);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(172, 28);
             this.cmbMonth.TabIndex = 2;
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(142, 693);
+            this.btnReport.Location = new System.Drawing.Point(981, 751);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(150, 55);
             this.btnReport.TabIndex = 3;
@@ -160,14 +160,14 @@
             // cmbYear
             // 
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(131, 595);
+            this.cmbYear.Location = new System.Drawing.Point(970, 653);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(172, 28);
             this.cmbYear.TabIndex = 4;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(309, 447);
+            this.richTextBox1.Location = new System.Drawing.Point(1148, 505);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(631, 342);
             this.richTextBox1.TabIndex = 5;
@@ -176,7 +176,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(18, 598);
+            this.lblMonth.Location = new System.Drawing.Point(857, 656);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(107, 20);
             this.lblMonth.TabIndex = 6;
@@ -185,7 +185,7 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(18, 636);
+            this.lblYear.Location = new System.Drawing.Point(857, 694);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(92, 20);
             this.lblYear.TabIndex = 7;
@@ -206,7 +206,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 559);
+            this.label1.Location = new System.Drawing.Point(857, 617);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 9;
@@ -215,7 +215,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 517);
+            this.label2.Location = new System.Drawing.Point(857, 575);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 10;
@@ -224,7 +224,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 514);
+            this.comboBox1.Location = new System.Drawing.Point(970, 572);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(172, 28);
             this.comboBox1.TabIndex = 11;
@@ -232,7 +232,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 556);
+            this.comboBox2.Location = new System.Drawing.Point(970, 614);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(172, 28);
             this.comboBox2.TabIndex = 12;

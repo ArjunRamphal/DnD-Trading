@@ -40,7 +40,7 @@ namespace DnD_Trading
                 textBox1.Text.Trim(), // UserName
                 textBox2.Text.Trim(), // UserFirstName
                 textBox3.Text.Trim(), // UserLastName
-                false, // UserPhoneNumber
+                false, // UserType
                 "12345", // UserPassword
                 false // UserOptOut
             );
@@ -58,6 +58,7 @@ namespace DnD_Trading
             this.Hide();
             mainForm.Show();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
     }
 }

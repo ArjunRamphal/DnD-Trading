@@ -53,6 +53,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,10 +67,16 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +87,7 @@
             this.supplierProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.SupplierProductTableAdapter();
             this.searchAddProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.SearchAddProductTableAdapter();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -97,15 +104,18 @@
             this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchAddProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productIDDataGridViewTextBoxColumn,
@@ -127,7 +137,6 @@
             this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
             this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // productNameDataGridViewTextBoxColumn
             // 
@@ -135,7 +144,6 @@
             this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
             this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // productSurchargeDataGridViewTextBoxColumn
             // 
@@ -143,7 +151,6 @@
             this.productSurchargeDataGridViewTextBoxColumn.HeaderText = "ProductSurcharge";
             this.productSurchargeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productSurchargeDataGridViewTextBoxColumn.Name = "productSurchargeDataGridViewTextBoxColumn";
-            this.productSurchargeDataGridViewTextBoxColumn.Width = 150;
             // 
             // productBindingSource
             // 
@@ -175,6 +182,7 @@
             this.cmbSupplier.Size = new System.Drawing.Size(345, 34);
             this.cmbSupplier.TabIndex = 2;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
+            this.cmbSupplier.TextChanged += new System.EventHandler(this.cmbSupplier_TextChanged);
             // 
             // supplierBindingSource
             // 
@@ -268,6 +276,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(432, 32);
             this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -321,6 +330,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add product";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(218, 332);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(191, 26);
+            this.linkLabel1.TabIndex = 27;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Add new supplier?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(161, 220);
@@ -357,6 +377,7 @@
             // 
             this.comboBox1.DataSource = this.supplierBindingSource2;
             this.comboBox1.DisplayMember = "SupplierName";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(161, 114);
             this.comboBox1.Name = "comboBox1";
@@ -435,6 +456,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.textBox2);
             this.groupBox5.Location = new System.Drawing.Point(36, 671);
@@ -443,6 +465,16 @@
             this.groupBox5.TabIndex = 26;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(249, 91);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(210, 48);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Reset filter";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -476,16 +508,65 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Controls.Add(this.dataGridView2);
             this.groupBox6.Controls.Add(this.groupBox1);
             this.groupBox6.Controls.Add(this.groupBox2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(413, 116);
+            this.groupBox6.Location = new System.Drawing.Point(189, 116);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1385, 1125);
+            this.groupBox6.Size = new System.Drawing.Size(1970, 1125);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of products from suppliers";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.button4);
+            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Location = new System.Drawing.Point(1341, 678);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(486, 234);
+            this.groupBox7.TabIndex = 25;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Update product price from supplier";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(347, 26);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Select a product by double clicking";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(150, 174);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 37);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(136, 91);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(344, 32);
+            this.textBox5.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 26);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Enter price:";
             // 
             // dataGridView2
             // 
@@ -501,7 +582,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1256, 608);
+            this.dataGridView2.Size = new System.Drawing.Size(1795, 608);
             this.dataGridView2.TabIndex = 24;
             // 
             // ProductName
@@ -534,7 +615,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(964, 45);
+            this.label6.Location = new System.Drawing.Point(1019, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(264, 68);
             this.label6.TabIndex = 25;
@@ -565,16 +646,10 @@
             // 
             this.searchAddProductTableAdapter.ClearBeforeFill = true;
             // 
-            // linkLabel1
+            // productBindingSource1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(218, 332);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(191, 26);
-            this.linkLabel1.TabIndex = 27;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Add new supplier?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.wstGrp22DataSet;
             // 
             // Product
             // 
@@ -607,10 +682,13 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchAddProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,5 +747,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label9;
     }
 }

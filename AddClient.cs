@@ -105,6 +105,7 @@ namespace DnD_Trading
             this.Hide();
             mainForm.Show();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
     }
 }

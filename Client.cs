@@ -54,6 +54,7 @@ namespace DnD_Trading
             mainForm.Show();
             this.Hide();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace DnD_Trading
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtName.Text) && string.IsNullOrWhiteSpace(txtPhoneNumber.Text) && string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text.Trim()) && string.IsNullOrWhiteSpace(textBox2.Text.Trim()) && string.IsNullOrWhiteSpace(textBox3.Text.Trim()))
             {
                 MessageBox.Show("Please enter at least one field to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -80,7 +81,7 @@ namespace DnD_Trading
                         textBox1.Text.Trim(), // ClientName
                         clientID // ClientID
                     );
-                    MessageBox.Show("Client added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Client updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else 
                 {
@@ -88,11 +89,7 @@ namespace DnD_Trading
                     return;
                 }
             }
-            else
-            {
-                MessageBox.Show("Please enter a valid client name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            
             if (!string.IsNullOrWhiteSpace(textBox2.Text) && IsValidPhoneNumber(textBox2.Text.Trim()))
             {
                 if (MessageBox.Show("Are you sure you want to update client phone number?", "Client Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -101,7 +98,7 @@ namespace DnD_Trading
                         textBox2.Text.Trim(), // ClientName
                         clientID // ClientID
                     );
-                    MessageBox.Show("Client added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Client updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -109,6 +106,7 @@ namespace DnD_Trading
                     return;
                 }
             }
+
             if (!string.IsNullOrWhiteSpace(textBox3.Text) && IsValidEmail(textBox3.Text.Trim()))
             {
                 if (MessageBox.Show("Are you sure you want to update client email?", "Client Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -117,7 +115,7 @@ namespace DnD_Trading
                         textBox3.Text.Trim(), // ClientName
                         clientID // ClientID
                     );
-                    MessageBox.Show("Client added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Client updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -125,10 +123,10 @@ namespace DnD_Trading
                     return;
                 }
             }
-            else {
-                MessageBox.Show("Please enter a valid email address.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
         }
 
         bool IsValidPhoneNumber(string number)

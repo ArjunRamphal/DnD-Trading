@@ -122,7 +122,7 @@ namespace DnD_Trading
                 groupBox1.Visible = true;
                 groupBox2.Visible = false;
                 paymentTableAdapter.Insert(
-                    globalvar.orderID, // PaymentID
+                    globalvar.orderID, 
                     false,
                     0,
                     0,
@@ -151,6 +151,7 @@ namespace DnD_Trading
             mainForm.Show();
             this.Hide();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -168,5 +169,6 @@ namespace DnD_Trading
         public static int clientID = 0;
         public static int productID = 0;
         public static int paymentID = 0;
+        public static decimal priceTotal = 0;
     }
 }

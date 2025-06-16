@@ -57,12 +57,13 @@ namespace DnD_Trading
             this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
 
             TabControl1 = this.tabControl1;
-            comboBox1.Text = "";
-            cmbSupplier.Text = "";
+            comboBox1.SelectedIndex = -1;
+            cmbSupplier.SelectedIndex = -1;
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
         {
+            cmbSupplier.Text = "";
             // Filter the Product table based on the text entered in txtProduct
             if (string.IsNullOrWhiteSpace(txtProduct.Text))
             {
@@ -71,7 +72,7 @@ namespace DnD_Trading
                 return;
             }
 
-            searchAddProductTableAdapter.FillByProduct(this.wstGrp22DataSet.SearchAddProduct, txtProduct.Text.Trim());
+            searchAddProductTableAdapter.FillByProductLIKE(this.wstGrp22DataSet.SearchAddProduct, txtProduct.Text.Trim());
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace DnD_Trading
             {
                 productTableAdapter.UpdateQuery(surcharge, globalvar.productID);
                 MessageBox.Show("Surcharge updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSurcharge.Clear();
             }
             else
             {
@@ -90,7 +92,8 @@ namespace DnD_Trading
 
         private void cmbSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            supplierTableAdapter.FillBySupplierName(this.wstGrp22DataSet.Supplier, cmbSupplier.Text.Trim());
+            txtProduct.Text = "";
+            searchAddProductTableAdapter.FillBySupplier(this.wstGrp22DataSet.SearchAddProduct, cmbSupplier.Text.Trim());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -114,20 +117,93 @@ namespace DnD_Trading
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string productName = txtProduct.Text.Trim();
-            string supplierName = cmbSupplier.Text.Trim();
+            string productName = textBox1.Text.Trim();
+            string supplierName = comboBox1.Text.Trim();
+            decimal surcharge;
+            decimal price;
+
+            
+
+            
 
             if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(supplierName))
             {
                 MessageBox.Show("Product name and supplier name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Insert the new product into the database
-            productTableAdapter.Insert(productName, text, 0, 0, 0, 0, 0, 0, 0);
+
+            searchAddProductTableAdapter.FillByProductAndSupplier(this.wstGrp22DataSet.SearchAddProduct, productName, supplierName);
+
+            if (wstGrp22DataSet.SearchAddProduct.Rows.Count > 0)
+            {
+                MessageBox.Show("This product already exists in the database.", "Duplicate Product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            productTableAdapter.FillByProduct(wstGrp22DataSet.Product, productName);
+
+            if (wstGrp22DataSet.Product.Rows.Count > 0)
+            {
+                if (!string.IsNullOrWhiteSpace(textBox4.Text.Trim()))
+                {
+                    MessageBox.Show("This product already exists in the database. Do not enter a value in the surcharge field.", "Duplicate Product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(textBox3.Text.Trim(), out price))
+                {
+                    MessageBox.Show("Please enter a valid decimal value for the price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                productTableAdapter.FillByProduct(wstGrp22DataSet.Product, productName);
+                int productID = Convert.ToInt32(wstGrp22DataSet.Product.Rows[0]["ProductID"]);
+
+                supplierTableAdapter.FillBySupplierName(this.wstGrp22DataSet.Supplier, supplierName);
+                // Get the supplier ID based on the supplier name
+                int supplierID = Convert.ToInt32(wstGrp22DataSet.Supplier.Rows[0]["SupplierID"]);
+
+                supplierProductTableAdapter.Insert(
+                    productID, //find matching product ID
+                    supplierID, //find matching supplier ID
+                    price
+                );
+            }
+            else
+            {
+                if (!decimal.TryParse(textBox4.Text.Trim(), out surcharge))
+                {
+                    MessageBox.Show("Please enter a valid decimal value for the surcharge.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!decimal.TryParse(textBox3.Text.Trim(), out price))
+                {
+                    MessageBox.Show("Please enter a valid decimal value for the price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                productTableAdapter.Insert(productName, surcharge);
+                productTableAdapter.FillByOrderIDDESC(wstGrp22DataSet.Product);
+                // Get the last inserted product ID
+                int lastInsertedProductID = Convert.ToInt32(wstGrp22DataSet.Product.Rows[0]["ProductID"]);
+                supplierTableAdapter.FillBySupplierName(this.wstGrp22DataSet.Supplier, supplierName);
+                // Get the supplier ID based on the supplier name
+                int supplierID = Convert.ToInt32(wstGrp22DataSet.Supplier.Rows[0]["SupplierID"]);
+                
+                supplierProductTableAdapter.Insert(
+                    lastInsertedProductID, //get last inserted product ID
+                    supplierID, //find matching supplier ID
+                    price
+                );
+            }
+
+                // Insert the new product into the database  
+                
 
             MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Optionally, you can clear the input fields after adding
+            // Optionally, you can clear the input fields after adding  
             textBox1.Clear();
             comboBox1.SelectedIndex = -1;
             textBox3.Clear();
@@ -139,6 +215,11 @@ namespace DnD_Trading
                 this.Hide();
                 createOrderForm.WindowState = FormWindowState.Maximized;
             }
+
+            supplierTableAdapter.Fill(this.wstGrp22DataSet.Supplier);
+            productTableAdapter.Fill(this.wstGrp22DataSet.Product);
+            searchAddProductTableAdapter.Fill(this.wstGrp22DataSet.SearchAddProduct);
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -153,6 +234,7 @@ namespace DnD_Trading
             this.Hide();
             mainForm.Show();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -162,6 +244,8 @@ namespace DnD_Trading
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtProduct.Text = "";
+            cmbSupplier.SelectedIndex = -1;
             this.searchAddProductTableAdapter.Fill(this.wstGrp22DataSet.SearchAddProduct);
         }
 
@@ -171,6 +255,58 @@ namespace DnD_Trading
             supplier.Show();
             this.Hide();
             supplier.WindowState = FormWindowState.Maximized;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text.Trim()))
+            {
+                searchAddProductTableAdapter.Fill(this.wstGrp22DataSet.SearchAddProduct);
+                return;
+            }
+            string productName = textBox1.Text.Trim();
+            searchAddProductTableAdapter.FillByProduct(this.wstGrp22DataSet.SearchAddProduct, productName);
+        }
+
+        private void cmbSupplier_TextChanged(object sender, EventArgs e)
+        {
+            txtProduct.Text = "";
+            searchAddProductTableAdapter.FillBySupplier(this.wstGrp22DataSet.SearchAddProduct, cmbSupplier.Text.Trim());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            productTableAdapter.Fill(this.wstGrp22DataSet.Product);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string productName = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            string supplierName = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+
+            productTableAdapter.FillByProduct(wstGrp22DataSet.Product, productName);
+            // Get the last inserted product ID
+            int productID = Convert.ToInt32(wstGrp22DataSet.Product.Rows[0]["ProductID"]);
+
+            supplierTableAdapter.FillBySupplierName(this.wstGrp22DataSet.Supplier, supplierName);
+            // Get the supplier ID based on the supplier name
+            int supplierID = Convert.ToInt32(wstGrp22DataSet.Supplier.Rows[0]["SupplierID"]);
+
+            if (decimal.TryParse(textBox5.Text.Trim(), out decimal price))
+            {
+                supplierProductTableAdapter.UpdatePrice(price, productID, supplierID);
+                MessageBox.Show("Price updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBox5.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Invalid price value. Please enter a valid decimal value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            searchAddProductTableAdapter.Fill(wstGrp22DataSet.SearchAddProduct);
+            supplierTableAdapter.Fill(this.wstGrp22DataSet.Supplier);
+            productTableAdapter.Fill(this.wstGrp22DataSet.Product);
         }
     }
 }

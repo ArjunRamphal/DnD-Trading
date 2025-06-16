@@ -33,26 +33,50 @@ namespace DnD_Trading
                 return;
             }
 
+            decimal price = 0;
+
             DataRow dr;
             dr = wstGrp22DataSet.OrderSupplierProduct.NewRow();
 
-            for (int i = 0; i < dr.ItemArray.Length; i++)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                // Skip the last row if it's the new row placeholder
+                if (row.IsNewRow) continue;
+
+                dr = wstGrp22DataSet.OrderSupplierProduct.NewRow();
+
                 dr["OrderID"] = globalvar.orderID;
-                dr["ProductID"] = (int)dataGridView1.CurrentRow.Cells[1].Value;
-                dr["SupplierID"] = (int)dataGridView1.CurrentRow.Cells[2].Value;
-                dr["OrderSupplierProductQuantity"] = (int)dataGridView1.CurrentRow.Cells[3].Value;
-                dr["OrderSupplierProductPrice"] = (decimal)dataGridView1.CurrentRow.Cells[4].Value;
-                dr["OrderSupplierProductStatus"] = (bool)dataGridView1.CurrentRow.Cells[5].Value;
+                dr["ProductID"] = Convert.ToInt32(row.Cells[1].Value);
+                dr["SupplierID"] = Convert.ToInt32(row.Cells[2].Value);
+                dr["OrderSupplierProductQuantity"] = Convert.ToInt32(row.Cells[3].Value);
+                dr["OrderSupplierProductPrice"] = Convert.ToDecimal(row.Cells[4].Value);
+                dr["OrderSupplierProductStatus"] = Convert.ToBoolean(row.Cells[5].Value);
+
+                // Add the price directly
+                price += Convert.ToDecimal(row.Cells[4].Value);
+
+                // Add the row to the dataset
+                //wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             }
+
+            orderTableAdapter.UpdateOrderAmount(
+                price,
+                globalvar.orderID
+            );
 
             //wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
             MessageBox.Show("Order created successfully.", "Order Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
-            
+            paymentTableAdapter.UpdatePaymentTotalAndPaymentDue(
+                price,
+                price,
+                globalvar.paymentID // Use the global variable for payment ID
+            );
+
             // Send email notification
 
+            /*
             string to, from, pass, body;
             MailMessage msg = new MailMessage();
             to = "ClientEmail";
@@ -69,10 +93,19 @@ namespace DnD_Trading
             smtp.Port = 587;
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = new NetworkCredential(from, pass);
+            */
+
+            mainForm.Show();
+            mainForm.Panel1.Visible = true;
+            this.Hide();
         }
 
         private void CreateOrder_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet3.Order' table. You can move, or remove it, as needed.
+            this.orderTableAdapter.Fill(this.wstGrp22DataSet3.Order);
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
+            this.paymentTableAdapter.Fill(this.wstGrp22DataSet.Payment);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.CreateOrderSupplierProduct' table. You can move, or remove it, as needed.
             this.createOrderSupplierProductTableAdapter.Fill(this.wstGrp22DataSet.CreateOrderSupplierProduct);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Product' table. You can move, or remove it, as needed.
@@ -114,6 +147,7 @@ namespace DnD_Trading
             this.Hide();
             mainForm.Show();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void dataGridView3_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -145,10 +179,14 @@ namespace DnD_Trading
             decimal surcharge = (decimal)Convert.ToDecimal(dataGridView6.CurrentRow.Cells[2].Value)/100;
 
             dr["OrderSupplierProductPrice"] = ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim());
+            globalvar.priceTotal += ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim());
+            label4.Text = "Total Price: " + globalvar.priceTotal.ToString("C2");
             dr["OrderSupplierProductStatus"] = false; // Default value for OrderSupplierProductStatus
             wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
             numericUpDown1.Value = 0; // Reset the numericUpDown control after adding the product
+
+            txtProductSearch.Clear(); // Clear the search box after adding the product
         }
 
         private void txtProductSearch_TextChanged(object sender, EventArgs e)

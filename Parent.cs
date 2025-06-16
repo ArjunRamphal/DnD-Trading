@@ -17,11 +17,12 @@ namespace DnD_Trading
     {
 
         public Panel Panel1;
-
+        public MenuStrip MenuStrip1;
         public Parent()
         {
             InitializeComponent();
             Panel1 = this.panel1;
+            MenuStrip1 = this.menuStrip1;
         }
 
         private void pbShowPassword_MouseDown(object sender, MouseEventArgs e)
@@ -307,6 +308,7 @@ namespace DnD_Trading
             { 
                 this.ActiveMdiChild.Close();
             }
+            menuStrip1.Items[8].Visible = false;
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,11 +330,14 @@ namespace DnD_Trading
             globalvar.paymentID = 0; // Reset payment ID
             lblLogin.Visible = true;
             lblLogin.Text = "Login";
-            lblLogin.Location = new Point(900, 300); // Adjust the position as needed
+            lblLogin.Location = new Point(750, 150); // Adjust the position as needed
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
+            globalvar.priceTotal = 0; // Reset price total
+            globalvar.productID = 0; // Reset product ID
 
+            MessageBox.Show("You have been logged out successfully.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void addUsersToolStripMenuItem_Click(object sender, EventArgs e)

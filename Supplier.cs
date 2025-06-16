@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnD_Trading.WstGrp22DataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -125,6 +126,7 @@ namespace DnD_Trading
                 mainForm.Show();
                 this.Hide();
                 mainForm.Panel1.Visible = true;
+                mainForm.MenuStrip1.Items[8].Visible = true;
             }
             else if (isProductForm)
             {
@@ -142,6 +144,21 @@ namespace DnD_Trading
             productForm.WindowState = FormWindowState.Maximized;
             productForm.TabControl1.SelectedIndex = 1; // Switch to the first tab
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is the checkbox column (index 4)
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                // Force the current edit (checkbox) to commit
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+                int supplierID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                bool isOptOut = (bool)dataGridView1.Rows[e.RowIndex].Cells[4].Value;
+
+                supplierTableAdapter.UpdateStatus(isOptOut, supplierID);
+            }
         }
     }
 }

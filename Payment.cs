@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace DnD_Trading
 {
@@ -34,6 +35,7 @@ namespace DnD_Trading
             mainForm.Show();
             this.Hide();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -104,7 +106,8 @@ namespace DnD_Trading
                 globalvar.paymentID
                 );
             }
-                
+              
+            paymentFormTableAdapter.Fill(this.wstGrp22DataSet.PaymentForm);
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -116,7 +119,16 @@ namespace DnD_Trading
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            // Validate that the input is not empty
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Please enter a client name to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Fill the PaymentForm table with the filtered data based on the client name
+
+            paymentFormTableAdapter.FillByClientName(this.wstGrp22DataSet.PaymentForm, textBox2.Text.Trim());
         }
     }
 }
