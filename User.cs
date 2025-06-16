@@ -36,7 +36,7 @@ namespace DnD_Trading
                 {
                     int index = dataGridView1.CurrentRow.Index;
 
-                    string username = Convert.ToString(wstGrp22DataSet.ClientOrderProduct.Rows[index]["UserName"]);
+                    string username = Convert.ToString(wstGrp22DataSet.User.Rows[index]["UserName"]);
 
                     bool isOptOut = !((bool)dataGridView1.CurrentRow.Cells[5].Value);
 

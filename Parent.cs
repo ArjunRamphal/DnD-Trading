@@ -118,6 +118,14 @@ namespace DnD_Trading
                     menuStrip1.Visible = true;
                     menuStrip1.Items[0].Visible = false;
 
+                    if (Convert.ToInt32(wstGrp22DataSet.User.Rows[0]["UserOptOut"]) == 1)
+                    {
+                        MessageBox.Show("This user has opted out of the system. Please contact support.", "User Opted Out", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; // Exit the login process if the user has opted out
+                    }
+
+                    globalvar.loggedInAs = Convert.ToInt32(wstGrp22DataSet.User.Rows[0]["UserType"]); // 0 = Sales Rep, 1 = Manager
+
                     // Access the specific row and column instead of using ItemArray  
                     DataRow userRow = wstGrp22DataSet.User.Rows[0];
                     if (userRow["UserType"].ToString() == "False")
@@ -321,7 +329,7 @@ namespace DnD_Trading
             label1.Visible = true;
             label2.Visible = true;
             pbShowPassword.Visible = true;
-            label3.Visible = true;
+            label3.Visible = false;
             globalvar.userName = string.Empty; // Clear the global variable
             globalvar.userFirstName = string.Empty; // Clear the global variable
             globalvar.userSurname = string.Empty; // Clear the global variable
@@ -331,11 +339,13 @@ namespace DnD_Trading
             lblLogin.Visible = true;
             lblLogin.Text = "Login";
             lblLogin.Location = new Point(750, 150); // Adjust the position as needed
+            lblReEnter.Visible = false;
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
             globalvar.priceTotal = 0; // Reset price total
             globalvar.productID = 0; // Reset product ID
+            globalvar.loggedInAs = -1; // Reset logged in status
 
             MessageBox.Show("You have been logged out successfully.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -358,6 +368,16 @@ namespace DnD_Trading
             User.WindowState = FormWindowState.Maximized;
             User.Show();
             panel1.Visible = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
         }
     }
 }

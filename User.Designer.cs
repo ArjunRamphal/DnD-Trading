@@ -87,42 +87,42 @@
             // userNameDataGridViewTextBoxColumn
             // 
             this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "Username";
             this.userNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             // 
             // userFirstNameDataGridViewTextBoxColumn
             // 
             this.userFirstNameDataGridViewTextBoxColumn.DataPropertyName = "UserFirstName";
-            this.userFirstNameDataGridViewTextBoxColumn.HeaderText = "UserFirstName";
+            this.userFirstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.userFirstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.userFirstNameDataGridViewTextBoxColumn.Name = "userFirstNameDataGridViewTextBoxColumn";
             // 
             // userLastNameDataGridViewTextBoxColumn
             // 
             this.userLastNameDataGridViewTextBoxColumn.DataPropertyName = "UserLastName";
-            this.userLastNameDataGridViewTextBoxColumn.HeaderText = "UserLastName";
+            this.userLastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.userLastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.userLastNameDataGridViewTextBoxColumn.Name = "userLastNameDataGridViewTextBoxColumn";
             // 
             // userTypeDataGridViewCheckBoxColumn
             // 
             this.userTypeDataGridViewCheckBoxColumn.DataPropertyName = "UserType";
-            this.userTypeDataGridViewCheckBoxColumn.HeaderText = "UserType";
+            this.userTypeDataGridViewCheckBoxColumn.HeaderText = "Type";
             this.userTypeDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.userTypeDataGridViewCheckBoxColumn.Name = "userTypeDataGridViewCheckBoxColumn";
             // 
             // userPasswordDataGridViewTextBoxColumn
             // 
             this.userPasswordDataGridViewTextBoxColumn.DataPropertyName = "UserPassword";
-            this.userPasswordDataGridViewTextBoxColumn.HeaderText = "UserPassword";
+            this.userPasswordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.userPasswordDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.userPasswordDataGridViewTextBoxColumn.Name = "userPasswordDataGridViewTextBoxColumn";
             // 
             // userOptOutDataGridViewCheckBoxColumn
             // 
             this.userOptOutDataGridViewCheckBoxColumn.DataPropertyName = "UserOptOut";
-            this.userOptOutDataGridViewCheckBoxColumn.HeaderText = "UserOptOut";
+            this.userOptOutDataGridViewCheckBoxColumn.HeaderText = "Opt Out";
             this.userOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.userOptOutDataGridViewCheckBoxColumn.Name = "userOptOutDataGridViewCheckBoxColumn";
             // 
@@ -153,7 +153,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1303, 874);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Users";
+            this.groupBox1.Text = "Update opt out by clicking the checkbox";
             // 
             // textBox2
             // 
@@ -205,6 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -230,17 +231,17 @@
         private WstGrp22DataSet wstGrp22DataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
         private WstGrp22DataSetTableAdapters.UserTableAdapter userTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userFirstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userLastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn userTypeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userPasswordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn userOptOutDataGridViewCheckBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn userTypeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userPasswordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn userOptOutDataGridViewCheckBoxColumn;
     }
 }

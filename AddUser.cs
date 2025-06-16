@@ -44,6 +44,9 @@ namespace DnD_Trading
                 "12345", // UserPassword
                 false // UserOptOut
             );
+
+            MessageBox.Show("New user record added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void AddUser_Load(object sender, EventArgs e)

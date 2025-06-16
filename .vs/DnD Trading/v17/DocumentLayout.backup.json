@@ -3,72 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\wstgrp22dataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:wstgrp22dataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\addclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:addclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\wstgrp22dataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:wstgrp22dataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\wstgrp22dataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:wstgrp22dataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,104 +70,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Reports.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Reports.cs",
-              "RelativeDocumentMoniker": "Reports.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Reports.cs [Design]",
-              "RelativeToolTip": "Reports.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Parent.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeDocumentMoniker": "Parent.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeToolTip": "Parent.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAwwHsAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T13:46:02.412Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-16T20:18:24.496Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "AddUser.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs",
+              "RelativeDocumentMoniker": "AddUser.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs",
+              "RelativeToolTip": "AddUser.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwC8AAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T20:01:57.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs",
+              "RelativeDocumentMoniker": "AddUser.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs [Design]",
+              "RelativeToolTip": "AddUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T20:01:56.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\User.cs [Design]",
+              "RelativeToolTip": "User.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T20:01:52.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Product.cs",
               "RelativeDocumentMoniker": "Product.cs",
               "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Product.cs",
               "RelativeToolTip": "Product.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAAwOwAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenGroupName": "",
-              "WhenOpened": "2025-06-12T14:40:45.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T19:56:30.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Product.cs [Design]",
               "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Product.cs",
               "RelativeDocumentMoniker": "Product.cs",
               "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Product.cs [Design]",
               "RelativeToolTip": "Product.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T17:51:09.983Z",
+              "WhenOpened": "2025-06-16T19:54:38.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Parent.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeDocumentMoniker": "Parent.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs [Design]",
+              "RelativeToolTip": "Parent.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T18:08:15.237Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Order.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeDocumentMoniker": "Order.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs [Design]",
-              "RelativeToolTip": "Order.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
+              "RelativeDocumentMoniker": "Payment.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
+              "RelativeToolTip": "Payment.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAkwHUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T13:42:45.237Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeDocumentMoniker": "Order.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeToolTip": "Order.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAIAwwDIAAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T13:40:28.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T20:11:44.798Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Payment.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
+              "RelativeDocumentMoniker": "Payment.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs [Design]",
+              "RelativeToolTip": "Payment.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T20:11:42.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Supplier.cs",
               "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Supplier.cs",
               "RelativeDocumentMoniker": "Supplier.cs",
               "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Supplier.cs",
               "RelativeToolTip": "Supplier.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAAAIAAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAQwF4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T13:57:04.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WstGrp22DataSet.xsd",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.xsd",
-              "RelativeDocumentMoniker": "WstGrp22DataSet.xsd",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.xsd",
-              "RelativeToolTip": "WstGrp22DataSet.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-06-12T09:18:42.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Reports.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Reports.cs",
-              "RelativeDocumentMoniker": "Reports.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Reports.cs",
-              "RelativeToolTip": "Reports.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T13:14:23.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T19:54:21.557Z"
             },
             {
               "$type": "Document",
@@ -198,108 +194,18 @@
               "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Supplier.cs [Design]",
               "RelativeToolTip": "Supplier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:04:06.137Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-16T19:54:12.45Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Parent.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
-              "RelativeDocumentMoniker": "Parent.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
-              "RelativeToolTip": "Parent.cs",
-              "ViewState": "AgIAAOAAAAAAAAAAAADwv1wBAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:44:36.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Parent.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
-              "RelativeDocumentMoniker": "Parent.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs [Design]",
-              "RelativeToolTip": "Parent.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:50:53.373Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\User.cs",
-              "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\User.cs",
-              "RelativeToolTip": "User.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEcAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T15:51:26.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
-              "RelativeDocumentMoniker": "Payment.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
-              "RelativeToolTip": "Payment.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCUAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T15:32:46.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Payment.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs",
-              "RelativeDocumentMoniker": "Payment.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Payment.cs [Design]",
-              "RelativeToolTip": "Payment.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T15:37:48.084Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AddClient.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddClient.cs",
-              "RelativeDocumentMoniker": "AddClient.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddClient.cs [Design]",
-              "RelativeToolTip": "AddClient.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:25:50.099Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AddUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs",
-              "RelativeDocumentMoniker": "AddUser.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\AddUser.cs [Design]",
-              "RelativeToolTip": "AddUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T10:56:56.017Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "WstGrp22DataSet.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.cs",
-              "RelativeDocumentMoniker": "WstGrp22DataSet.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.cs*",
-              "RelativeToolTip": "WstGrp22DataSet.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T14:40:31.358Z",
-              "EditorCaption": ""
+              "DocumentIndex": 11,
+              "Title": "WstGrp22DataSet.xsd",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.xsd",
+              "RelativeDocumentMoniker": "WstGrp22DataSet.xsd",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\WstGrp22DataSet.xsd",
+              "RelativeToolTip": "WstGrp22DataSet.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2025-06-16T17:50:51.554Z"
             }
           ]
         }

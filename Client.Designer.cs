@@ -98,7 +98,7 @@
             // clientIDDataGridViewTextBoxColumn
             // 
             this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Client ID";
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -106,28 +106,28 @@
             // clientNameDataGridViewTextBoxColumn
             // 
             this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "Client Name";
             this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
             // 
             // clientPhoneNumberDataGridViewTextBoxColumn
             // 
             this.clientPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "ClientPhoneNumber";
-            this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "ClientPhoneNumber";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Phone Number";
             this.clientPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
             // 
             // clientEmailDataGridViewTextBoxColumn
             // 
             this.clientEmailDataGridViewTextBoxColumn.DataPropertyName = "ClientEmail";
-            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "ClientEmail";
+            this.clientEmailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
             // 
             // clientOptOutDataGridViewCheckBoxColumn
             // 
             this.clientOptOutDataGridViewCheckBoxColumn.DataPropertyName = "ClientOptOut";
-            this.clientOptOutDataGridViewCheckBoxColumn.HeaderText = "ClientOptOut";
+            this.clientOptOutDataGridViewCheckBoxColumn.HeaderText = "Archive";
             this.clientOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.clientOptOutDataGridViewCheckBoxColumn.Name = "clientOptOutDataGridViewCheckBoxColumn";
             // 
@@ -144,7 +144,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 55);
+            this.lblName.Location = new System.Drawing.Point(6, 46);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(77, 26);
             this.lblName.TabIndex = 2;
@@ -152,7 +152,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(161, 52);
+            this.txtName.Location = new System.Drawing.Point(161, 40);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(386, 32);
             this.txtName.TabIndex = 4;
@@ -173,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 84);
+            this.label2.Location = new System.Drawing.Point(6, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 26);
             this.label2.TabIndex = 12;
@@ -190,7 +190,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(161, 84);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(161, 78);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(386, 32);
             this.txtPhoneNumber.TabIndex = 14;
@@ -264,21 +264,21 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(164, 121);
+            this.textBox3.Location = new System.Drawing.Point(164, 113);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(386, 32);
             this.textBox3.TabIndex = 18;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(164, 81);
+            this.textBox2.Location = new System.Drawing.Point(164, 75);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(386, 32);
             this.textBox2.TabIndex = 17;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 46);
+            this.textBox1.Location = new System.Drawing.Point(164, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(386, 32);
             this.textBox1.TabIndex = 16;
@@ -286,7 +286,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 119);
+            this.label6.Location = new System.Drawing.Point(7, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 26);
             this.label6.TabIndex = 2;
@@ -295,7 +295,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 87);
+            this.label5.Location = new System.Drawing.Point(6, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 26);
             this.label5.TabIndex = 1;
@@ -304,7 +304,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 52);
+            this.label4.Location = new System.Drawing.Point(6, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 26);
             this.label4.TabIndex = 0;
@@ -314,12 +314,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "Client";
-            this.Text = "DnD Trading - Client";
+            this.Text = "Clients";
             this.Load += new System.EventHandler(this.Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
@@ -349,11 +350,6 @@
         private WstGrp22DataSet wstGrp22DataSet;
         private System.Windows.Forms.BindingSource clientBindingSource;
         private WstGrp22DataSetTableAdapters.ClientTableAdapter clientTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn clientOptOutDataGridViewCheckBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -364,5 +360,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientPhoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clientOptOutDataGridViewCheckBoxColumn;
     }
 }

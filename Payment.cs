@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using DnD_Trading.WstGrp22DataSetTableAdapters;
 
 namespace DnD_Trading
 {
@@ -42,17 +43,17 @@ namespace DnD_Trading
         {
             if (checkBox1.Checked)
             {
-                paymentTableAdapter.FillByStatusTrue(this.wstGrp22DataSet.Payment);
+                paymentFormTableAdapter.FillByStatusTrue(this.wstGrp22DataSet.PaymentForm);
             }
             else
             {
-                paymentTableAdapter.FillByStatusFalse(this.wstGrp22DataSet.Payment);
+                paymentFormTableAdapter.FillByStatusFalse(this.wstGrp22DataSet.PaymentForm);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.paymentTableAdapter.Fill(this.wstGrp22DataSet.Payment);
+            this.paymentFormTableAdapter.Fill(this.wstGrp22DataSet.PaymentForm);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,15 +80,15 @@ namespace DnD_Trading
             }
 
             // Validate that the status is not already true
-            if (Convert.ToBoolean(dataGridView1.CurrentRow.Cells[3].Value))
+            if (Convert.ToBoolean(dataGridView1.CurrentRow.Cells[6].Value))
             {
                 MessageBox.Show("This payment is already marked as paid.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (Convert.ToDecimal(textBox1.Text.Trim()) >= Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value))
+            if (Convert.ToDecimal(textBox1.Text.Trim()) >= Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value))
             {
-                decimal surplus = Convert.ToDecimal(textBox1.Text.Trim()) - Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value);
+                decimal surplus = Convert.ToDecimal(textBox1.Text.Trim()) - Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value);
                 
                 paymentTableAdapter.UpdatePayment(
                 true,
@@ -95,26 +96,33 @@ namespace DnD_Trading
                 surplus,
                 globalvar.paymentID
                 );
+
+                MessageBox.Show("Payment status updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 // Update the payment status
                 paymentTableAdapter.UpdatePayment(
                 false,
-                Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value) - Convert.ToDecimal(textBox1.Text.Trim()),
+                Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value) - Convert.ToDecimal(textBox1.Text.Trim()),
                 0,
                 globalvar.paymentID
                 );
+
+                MessageBox.Show("Payment status updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
               
             paymentFormTableAdapter.Fill(this.wstGrp22DataSet.PaymentForm);
+
+            textBox1.Clear();
+            textBox2.Clear();
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             globalvar.paymentID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value);
 
-            MessageBox.Show("Payment ID: " + globalvar.paymentID, "Payment Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Payment ID: " + globalvar.paymentID, "Payment Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -122,13 +130,45 @@ namespace DnD_Trading
             // Validate that the input is not empty
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                MessageBox.Show("Please enter a client name to search.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                paymentFormTableAdapter.Fill(this.wstGrp22DataSet.PaymentForm);
                 return;
             }
 
             // Fill the PaymentForm table with the filtered data based on the client name
 
             paymentFormTableAdapter.FillByClientName(this.wstGrp22DataSet.PaymentForm, textBox2.Text.Trim());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+            if (dataGridView1.Rows.Count > 0)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    int index = dataGridView1.CurrentRow.Index;
+
+                    int paymentID = Convert.ToInt32(wstGrp22DataSet.Payment.Rows[index]["PaymentID"]);
+
+                    bool isOptOut = !((bool)dataGridView1.CurrentRow.Cells[5].Value);
+
+                    
+                    paymentTableAdapter.UpdateStatus(
+                        isOptOut,
+                        
+                    );
+                }
+            }*/
         }
     }
 }

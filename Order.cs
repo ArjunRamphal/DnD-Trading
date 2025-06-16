@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnD_Trading.WstGrp22DataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,8 @@ namespace DnD_Trading
 
         private void Order_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet1.ClientClientOrderProductOrder' table. You can move, or remove it, as needed.
+            this.clientClientOrderProductOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientClientOrderProductOrder);
             // TODO: This line of code loads data into the 'wstGrp22DataSet2.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.wstGrp22DataSet2.User);
             // TODO: This line of code loads data into the 'wstGrp22DataSet2.Order' table. You can move, or remove it, as needed.
@@ -48,12 +51,12 @@ namespace DnD_Trading
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            clientOrderTableAdapter.FillByClientName(this.wstGrp22DataSet1.ClientOrder, textBox1.Text.Trim());
+            clientClientOrderProductOrderTableAdapter.FillByClientName(this.wstGrp22DataSet1.ClientClientOrderProductOrder, textBox1.Text.Trim());
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clientOrderTableAdapter.FillBySupplierName(this.wstGrp22DataSet1.ClientOrder, comboBox2.Text.Trim());
+            clientClientOrderProductOrderTableAdapter.FillBySalesRep(this.wstGrp22DataSet1.ClientClientOrderProductOrder, comboBox2.Text.Trim());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -61,6 +64,28 @@ namespace DnD_Trading
             this.clientOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientOrder);
             textBox1.Clear();
             comboBox2.Text = "";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is the checkbox column (index 4)
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
+            {
+                // Force the current edit (checkbox) to commit
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+                int orderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                bool isOptOut = (bool)dataGridView1.Rows[e.RowIndex].Cells[5].Value;
+
+                orderTableAdapter.UpdateStatus(isOptOut, orderID);
+
+                MessageBox.Show("Order status updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

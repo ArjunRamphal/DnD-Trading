@@ -65,13 +65,21 @@
             this.supplierBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -100,10 +108,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchAddProductBindingSource)).BeginInit();
@@ -133,7 +145,7 @@
             // productIDDataGridViewTextBoxColumn
             // 
             this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Product ID";
             this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
             this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -141,14 +153,14 @@
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
             this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
             // 
             // productSurchargeDataGridViewTextBoxColumn
             // 
             this.productSurchargeDataGridViewTextBoxColumn.DataPropertyName = "ProductSurcharge";
-            this.productSurchargeDataGridViewTextBoxColumn.HeaderText = "ProductSurcharge";
+            this.productSurchargeDataGridViewTextBoxColumn.HeaderText = "Product Surcharge";
             this.productSurchargeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productSurchargeDataGridViewTextBoxColumn.Name = "productSurchargeDataGridViewTextBoxColumn";
             // 
@@ -166,7 +178,7 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(910, 24);
+            this.lblProduct.Location = new System.Drawing.Point(1017, 28);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(235, 68);
             this.lblProduct.TabIndex = 1;
@@ -323,7 +335,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(695, 678);
+            this.groupBox2.Location = new System.Drawing.Point(1214, 678);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(613, 396);
             this.groupBox2.TabIndex = 22;
@@ -430,6 +442,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gold;
+            this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.lblProduct);
             this.tabPage1.Controls.Add(this.pictureBox1);
@@ -439,20 +453,61 @@
             this.tabPage1.Size = new System.Drawing.Size(2470, 1311);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Products";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DnD_Trading.Properties.Resources.help_252;
+            this.pictureBox3.Location = new System.Drawing.Point(2374, 1222);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.dataGridView1);
             this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(388, 95);
+            this.groupBox4.Location = new System.Drawing.Point(495, 99);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1334, 836);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Select a product by double clicking it in the table";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Location = new System.Drawing.Point(368, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(677, 673);
+            this.panel1.TabIndex = 26;
+            this.panel1.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(270, 617);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(149, 48);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Close help";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(23, 31);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(637, 580);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "· Search for the product\'s name and select it.\n\n· Update the surcharge for that p" +
+    "roduct.\n";
             // 
             // groupBox5
             // 
@@ -495,6 +550,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gold;
+            this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.pictureBox2);
@@ -504,10 +561,21 @@
             this.tabPage2.Size = new System.Drawing.Size(2470, 1311);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Supplier products";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::DnD_Trading.Properties.Resources.help_252;
+            this.pictureBox4.Location = new System.Drawing.Point(2374, 1222);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 27;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.panel2);
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Controls.Add(this.dataGridView2);
             this.groupBox6.Controls.Add(this.groupBox1);
@@ -520,13 +588,43 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of products from suppliers";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.richTextBox2);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Location = new System.Drawing.Point(627, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(678, 599);
+            this.panel2.TabIndex = 26;
+            this.panel2.Visible = false;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(31, 24);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(618, 514);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "Search for a product by supplier or product name.\n\nUpdate product price for a sup" +
+    "plier.\n\nEnter product details in the form.\n\nClick \"Add product\" to save the info" +
+    "rmation.\n\n";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(272, 544);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(161, 39);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Close help";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label10);
             this.groupBox7.Controls.Add(this.button4);
             this.groupBox7.Controls.Add(this.textBox5);
             this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Location = new System.Drawing.Point(1341, 678);
+            this.groupBox7.Location = new System.Drawing.Point(696, 678);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(486, 234);
             this.groupBox7.TabIndex = 25;
@@ -584,25 +682,26 @@
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(1795, 608);
             this.dataGridView2.TabIndex = 24;
+            this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
             // 
             // ProductName
             // 
             this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.HeaderText = "Product Name";
             this.ProductName.MinimumWidth = 8;
             this.ProductName.Name = "ProductName";
             // 
             // SupplierName
             // 
             this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.HeaderText = "SupplierName";
+            this.SupplierName.HeaderText = "Supplier Name";
             this.SupplierName.MinimumWidth = 8;
             this.SupplierName.Name = "SupplierName";
             // 
             // supplierProductPriceDataGridViewTextBoxColumn
             // 
             this.supplierProductPriceDataGridViewTextBoxColumn.DataPropertyName = "SupplierProductPrice";
-            this.supplierProductPriceDataGridViewTextBoxColumn.HeaderText = "SupplierProductPrice";
+            this.supplierProductPriceDataGridViewTextBoxColumn.HeaderText = "Product Price";
             this.supplierProductPriceDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierProductPriceDataGridViewTextBoxColumn.Name = "supplierProductPriceDataGridViewTextBoxColumn";
             // 
@@ -655,10 +754,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
             this.Controls.Add(this.tabControl1);
             this.Name = "Product";
-            this.Text = "DnD Trading - Products";
+            this.Text = "Products";
             this.Load += new System.EventHandler(this.Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -676,12 +776,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -708,9 +812,6 @@
         private WstGrp22DataSet wstGrp22DataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
         private WstGrp22DataSetTableAdapters.ProductTableAdapter productTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productSurchargeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private WstGrp22DataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.Label label3;
@@ -733,9 +834,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource searchAddProductBindingSource;
         private WstGrp22DataSetTableAdapters.SearchAddProductTableAdapter searchAddProductTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierProductPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
@@ -754,5 +852,19 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productSurchargeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierProductPriceDataGridViewTextBoxColumn;
     }
 }

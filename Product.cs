@@ -13,6 +13,7 @@ namespace DnD_Trading
     public partial class Product: Form
     {
         public TabControl TabControl1 { get; set; }
+        public ComboBox ComboBox1 { get; set; }
 
         private Parent mainForm;
         public Product(Parent p)
@@ -57,8 +58,21 @@ namespace DnD_Trading
             this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
 
             TabControl1 = this.tabControl1;
+            ComboBox1 = this.comboBox1;
+
+
             comboBox1.SelectedIndex = -1;
             cmbSupplier.SelectedIndex = -1;
+
+            if (globalvar.loggedInAs == 0)
+            {
+                this.groupBox3.Visible = false;
+            }
+            else
+            {
+                this.groupBox3.Visible = true;
+            }
+
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
@@ -108,6 +122,7 @@ namespace DnD_Trading
             this.Hide();
             mainForm.Show();
             mainForm.Panel1.Visible = true;
+            mainForm.MenuStrip1.Items[8].Visible = true;
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -117,6 +132,9 @@ namespace DnD_Trading
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            cmbSupplier.DataSource = null;
+            cmbSupplier.DisplayMember = "";
+
             string productName = textBox1.Text.Trim();
             string supplierName = comboBox1.Text.Trim();
             decimal surcharge;
@@ -220,6 +238,8 @@ namespace DnD_Trading
             productTableAdapter.Fill(this.wstGrp22DataSet.Product);
             searchAddProductTableAdapter.Fill(this.wstGrp22DataSet.SearchAddProduct);
 
+            cmbSupplier.DataSource = supplierBindingSource;
+            cmbSupplier.DisplayMember = "SupplierName";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -282,6 +302,8 @@ namespace DnD_Trading
 
         private void button4_Click(object sender, EventArgs e)
         {
+            cmbSupplier.DataSource = null;
+            cmbSupplier.DisplayMember = "";
             string productName = dataGridView2.CurrentRow.Cells[0].Value.ToString();
             string supplierName = dataGridView2.CurrentRow.Cells[1].Value.ToString();
 
@@ -307,6 +329,34 @@ namespace DnD_Trading
             searchAddProductTableAdapter.Fill(wstGrp22DataSet.SearchAddProduct);
             supplierTableAdapter.Fill(this.wstGrp22DataSet.Supplier);
             productTableAdapter.Fill(this.wstGrp22DataSet.Product);
+
+            cmbSupplier.DataSource = supplierBindingSource;
+            cmbSupplier.DisplayMember = "SupplierName";
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
+
+        private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBox1.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }

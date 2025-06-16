@@ -72,6 +72,10 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).BeginInit();
@@ -80,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -205,14 +211,14 @@
             // addUsersToolStripMenuItem
             // 
             this.addUsersToolStripMenuItem.Name = "addUsersToolStripMenuItem";
-            this.addUsersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addUsersToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.addUsersToolStripMenuItem.Text = "Add users";
             this.addUsersToolStripMenuItem.Click += new System.EventHandler(this.addUsersToolStripMenuItem_Click);
             // 
             // searchForUsersToolStripMenuItem
             // 
             this.searchForUsersToolStripMenuItem.Name = "searchForUsersToolStripMenuItem";
-            this.searchForUsersToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.searchForUsersToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
             this.searchForUsersToolStripMenuItem.Text = "Search for users";
             this.searchForUsersToolStripMenuItem.Click += new System.EventHandler(this.searchForUsersToolStripMenuItem_Click);
             // 
@@ -227,6 +233,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pbReEnterPassword);
             this.panel1.Controls.Add(this.pbBack);
@@ -487,6 +495,48 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.help_252;
+            this.pictureBox1.Location = new System.Drawing.Point(2472, 1291);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(114, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(887, 921);
+            this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(462, 943);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Close help";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Location = new System.Drawing.Point(765, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1072, 987);
+            this.panel2.TabIndex = 17;
+            this.panel2.Visible = false;
+            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -509,6 +559,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,6 +610,10 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchForUsersToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

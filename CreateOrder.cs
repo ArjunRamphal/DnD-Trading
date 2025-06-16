@@ -50,7 +50,7 @@ namespace DnD_Trading
                 dr["SupplierID"] = Convert.ToInt32(row.Cells[2].Value);
                 dr["OrderSupplierProductQuantity"] = Convert.ToInt32(row.Cells[3].Value);
                 dr["OrderSupplierProductPrice"] = Convert.ToDecimal(row.Cells[4].Value);
-                dr["OrderSupplierProductStatus"] = Convert.ToBoolean(row.Cells[5].Value);
+                dr["OrderSupplierProductStatus"] = false;
 
                 // Add the price directly
                 price += Convert.ToDecimal(row.Cells[4].Value);
@@ -74,25 +74,91 @@ namespace DnD_Trading
                 globalvar.paymentID // Use the global variable for payment ID
             );
 
-            // Send email notification
+            // Send email notification to client
+
+            globalvar.orderMessage +=
+                "\nTotal Price: " + price.ToString("C2") + "\n" +
+                "Please send proof of payment to the following email address: DNDTrading22@gmail.com";
 
             /*
             string to, from, pass, body;
             MailMessage msg = new MailMessage();
-            to = "ClientEmail";
-            from = "DNDTrading22@gmail.com";
-            pass = "onetwothreefourfive";
-            body = "Order message";
+            //to = globalvar.clientEmail;
+            to = "arjuunramphal@gmail.com";
+            from = "dndtrading22@gmail.com";
+            //pass = "onetwothreefourfive";
+            pass = "qyax myny exec tzrb";
+            
+            body = globalvar.orderMessage;
             msg.To.Add(to);
             msg.From = new MailAddress(from);
             msg.Body = body;
-            msg.Subject = "Subject";
+            msg.Subject = "Requesting Proof of Payment from " + globalvar.clientName + " for Order " + globalvar.orderID.ToString();
             msg.IsBodyHtml = true;
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             smtp.EnableSsl = true;
-            smtp.Port = 587;
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.Credentials = new NetworkCredential(from, pass);
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(msg);
+                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            */
+
+            /*
+            string to = "arjuunramphal@gmail.com";
+            string from = "dndtrading22@gmail.com";
+            // This must be an **App Password**, not your Gmail login password
+            string pass = "qyax myny exec tzrb";
+            string body = globalvar.orderMessage;
+
+            MailMessage msg = new MailMessage();
+            msg.To.Add(to);
+            msg.From = new MailAddress(from);
+            msg.Body = body;
+
+            string clientName = globalvar.clientName?.Replace("\r", "").Replace("\n", "").Trim();
+            string orderID = globalvar.orderID.ToString().Replace("\r", "").Replace("\n", "").Trim();
+
+            // Limit the length if needed (Gmail supports up to ~998 characters for headers, but stay safe)
+            if (clientName.Length > 100) clientName = clientName.Substring(0, 100);
+            if (orderID.Length > 100) orderID = orderID.Substring(0, 100);
+
+            // Set subject safely
+            msg.Subject = $"Requesting Proof of Payment from {clientName} for Order {orderID}";
+
+            //msg.Subject = "Requesting Proof of Payment from " + globalvar.clientName + " for Order " + globalvar.orderID.ToString();
+           
+            // Replace this line:
+            //string orderID = globalvar.orderID?.ToString().Replace("\r", "").Replace("\n", "").Trim();
+
+            // With this corrected line:
+            
+            msg.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(msg);
+                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             */
 
             mainForm.Show();
@@ -182,6 +248,13 @@ namespace DnD_Trading
             globalvar.priceTotal += ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim());
             label4.Text = "Total Price: " + globalvar.priceTotal.ToString("C2");
             dr["OrderSupplierProductStatus"] = false; // Default value for OrderSupplierProductStatus
+
+            globalvar.orderMessage +=
+                "Product: " + dataGridView3.CurrentRow.Cells[0].Value.ToString() + "\n" +
+                "Supplier: " + dataGridView3.CurrentRow.Cells[1].Value.ToString() + "\n" +
+                "Quantity: " + numericUpDown1.Text.Trim() + "\n" +
+                "Price: " + ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim()) + "\n";
+
             wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
             numericUpDown1.Value = 0; // Reset the numericUpDown control after adding the product
@@ -227,6 +300,16 @@ namespace DnD_Trading
                     orderID
                 );
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }

@@ -898,6 +898,31 @@
         FAC0UUUAf//Z
 </value>
   </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Enter your username and password to log in.
+
+Click "Forgot Password?" to reset your password.
+
+You’ll need to enter and confirm a new password.
+
+Use the top menu to access system features:
+
+Clients – Search, update, or add client details
+
+Orders – Search orders, create order requests, or place new orders
+
+Products – View product catalogue, update surcharges (manager only), or add supplier products
+Supplier – Manage supplier information
+
+Payment – Update received payments and mark completed ones as fulfilled
+
+Reports – View system reports
+
+Users - Search, update, or add user details
+
+Click a tab to begin.
+</value>
+  </data>
   <metadata name="userBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>380, 17</value>
   </metadata>

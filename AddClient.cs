@@ -62,6 +62,12 @@ namespace DnD_Trading
                 );
 
                 MessageBox.Show("Client added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear input fields after successful addition
+                txtFirstName.Clear();
+                txtSurname.Clear();
+                txtPhoneNumber.Clear();
+                txtEmail.Clear();
             }
 
             this.clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
@@ -106,6 +112,16 @@ namespace DnD_Trading
             mainForm.Show();
             mainForm.Panel1.Visible = true;
             mainForm.MenuStrip1.Items[8].Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }

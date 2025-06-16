@@ -90,6 +90,9 @@ namespace DnD_Trading
                 this.Hide();
                 productForm.WindowState = FormWindowState.Maximized;
             }
+
+            productForm.ComboBox1.DataSource = supplierTableAdapter.GetData();
+            productForm.ComboBox1.DisplayMember = "SupplierName";
         }
 
         bool IsValidPhoneNumber(string number)
@@ -159,6 +162,16 @@ namespace DnD_Trading
 
                 supplierTableAdapter.UpdateStatus(isOptOut, supplierID);
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }

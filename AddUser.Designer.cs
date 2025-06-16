@@ -249,13 +249,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "AddUser";
-            this.Text = "AddUser";
+            this.Text = "Add User";
             this.Load += new System.EventHandler(this.AddUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

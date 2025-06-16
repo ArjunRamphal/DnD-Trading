@@ -90,8 +90,14 @@ namespace DnD_Trading
                 }
             }
             
-            if (!string.IsNullOrWhiteSpace(textBox2.Text) && IsValidPhoneNumber(textBox2.Text.Trim()))
+            if (!string.IsNullOrWhiteSpace(textBox2.Text))
             {
+                if (!IsValidPhoneNumber(textBox2.Text.Trim()))
+                {
+                    MessageBox.Show("Phone number must be 10 digits and contain only numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure you want to update client phone number?", "Client Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     clientTableAdapter.UpdatePhoneNumber(
@@ -107,8 +113,14 @@ namespace DnD_Trading
                 }
             }
 
-            if (!string.IsNullOrWhiteSpace(textBox3.Text) && IsValidEmail(textBox3.Text.Trim()))
+            if (!string.IsNullOrWhiteSpace(textBox3.Text))
             {
+                if (!IsValidEmail(textBox3.Text.Trim()))
+                {
+                    MessageBox.Show("Invalid email address format.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure you want to update client email?", "Client Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     clientTableAdapter.UpdateEmail(
@@ -127,6 +139,10 @@ namespace DnD_Trading
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
+
+            txtName.Clear();
+            txtPhoneNumber.Clear();
+            txtEmail.Clear();
         }
 
         bool IsValidPhoneNumber(string number)
@@ -167,6 +183,8 @@ namespace DnD_Trading
                 bool isOptOut = (bool)dataGridView1.Rows[e.RowIndex].Cells[4].Value;
 
                 clientTableAdapter.UpdateStatus(isOptOut, clientID);
+
+                MessageBox.Show("Client opt-out status updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

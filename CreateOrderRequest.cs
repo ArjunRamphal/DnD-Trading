@@ -79,6 +79,8 @@ namespace DnD_Trading
         private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             globalvar.clientID = (int)dataGridView2.CurrentRow.Cells[0].Value;
+            globalvar.clientName = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            globalvar.clientEmail = dataGridView2.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,7 +113,7 @@ namespace DnD_Trading
                     globalvar.userName, // UserName
                     DateTime.Now, // OrderDate
                     0, // OrderTotal
-                    false // OrderComplete
+                    false // OrderStatus
                 );
 
                 MessageBox.Show("Order created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -131,6 +133,7 @@ namespace DnD_Trading
 
                 this.paymentTableAdapter.FillByDESC(this.wstGrp22DataSet.Payment);
                 globalvar.paymentID = dataGridView4.Rows[0].Cells[0].Value != null ? Convert.ToInt32(dataGridView4.Rows[0].Cells[0].Value) : 0;
+                globalvar.orderMessage = "Order ID: " + globalvar.orderID + "\n";
             }
             else
             {
@@ -158,13 +161,27 @@ namespace DnD_Trading
         {
             clientTableAdapter.FillByName(this.wstGrp22DataSet.Client, textBox1.Text.Trim());
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
     }
 
     public static class globalvar
     {
+        public static int loggedInAs = -1; // 0 = Sales Rep, 1 = Manager
         public static string userName = "";
         public static string userFirstName = "";
         public static string userSurname = "";
+        public static string clientEmail = "";
+        public static string clientName = "";
+        public static string orderMessage = "";
         public static int orderID = 0;
         public static int clientID = 0;
         public static int productID = 0;

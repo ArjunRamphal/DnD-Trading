@@ -17,7 +17,6 @@ namespace DnD_Trading
         {
             InitializeComponent();
             mainForm=p;
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -30,8 +29,19 @@ namespace DnD_Trading
 
         private void Reports_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.OrderSupplierProduct' table. You can move, or remove it, as needed.
+            this.orderSupplierProductTableAdapter.Fill(this.wstGrp22DataSet.OrderSupplierProduct);
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
             this.paymentTableAdapter.Fill(this.wstGrp22DataSet.Payment);
+
+            crystalReport11.SetDataSource(this.wstGrp22DataSet);
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
 
         }
     }
