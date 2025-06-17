@@ -202,9 +202,24 @@ namespace DnD_Trading
                     MessageBox.Show("No products in the order to cancel.", "No Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                dataGridView1.Rows.Clear();
+                orderTableAdapter.DeleteQuery(globalvar.orderID);
+                clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
+                orderSupplierProductTableAdapter.DeleteQuery(globalvar.orderID);
+                dataGridView1.DataSource = null; // Clear the DataGridView
+                dataGridView1.DataSource = wstGrp22DataSet.OrderSupplierProduct; // Rebind to the updated dataset
                 dataGridView1.Refresh();
+                globalvar.priceTotal = 0; // Reset the total price
                 MessageBox.Show("Order cancelled successfully.", "Order Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                globalvar.orderID = 0; // Reset the order ID
+                globalvar.clientID = 0; // Reset the client ID
+                globalvar.clientName = string.Empty; // Reset the client name
+                globalvar.clientEmail = string.Empty; // Reset the client email
+                label4.Text = "Total Price: " + globalvar.priceTotal.ToString("C2"); // Update the total price label
+
+                mainForm.Show();
+                mainForm.Panel1.Visible = true; // Show the main form's panel
+                mainForm.MenuStrip1.Items[8].Visible = true; // Show the "Create Order" menu item
+                this.Hide(); // Hide the CreateOrder form
             }
         }
 
