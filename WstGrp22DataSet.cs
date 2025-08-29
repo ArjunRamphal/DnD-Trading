@@ -17,9 +17,12 @@ namespace DnD_Trading {
     }
 }
 
-namespace DnD_Trading.WstGrp22DataSetTableAdapters {
-    
-    
+namespace DnD_Trading.WstGrp22DataSetTableAdapters
+{
+    partial class UserTableAdapter
+    {
+    }
+
     public partial class SearchAddProductTableAdapter {
     }
 }

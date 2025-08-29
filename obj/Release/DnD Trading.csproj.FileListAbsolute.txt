@@ -1,0 +1,39 @@
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\DnD Trading.exe.config
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\DnD Trading.exe
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\DnD Trading.pdb
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\arjuu\source\repos\DnD Trading\bin\Release\stdole.dll
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trading.csproj.AssemblyReference.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.AddClient.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.AddUser.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Client.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.CreateOrder.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.CreateOrderRequest.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Payment.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Product.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Order.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Parent.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Properties.Resources.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Reports.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.Supplier.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD_Trading.User.resources
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trading.csproj.GenerateResource.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trading.csproj.CoreCompileInputs.cache
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trad.A65268A8.Up2Date
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trading.exe
+C:\Users\arjuu\source\repos\DnD Trading\obj\Release\DnD Trading.pdb

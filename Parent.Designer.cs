@@ -48,18 +48,14 @@
             this.searchForUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbReEnterPassword = new System.Windows.Forms.PictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userOptOutDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
             this.txtReEnterPassword = new System.Windows.Forms.TextBox();
             this.lblReEnter = new System.Windows.Forms.Label();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -71,21 +67,28 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userOptOutDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -112,7 +115,7 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(72, 27);
             this.loginToolStripMenuItem.Text = "Login";
             // 
             // clientsToolStripMenuItem
@@ -121,7 +124,7 @@
             this.searchForClientToolStripMenuItem,
             this.addClientToolStripMenuItem});
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(80, 27);
             this.clientsToolStripMenuItem.Text = "Clients";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
@@ -146,7 +149,7 @@
             this.createOrderRequestToolStripMenuItem,
             this.createOrderToolStripMenuItem});
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(82, 27);
             this.orderToolStripMenuItem.Text = "Orders";
             this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
@@ -174,28 +177,28 @@
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(98, 27);
             this.inventoryToolStripMenuItem.Text = "Products";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // supplierToolStripMenuItem
             // 
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(93, 29);
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(93, 27);
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(96, 27);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 27);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
@@ -205,7 +208,7 @@
             this.addUsersToolStripMenuItem,
             this.searchForUsersToolStripMenuItem});
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(71, 27);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // addUsersToolStripMenuItem
@@ -225,7 +228,7 @@
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(90, 27);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -233,6 +236,9 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
@@ -255,6 +261,48 @@
             this.panel1.Size = new System.Drawing.Size(2586, 1466);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Location = new System.Drawing.Point(765, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1072, 987);
+            this.panel2.TabIndex = 17;
+            this.panel2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(462, 943);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Close help";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(114, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(887, 921);
+            this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.help_252;
+            this.pictureBox1.Location = new System.Drawing.Point(2472, 1291);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -262,9 +310,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(884, 1101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 55);
+            this.label3.Size = new System.Drawing.Size(359, 55);
             this.label3.TabIndex = 13;
-            this.label3.Text = "New password:";
+            this.label3.Text = "New Password:";
             this.label3.Visible = false;
             // 
             // pbReEnterPassword
@@ -316,64 +364,6 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.Visible = false;
             // 
-            // userFirstNameDataGridViewTextBoxColumn
-            // 
-            this.userFirstNameDataGridViewTextBoxColumn.DataPropertyName = "UserFirstName";
-            this.userFirstNameDataGridViewTextBoxColumn.HeaderText = "UserFirstName";
-            this.userFirstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userFirstNameDataGridViewTextBoxColumn.Name = "userFirstNameDataGridViewTextBoxColumn";
-            this.userFirstNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // userLastNameDataGridViewTextBoxColumn
-            // 
-            this.userLastNameDataGridViewTextBoxColumn.DataPropertyName = "UserLastName";
-            this.userLastNameDataGridViewTextBoxColumn.HeaderText = "UserLastName";
-            this.userLastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userLastNameDataGridViewTextBoxColumn.Name = "userLastNameDataGridViewTextBoxColumn";
-            this.userLastNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // userTypeDataGridViewTextBoxColumn
-            // 
-            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "UserType";
-            this.userTypeDataGridViewTextBoxColumn.HeaderText = "UserType";
-            this.userTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
-            this.userTypeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            this.userNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // userPasswordDataGridViewTextBoxColumn
-            // 
-            this.userPasswordDataGridViewTextBoxColumn.DataPropertyName = "UserPassword";
-            this.userPasswordDataGridViewTextBoxColumn.HeaderText = "UserPassword";
-            this.userPasswordDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userPasswordDataGridViewTextBoxColumn.Name = "userPasswordDataGridViewTextBoxColumn";
-            this.userPasswordDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // userOptOutDataGridViewCheckBoxColumn
-            // 
-            this.userOptOutDataGridViewCheckBoxColumn.DataPropertyName = "UserOptOut";
-            this.userOptOutDataGridViewCheckBoxColumn.HeaderText = "UserOptOut";
-            this.userOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.userOptOutDataGridViewCheckBoxColumn.Name = "userOptOutDataGridViewCheckBoxColumn";
-            this.userOptOutDataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.wstGrp22DataSet;
-            // 
-            // wstGrp22DataSet
-            // 
-            this.wstGrp22DataSet.DataSetName = "WstGrp22DataSet";
-            this.wstGrp22DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtReEnterPassword
             // 
             this.txtReEnterPassword.Location = new System.Drawing.Point(1244, 1178);
@@ -397,7 +387,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(1176, 1231);
+            this.btnChangePassword.Location = new System.Drawing.Point(1176, 1280);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(196, 94);
             this.btnChangePassword.TabIndex = 7;
@@ -479,6 +469,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(197, 26);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblLogin
             // 
@@ -491,51 +482,98 @@
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(440, 1217);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(478, 55);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Verification Question:";
+            this.label4.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1244, 1237);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(197, 26);
+            this.textBox1.TabIndex = 19;
+            this.textBox1.Visible = false;
+            // 
+            // userFirstNameDataGridViewTextBoxColumn
+            // 
+            this.userFirstNameDataGridViewTextBoxColumn.DataPropertyName = "UserFirstName";
+            this.userFirstNameDataGridViewTextBoxColumn.HeaderText = "UserFirstName";
+            this.userFirstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.userFirstNameDataGridViewTextBoxColumn.Name = "userFirstNameDataGridViewTextBoxColumn";
+            this.userFirstNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // userLastNameDataGridViewTextBoxColumn
+            // 
+            this.userLastNameDataGridViewTextBoxColumn.DataPropertyName = "UserLastName";
+            this.userLastNameDataGridViewTextBoxColumn.HeaderText = "UserLastName";
+            this.userLastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.userLastNameDataGridViewTextBoxColumn.Name = "userLastNameDataGridViewTextBoxColumn";
+            this.userLastNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // userTypeDataGridViewTextBoxColumn
+            // 
+            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "UserType";
+            this.userTypeDataGridViewTextBoxColumn.HeaderText = "UserType";
+            this.userTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
+            this.userTypeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // userPasswordDataGridViewTextBoxColumn
+            // 
+            this.userPasswordDataGridViewTextBoxColumn.DataPropertyName = "UserPassword";
+            this.userPasswordDataGridViewTextBoxColumn.HeaderText = "UserPassword";
+            this.userPasswordDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.userPasswordDataGridViewTextBoxColumn.Name = "userPasswordDataGridViewTextBoxColumn";
+            this.userPasswordDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // userOptOutDataGridViewCheckBoxColumn
+            // 
+            this.userOptOutDataGridViewCheckBoxColumn.DataPropertyName = "UserOptOut";
+            this.userOptOutDataGridViewCheckBoxColumn.HeaderText = "UserOptOut";
+            this.userOptOutDataGridViewCheckBoxColumn.MinimumWidth = 8;
+            this.userOptOutDataGridViewCheckBoxColumn.Name = "userOptOutDataGridViewCheckBoxColumn";
+            this.userOptOutDataGridViewCheckBoxColumn.Width = 150;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.wstGrp22DataSet;
+            // 
+            // wstGrp22DataSet
+            // 
+            this.wstGrp22DataSet.DataSetName = "WstGrp22DataSet";
+            this.wstGrp22DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // userTableAdapter
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
+            // button2
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.help_252;
-            this.pictureBox1.Location = new System.Drawing.Point(2472, 1291);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(114, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(887, 921);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(462, 943);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Close help";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Location = new System.Drawing.Point(765, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 987);
-            this.panel2.TabIndex = 17;
-            this.panel2.Visible = false;
+            this.button2.Location = new System.Drawing.Point(1447, 1237);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 49);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Get question";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Parent
             // 
@@ -553,14 +591,14 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbReEnterPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,6 +652,9 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
     }
 }
 

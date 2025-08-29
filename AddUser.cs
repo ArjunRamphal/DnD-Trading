@@ -42,10 +42,21 @@ namespace DnD_Trading
                 textBox3.Text.Trim(), // UserLastName
                 false, // UserType
                 "12345", // UserPassword
-                false // UserOptOut
+                false, // UserOptOut
+                comboBox1.SelectedItem.ToString().Trim(), // UserQuestion
+                textBox4.Text.Trim() // UserAnswer
             );
 
             MessageBox.Show("New user record added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Clear input fields after successful insertion
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            comboBox1.SelectedIndex = -1; // Reset the combo box selection
+            textBox1.Focus(); // Set focus back to the first input field
+            this.userTableAdapter.Fill(this.wstGrp22DataSet.User); // Refresh the user data
 
         }
 

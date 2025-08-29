@@ -188,6 +188,9 @@ namespace DnD_Trading
             txtPassword.Clear();
             txtReEnterPassword.Clear();
             label3.Visible = true;
+            label4.Visible = true;
+            textBox1.Visible = true;
+            button2.Visible = true;
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -204,11 +207,15 @@ namespace DnD_Trading
                 return;
             }
 
+
+
             try
             { 
                 // Attempt to update and get number of affected rows
-                int affectedRows = userTableAdapter.UpdateQuery(
+                int affectedRows = userTableAdapter.UpdateQuery1(
                     txtReEnterPassword.Text.Trim(),
+                    txtUsername.Text.Trim(),
+                    textBox1.Text.Trim(),
                     txtUsername.Text.Trim()
                 );
 
@@ -226,10 +233,15 @@ namespace DnD_Trading
                     btnLogin.Visible = true;
                     lblForgotPassword.Visible = true;
                     label3.Visible = false;
+                    label4.Visible = false;
+                    textBox1.Visible = false;
+                    button2.Visible = false;
+                    textBox1.Clear();
+                    label4.Text = "Verification Question:";
                 }
                 else
                 {
-                    MessageBox.Show("No user found with that username. Password not changed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Incorrect username/verification question answer. Password not changed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -260,6 +272,9 @@ namespace DnD_Trading
             txtPassword.Clear();
             txtReEnterPassword.Clear();
             label3.Visible = false;
+            label4.Visible = false;
+            textBox1.Visible = false;
+            button2.Visible = false;
         }
 
         private void pbReEnterPassword_Click(object sender, EventArgs e)
@@ -378,6 +393,41 @@ namespace DnD_Trading
         private void button1_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            /*
+            try
+            {
+                // Fill the DataGridView with users matching the entered username
+                userTableAdapter.FillByUsername(wstGrp22DataSet.User, txtUsername.Text.Trim());
+                label4.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();
+                label4.Text = wstGrp22DataSet.User.Rows[0]["UserQuestion"].ToString();
+            }
+            catch (Exception ex)
+            {
+                // Handle the case where there are no rows or the cell is empty
+                label4.Text = "Verification Question:";
+            }
+            */
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // Fill the DataGridView with users matching the entered username
+                userTableAdapter.FillByUsername(wstGrp22DataSet.User, txtUsername.Text.Trim());
+                //label4.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();
+                label4.Text = wstGrp22DataSet.User.Rows[0]["UserQuestion"].ToString();
+            }
+            catch (Exception ex)
+            {
+                // Handle the case where there are no rows or the cell is empty
+                label4.Text = "Verification Question:";
+            }
         }
     }
 }

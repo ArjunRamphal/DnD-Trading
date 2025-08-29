@@ -36,6 +36,10 @@ namespace DnD_Trading
 
         private void Order_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet3.ViewOrderProduct1' table. You can move, or remove it, as needed.
+            this.viewOrderProduct1TableAdapter.Fill(this.wstGrp22DataSet3.ViewOrderProduct1);
+            // TODO: This line of code loads data into the 'wstGrp22DataSet1.ViewOrderProduct' table. You can move, or remove it, as needed.
+            this.viewOrderProductTableAdapter.Fill(this.wstGrp22DataSet1.ViewOrderProduct);
             // TODO: This line of code loads data into the 'wstGrp22DataSet1.ClientClientOrderProductOrder' table. You can move, or remove it, as needed.
             this.clientClientOrderProductOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientClientOrderProductOrder);
             // TODO: This line of code loads data into the 'wstGrp22DataSet2.User' table. You can move, or remove it, as needed.
@@ -64,6 +68,7 @@ namespace DnD_Trading
             this.clientOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientOrder);
             textBox1.Clear();
             comboBox2.Text = "";
+            dataGridView3.Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,6 +91,24 @@ namespace DnD_Trading
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView3.Visible = true;
+            
+            //wstGrp22DataSet1.EnforceConstraints = false;
+            
+            //viewOrderProductTableAdapter.FillByOrderID(this.wstGrp22DataSet1.ViewOrderProduct, Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
+            
+            MessageBox.Show("Order ID: " + dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            
+            
+            //viewOrderProduct1TableAdapter.Fill(this.wstGrp22DataSet1.ViewOrderProduct1);
+
+            viewOrderProduct1TableAdapter.FillByOrderID(this.wstGrp22DataSet3.ViewOrderProduct1, Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
+
+            //wstGrp22DataSet1.EnforceConstraints = true;
         }
     }
 }

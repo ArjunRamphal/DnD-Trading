@@ -16,10 +16,21 @@ namespace DnD_Trading
     public partial class CreateOrder: Form
     {
         private Parent mainForm;
+        private CreateOrderRequest createOrderRequestForm;
+
+        public Label Label5;
         public CreateOrder(Parent p)
         {
             mainForm=p;
             InitializeComponent();
+            Label5 = this.label5;
+        }
+
+        public CreateOrder(CreateOrderRequest c)
+        {
+            createOrderRequestForm = c;
+            InitializeComponent();
+            Label5 = this.label5;
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
@@ -160,10 +171,63 @@ namespace DnD_Trading
                 MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             */
+            /*
+            try
+            {
+                var msg = new MailMessage();
+                msg.To.Add("arjuunramphal@gmail.com");
+                msg.From = new MailAddress("dndtrading22@gmail.com", "Email Test");
+                msg.IsBodyHtml = true;
+                msg.Subject = "test";
+                msg.Body = globalvar.orderMessage;
+                msg.Priority = MailPriority.High;
+                var smtp = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("dndtrading22@gmail.com", "qyaxmynyexectzrb"),
+                    EnableSsl = true,
+                };
+                smtp.SendCompleted += new SendCompletedEventHandler(smtp_SendCompleted);
 
-            mainForm.Show();
-            mainForm.Panel1.Visible = true;
+                //smtp.SendAsync(msg, null);
+
+                await smtp.SendMailAsync(msg);
+
+
+                MessageBox.Show("Message Sent!");
+            }
+            catch (Exception ex)
+            {
+                string fullError = $"Exception: {ex.Message}";
+                if (ex.InnerException != null)
+                {
+                    fullError += $"\nInner Exception: {ex.InnerException.Message}";
+                }
+
+                MessageBox.Show(fullError, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            */
+            
+            createOrderRequestForm.Show();
+            //mainForm.Panel1.Visible = true;
             this.Hide();
+            createOrderRequestForm.WindowState = FormWindowState.Maximized; // Maximize the CreateOrderRequest form
+        }
+
+        void smtp_SendCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                MessageBox.Show("Email sending was canceled.");
+            }
+            else if (e.Error != null)
+            {
+                MessageBox.Show("Error sending email: " + e.Error.Message);
+            }
+            else
+            {
+                MessageBox.Show("Message sent successfully!");
+            }
         }
 
         private void CreateOrder_Load(object sender, EventArgs e)
@@ -205,6 +269,8 @@ namespace DnD_Trading
                 orderTableAdapter.DeleteQuery(globalvar.orderID);
                 clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
                 orderSupplierProductTableAdapter.DeleteQuery(globalvar.orderID);
+                paymentTableAdapter.DeleteQuery(globalvar.orderID);
+
                 dataGridView1.DataSource = null; // Clear the DataGridView
                 dataGridView1.DataSource = wstGrp22DataSet.OrderSupplierProduct; // Rebind to the updated dataset
                 dataGridView1.Refresh();
@@ -225,10 +291,27 @@ namespace DnD_Trading
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            mainForm.Show();
-            mainForm.Panel1.Visible = true;
-            mainForm.MenuStrip1.Items[8].Visible = true;
+            try
+            {
+                this.Hide();
+                if (mainForm == null)
+                {
+                    this.Hide();
+                    createOrderRequestForm.Show();
+                    label5.Text = "";
+                    createOrderRequestForm.WindowState = FormWindowState.Maximized; // Maximize the CreateOrderRequest form
+                }
+                else
+                {
+                    mainForm.Show();
+                    mainForm.Panel1.Visible = true;
+                    mainForm.MenuStrip1.Items[8].Visible = true;
+                }      
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("An error occurred while navigating back: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView3_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

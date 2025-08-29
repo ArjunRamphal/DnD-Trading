@@ -65,6 +65,17 @@
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.viewOrderProduct1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wstGrp22DataSet3 = new DnD_Trading.WstGrp22DataSet();
+            this.viewOrderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewOrderProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ViewOrderProductTableAdapter();
+            this.viewOrderProduct1TableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ViewOrderProduct1TableAdapter();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderSupplierProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductSurcharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientClientOrderProductOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet1)).BeginInit();
@@ -79,6 +90,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderProduct1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -98,9 +113,10 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1318, 681);
+            this.dataGridView1.Size = new System.Drawing.Size(1318, 432);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -164,7 +180,7 @@
             // 
             this.lblOrder.AutoSize = true;
             this.lblOrder.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrder.Location = new System.Drawing.Point(1089, 72);
+            this.lblOrder.Location = new System.Drawing.Point(1111, 72);
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.Size = new System.Drawing.Size(184, 68);
             this.lblOrder.TabIndex = 1;
@@ -274,9 +290,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Location = new System.Drawing.Point(387, 741);
+            this.groupBox1.Location = new System.Drawing.Point(368, 472);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 222);
+            this.groupBox1.Size = new System.Drawing.Size(631, 203);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
@@ -361,15 +377,98 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dataGridView3);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(536, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1373, 995);
+            this.groupBox2.Size = new System.Drawing.Size(1373, 1189);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select an order by double clicking";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productNameDataGridViewTextBoxColumn,
+            this.supplierNameDataGridViewTextBoxColumn,
+            this.OrderSupplierProductQuantity,
+            this.SupplierProductPrice,
+            this.ProductSurcharge});
+            this.dataGridView3.DataSource = this.viewOrderProduct1BindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(30, 720);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(1318, 444);
+            this.dataGridView3.TabIndex = 13;
+            this.dataGridView3.Visible = false;
+            // 
+            // viewOrderProduct1BindingSource
+            // 
+            this.viewOrderProduct1BindingSource.DataMember = "ViewOrderProduct1";
+            this.viewOrderProduct1BindingSource.DataSource = this.wstGrp22DataSet3;
+            // 
+            // wstGrp22DataSet3
+            // 
+            this.wstGrp22DataSet3.DataSetName = "WstGrp22DataSet";
+            this.wstGrp22DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // viewOrderProductBindingSource
+            // 
+            this.viewOrderProductBindingSource.DataMember = "ViewOrderProduct";
+            this.viewOrderProductBindingSource.DataSource = this.wstGrp22DataSet1;
+            // 
+            // viewOrderProductTableAdapter
+            // 
+            this.viewOrderProductTableAdapter.ClearBeforeFill = true;
+            // 
+            // viewOrderProduct1TableAdapter
+            // 
+            this.viewOrderProduct1TableAdapter.ClearBeforeFill = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // supplierNameDataGridViewTextBoxColumn
+            // 
+            this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
+            this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier";
+            this.supplierNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
+            this.supplierNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // OrderSupplierProductQuantity
+            // 
+            this.OrderSupplierProductQuantity.DataPropertyName = "OrderSupplierProductQuantity";
+            this.OrderSupplierProductQuantity.HeaderText = "Quantity";
+            this.OrderSupplierProductQuantity.MinimumWidth = 8;
+            this.OrderSupplierProductQuantity.Name = "OrderSupplierProductQuantity";
+            this.OrderSupplierProductQuantity.Width = 150;
+            // 
+            // SupplierProductPrice
+            // 
+            this.SupplierProductPrice.DataPropertyName = "SupplierProductPrice";
+            this.SupplierProductPrice.HeaderText = "Price";
+            this.SupplierProductPrice.MinimumWidth = 8;
+            this.SupplierProductPrice.Name = "SupplierProductPrice";
+            this.SupplierProductPrice.Width = 150;
+            // 
+            // ProductSurcharge
+            // 
+            this.ProductSurcharge.DataPropertyName = "ProductSurcharge";
+            this.ProductSurcharge.HeaderText = "Surcharge";
+            this.ProductSurcharge.MinimumWidth = 8;
+            this.ProductSurcharge.Name = "ProductSurcharge";
+            this.ProductSurcharge.Width = 150;
             // 
             // Order
             // 
@@ -399,6 +498,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderProduct1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderProductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +545,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn orderStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.BindingSource viewOrderProductBindingSource;
+        private WstGrp22DataSetTableAdapters.ViewOrderProductTableAdapter viewOrderProductTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr3DataGridViewTextBoxColumn;
+        private WstGrp22DataSet wstGrp22DataSet3;
+        private System.Windows.Forms.BindingSource viewOrderProduct1BindingSource;
+        private WstGrp22DataSetTableAdapters.ViewOrderProduct1TableAdapter viewOrderProduct1TableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderSupplierProductQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierProductPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductSurcharge;
     }
 }

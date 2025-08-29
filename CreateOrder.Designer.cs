@@ -113,6 +113,7 @@
             this.createOrderSupplierProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.CreateOrderSupplierProductTableAdapter();
             this.paymentTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentTableAdapter();
             this.orderTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.OrderTableAdapter();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderSupplierProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -853,12 +854,22 @@
             // 
             this.orderTableAdapter.ClearBeforeFill = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(691, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 68);
+            this.label5.TabIndex = 24;
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dataGridView8);
@@ -994,5 +1005,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderSupplierProductQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderSupplierProductPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label5;
     }
 }

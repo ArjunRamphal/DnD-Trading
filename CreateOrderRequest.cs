@@ -143,10 +143,16 @@ namespace DnD_Trading
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CreateOrder createOrder = new CreateOrder(mainForm);
+            CreateOrder createOrder = new CreateOrder(this);
             createOrder.Show();
             this.Hide();
             createOrder.WindowState = FormWindowState.Maximized;
+            createOrder.Label5.Text = "Client: " + globalvar.clientName;
+            groupBox2.Visible = true;
+            groupBox1.Visible = false;
+            txtProdDesc.Clear();
+            numericUpDown1.Value = 0;
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
