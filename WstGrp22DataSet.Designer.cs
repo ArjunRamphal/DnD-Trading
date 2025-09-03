@@ -6047,6 +6047,8 @@ namespace DnD_Trading {
             
             private global::System.Data.DataColumn columnSupplierName;
             
+            private global::System.Data.DataColumn columnOrderSupplierProductPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ViewOrderProduct1DataTable() {
@@ -6178,6 +6180,14 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OrderSupplierProductPriceColumn {
+                get {
+                    return this.columnOrderSupplierProductPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6213,7 +6223,7 @@ namespace DnD_Trading {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ViewOrderProduct1Row AddViewOrderProduct1Row(int OrderID, int ProductID, int SupplierID, int OrderSupplierProductQuantity, string ProductName, decimal ProductSurcharge, int Expr2, int Expr3, decimal SupplierProductPrice, string SupplierName) {
+            public ViewOrderProduct1Row AddViewOrderProduct1Row(int OrderID, int ProductID, int SupplierID, int OrderSupplierProductQuantity, string ProductName, decimal ProductSurcharge, int Expr2, int Expr3, decimal SupplierProductPrice, string SupplierName, decimal OrderSupplierProductPrice) {
                 ViewOrderProduct1Row rowViewOrderProduct1Row = ((ViewOrderProduct1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderID,
@@ -6227,7 +6237,8 @@ namespace DnD_Trading {
                         Expr3,
                         SupplierProductPrice,
                         null,
-                        SupplierName};
+                        SupplierName,
+                        OrderSupplierProductPrice};
                 rowViewOrderProduct1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewOrderProduct1Row);
                 return rowViewOrderProduct1Row;
@@ -6275,6 +6286,7 @@ namespace DnD_Trading {
                 this.columnSupplierProductPrice = base.Columns["SupplierProductPrice"];
                 this.columnExpr4 = base.Columns["Expr4"];
                 this.columnSupplierName = base.Columns["SupplierName"];
+                this.columnOrderSupplierProductPrice = base.Columns["OrderSupplierProductPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6304,6 +6316,8 @@ namespace DnD_Trading {
                 base.Columns.Add(this.columnExpr4);
                 this.columnSupplierName = new global::System.Data.DataColumn("SupplierName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSupplierName);
+                this.columnOrderSupplierProductPrice = new global::System.Data.DataColumn("OrderSupplierProductPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrderSupplierProductPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOrderID,
                                 this.columnProductID,
@@ -6334,6 +6348,7 @@ namespace DnD_Trading {
                 this.columnExpr4.ReadOnly = true;
                 this.columnSupplierName.AllowDBNull = false;
                 this.columnSupplierName.MaxLength = 50;
+                this.columnOrderSupplierProductPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7906,6 +7921,17 @@ namespace DnD_Trading {
                 }
                 set {
                     this[this.tableViewOrderProduct1.SupplierNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal OrderSupplierProductPrice {
+                get {
+                    return ((decimal)(this[this.tableViewOrderProduct1.OrderSupplierProductPriceColumn]));
+                }
+                set {
+                    this[this.tableViewOrderProduct1.OrderSupplierProductPriceColumn] = value;
                 }
             }
         }
@@ -14861,6 +14887,7 @@ WHERE (osp.OrderID = @orderid);
             tableMapping.ColumnMappings.Add("SupplierProductPrice", "SupplierProductPrice");
             tableMapping.ColumnMappings.Add("Expr4", "Expr4");
             tableMapping.ColumnMappings.Add("SupplierName", "SupplierName");
+            tableMapping.ColumnMappings.Add("OrderSupplierProductPrice", "OrderSupplierProductPrice");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -14878,7 +14905,7 @@ WHERE (osp.OrderID = @orderid);
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT OrderSupplierProduct.OrderID, OrderSupplierProduct.ProductID, OrderSupplierProduct.SupplierID, OrderSupplierProduct.OrderSupplierProductQuantity, Product.ProductID AS Expr1, Product.ProductName, Product.ProductSurcharge, SupplierProduct.ProductID AS Expr2, 
-             SupplierProduct.SupplierID AS Expr3, SupplierProduct.SupplierProductPrice, Supplier.SupplierID AS Expr4, Supplier.SupplierName
+             SupplierProduct.SupplierID AS Expr3, SupplierProduct.SupplierProductPrice, Supplier.SupplierID AS Expr4, Supplier.SupplierName, OrderSupplierProduct.OrderSupplierProductPrice
 FROM   OrderSupplierProduct INNER JOIN
              Product ON OrderSupplierProduct.ProductID = Product.ProductID INNER JOIN
              Supplier ON OrderSupplierProduct.SupplierID = Supplier.SupplierID INNER JOIN
@@ -14887,7 +14914,7 @@ FROM   OrderSupplierProduct INNER JOIN
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT OrderSupplierProduct.OrderID, OrderSupplierProduct.ProductID, OrderSupplierProduct.SupplierID, OrderSupplierProduct.OrderSupplierProductQuantity, Product.ProductID AS Expr1, Product.ProductName, Product.ProductSurcharge, SupplierProduct.ProductID AS Expr2, 
-             SupplierProduct.SupplierID AS Expr3, SupplierProduct.SupplierProductPrice, Supplier.SupplierID AS Expr4, Supplier.SupplierName
+             SupplierProduct.SupplierID AS Expr3, SupplierProduct.SupplierProductPrice, Supplier.SupplierID AS Expr4, Supplier.SupplierName, OrderSupplierProduct.OrderSupplierProductPrice
 FROM   OrderSupplierProduct INNER JOIN
              SupplierProduct ON OrderSupplierProduct.ProductID = SupplierProduct.ProductID AND OrderSupplierProduct.SupplierID = SupplierProduct.SupplierID INNER JOIN
              Product ON OrderSupplierProduct.ProductID = Product.ProductID INNER JOIN

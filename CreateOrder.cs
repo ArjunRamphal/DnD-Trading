@@ -60,11 +60,11 @@ namespace DnD_Trading
                 dr["ProductID"] = Convert.ToInt32(row.Cells[1].Value);
                 dr["SupplierID"] = Convert.ToInt32(row.Cells[2].Value);
                 dr["OrderSupplierProductQuantity"] = Convert.ToInt32(row.Cells[3].Value);
-                dr["OrderSupplierProductPrice"] = Convert.ToDecimal(row.Cells[4].Value);
+                dr["OrderSupplierProductPrice"] = Convert.ToDecimal(row.Cells[7].Value);
                 dr["OrderSupplierProductStatus"] = false;
 
                 // Add the price directly
-                price += Convert.ToDecimal(row.Cells[4].Value);
+                price += Convert.ToDecimal(row.Cells[7].Value);
 
                 // Add the row to the dataset
                 //wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
@@ -232,6 +232,8 @@ namespace DnD_Trading
 
         private void CreateOrder_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet3.ViewOrderProduct1' table. You can move, or remove it, as needed.
+            //this.viewOrderProduct1TableAdapter.Fill(this.wstGrp22DataSet3.ViewOrderProduct1);
             // TODO: This line of code loads data into the 'wstGrp22DataSet3.Order' table. You can move, or remove it, as needed.
             this.orderTableAdapter.Fill(this.wstGrp22DataSet3.Order);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
@@ -263,8 +265,8 @@ namespace DnD_Trading
             {
                 if (dataGridView1.Rows.Count == 1)
                 {
-                    MessageBox.Show("No products in the order to cancel.", "No Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    //MessageBox.Show("No products in the order to cancel.", "No Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //return;
                 }
                 orderTableAdapter.DeleteQuery(globalvar.orderID);
                 clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
@@ -282,9 +284,10 @@ namespace DnD_Trading
                 globalvar.clientEmail = string.Empty; // Reset the client email
                 label4.Text = "Total Price: " + globalvar.priceTotal.ToString("C2"); // Update the total price label
 
-                mainForm.Show();
-                mainForm.Panel1.Visible = true; // Show the main form's panel
-                mainForm.MenuStrip1.Items[8].Visible = true; // Show the "Create Order" menu item
+                createOrderRequestForm.Show();
+                createOrderRequestForm.WindowState = FormWindowState.Maximized;
+                //mainForm.Panel1.Visible = true; // Show the main form's panel
+                //mainForm.MenuStrip1.Items[8].Visible = true; // Show the "Create Order" menu item
                 this.Hide(); // Hide the CreateOrder form
             }
         }
@@ -358,6 +361,9 @@ namespace DnD_Trading
             numericUpDown1.Value = 0; // Reset the numericUpDown control after adding the product
 
             txtProductSearch.Clear(); // Clear the search box after adding the product
+
+            viewOrderProduct1TableAdapter.FillByOrderID(wstGrp22DataSet3.ViewOrderProduct1, globalvar.orderID);
+            dataGridView1.Refresh();
         }
 
         private void txtProductSearch_TextChanged(object sender, EventArgs e)

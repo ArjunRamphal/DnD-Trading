@@ -207,8 +207,6 @@ namespace DnD_Trading
                 return;
             }
 
-
-
             try
             { 
                 // Attempt to update and get number of affected rows

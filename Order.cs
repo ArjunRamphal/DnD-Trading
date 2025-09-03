@@ -66,9 +66,11 @@ namespace DnD_Trading
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.clientOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientOrder);
+            clientClientOrderProductOrderTableAdapter.Fill(this.wstGrp22DataSet1.ClientClientOrderProductOrder);
             textBox1.Clear();
             comboBox2.Text = "";
             dataGridView3.Visible = false;
+            dataGridView1.Refresh();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +103,7 @@ namespace DnD_Trading
             
             //viewOrderProductTableAdapter.FillByOrderID(this.wstGrp22DataSet1.ViewOrderProduct, Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
             
-            MessageBox.Show("Order ID: " + dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            //MessageBox.Show("Order ID: " + dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             
             
             //viewOrderProduct1TableAdapter.Fill(this.wstGrp22DataSet1.ViewOrderProduct1);

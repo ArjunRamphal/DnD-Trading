@@ -432,43 +432,48 @@
             // 
             // productNameDataGridViewTextBoxColumn
             // 
+            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
             this.productNameDataGridViewTextBoxColumn.HeaderText = "Product";
             this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.Width = 150;
+            this.productNameDataGridViewTextBoxColumn.Width = 123;
             // 
             // supplierNameDataGridViewTextBoxColumn
             // 
+            this.supplierNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
             this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier";
             this.supplierNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
-            this.supplierNameDataGridViewTextBoxColumn.Width = 150;
+            this.supplierNameDataGridViewTextBoxColumn.Width = 128;
             // 
             // OrderSupplierProductQuantity
             // 
+            this.OrderSupplierProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.OrderSupplierProductQuantity.DataPropertyName = "OrderSupplierProductQuantity";
             this.OrderSupplierProductQuantity.HeaderText = "Quantity";
             this.OrderSupplierProductQuantity.MinimumWidth = 8;
             this.OrderSupplierProductQuantity.Name = "OrderSupplierProductQuantity";
-            this.OrderSupplierProductQuantity.Width = 150;
+            this.OrderSupplierProductQuantity.Width = 129;
             // 
             // SupplierProductPrice
             // 
+            this.SupplierProductPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.SupplierProductPrice.DataPropertyName = "SupplierProductPrice";
             this.SupplierProductPrice.HeaderText = "Price";
             this.SupplierProductPrice.MinimumWidth = 8;
             this.SupplierProductPrice.Name = "SupplierProductPrice";
-            this.SupplierProductPrice.Width = 150;
+            this.SupplierProductPrice.Width = 98;
             // 
             // ProductSurcharge
             // 
+            this.ProductSurcharge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ProductSurcharge.DataPropertyName = "ProductSurcharge";
             this.ProductSurcharge.HeaderText = "Surcharge";
             this.ProductSurcharge.MinimumWidth = 8;
             this.ProductSurcharge.Name = "ProductSurcharge";
-            this.ProductSurcharge.Width = 150;
+            this.ProductSurcharge.Width = 148;
             // 
             // Order
             // 
