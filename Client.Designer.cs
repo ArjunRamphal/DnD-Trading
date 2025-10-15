@@ -87,11 +87,11 @@
             this.clientEmailDataGridViewTextBoxColumn,
             this.clientOptOutDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.clientBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 267);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1135, 726);
+            this.dataGridView1.Size = new System.Drawing.Size(2355, 845);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -152,7 +152,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(161, 40);
+            this.txtName.Location = new System.Drawing.Point(173, 40);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(386, 32);
             this.txtName.TabIndex = 4;
@@ -160,7 +160,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(3, 1258);
             this.pictureBox1.Name = "pictureBox1";
@@ -190,7 +190,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(161, 78);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(173, 75);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(386, 32);
             this.txtPhoneNumber.TabIndex = 14;
@@ -198,7 +198,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(161, 116);
+            this.txtEmail.Location = new System.Drawing.Point(173, 113);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(386, 32);
             this.txtEmail.TabIndex = 15;
@@ -216,9 +216,9 @@
             this.groupBox1.Controls.Add(this.txtPhoneNumber);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(61, 797);
+            this.groupBox1.Location = new System.Drawing.Point(606, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(559, 177);
+            this.groupBox1.Size = new System.Drawing.Size(573, 177);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search for client by:";
@@ -229,9 +229,9 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(577, 214);
+            this.groupBox2.Location = new System.Drawing.Point(99, 214);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1287, 1033);
+            this.groupBox2.Size = new System.Drawing.Size(2367, 1118);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select a client by double clicking";
@@ -245,9 +245,9 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(626, 797);
+            this.groupBox3.Location = new System.Drawing.Point(1203, 31);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(570, 230);
+            this.groupBox3.Size = new System.Drawing.Size(570, 215);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update client details";

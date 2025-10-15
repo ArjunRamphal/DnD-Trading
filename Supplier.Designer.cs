@@ -79,11 +79,11 @@
             this.supplierEmailDataGridViewTextBoxColumn,
             this.supplierOptOutDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.supplierBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 320);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1272, 560);
+            this.dataGridView1.Size = new System.Drawing.Size(2234, 898);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -158,7 +158,7 @@
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(291, 39);
+            this.txtSupplier.Location = new System.Drawing.Point(302, 39);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(315, 32);
             this.txtSupplier.TabIndex = 3;
@@ -173,7 +173,7 @@
             this.grpAddSupplier.Controls.Add(this.label3);
             this.grpAddSupplier.Controls.Add(this.txtSupplierName);
             this.grpAddSupplier.Controls.Add(this.lblSupplierName);
-            this.grpAddSupplier.Location = new System.Drawing.Point(651, 623);
+            this.grpAddSupplier.Location = new System.Drawing.Point(1628, 40);
             this.grpAddSupplier.Name = "grpAddSupplier";
             this.grpAddSupplier.Size = new System.Drawing.Size(640, 274);
             this.grpAddSupplier.TabIndex = 4;
@@ -242,7 +242,7 @@
             // 
             this.groupBox1.Controls.Add(this.lblSupplier);
             this.groupBox1.Controls.Add(this.txtSupplier);
-            this.groupBox1.Location = new System.Drawing.Point(18, 623);
+            this.groupBox1.Location = new System.Drawing.Point(18, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(627, 274);
             this.groupBox1.TabIndex = 7;
@@ -277,15 +277,15 @@
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(435, 128);
+            this.panel1.Location = new System.Drawing.Point(914, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(398, 401);
+            this.panel1.Size = new System.Drawing.Size(749, 692);
             this.panel1.TabIndex = 9;
             this.panel1.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(124, 329);
+            this.button1.Location = new System.Drawing.Point(324, 592);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 46);
             this.button1.TabIndex = 1;
@@ -295,24 +295,23 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(29, 51);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(332, 246);
+            this.richTextBox1.Size = new System.Drawing.Size(685, 535);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "·  Enter the supplier’s details in the form.\n\n·  Click \"Add Supplier\" to save the" +
     " information.\n";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.grpAddSupplier);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(659, 114);
+            this.groupBox2.Location = new System.Drawing.Point(99, 114);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1341, 924);
+            this.groupBox2.Size = new System.Drawing.Size(2283, 1229);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List of suppliers";
@@ -323,6 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

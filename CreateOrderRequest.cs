@@ -22,6 +22,8 @@ namespace DnD_Trading
 
         private void CreateOrderRequest_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Payment' table. You can move, or remove it, as needed.
             this.paymentTableAdapter.FillByDESC(this.wstGrp22DataSet.Payment);
             // TODO: This line of code loads data into the 'wstGrp22DataSet.Order' table. You can move, or remove it, as needed.
@@ -37,43 +39,131 @@ namespace DnD_Trading
         {
             DialogResult result = MessageBox.Show("Add new product to order?", "New Product", MessageBoxButtons.OKCancel);
 
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
+                string desc = txtProdDesc.Text.Trim();
 
-                // Validate Product Description
-                if (string.IsNullOrWhiteSpace(txtProdDesc.Text))
+                // Validate Product Description - Required
+                if (string.IsNullOrWhiteSpace(desc))
                 {
                     MessageBox.Show("Product description is required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtProdDesc.Focus();
                     return;
+                }
+
+                // Validate Product Description Format
+                if (!System.Text.RegularExpressions.Regex.IsMatch(desc, @"^(?=.*[A-Za-z])[A-Za-z0-9\s\-,.()'/&]+$"))
+                {
+                    MessageBox.Show("Product description must contain valid characters (letters, numbers, spaces, and basic punctuation).",
+                                    "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtProdDesc.Focus();
+                    return;
+                }
+
+                // Validate Product Description Length
+                if (desc.Length < 3 || desc.Length > 100)
+                {
+                    MessageBox.Show("Product description should be between 3 and 100 characters.",
+                                    "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtProdDesc.Focus();
+                    return;
+                }
+
+                // Reject repetitive or vowel-less nonsense (e.g., "rrrrrr", "qwrty")
+                // Check for 4+ repeated identical letters
+                if (System.Text.RegularExpressions.Regex.IsMatch(desc, @"(.)\1{3,}"))
+                {
+                    MessageBox.Show("Product description appears invalid (repeated characters). Please enter a proper description.",
+                                    "Invalid Description", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtProdDesc.Focus();
+                    return;
+                }
+
+                // Check that there's at least one vowel (a, e, i, o, u)
+                if (!System.Text.RegularExpressions.Regex.IsMatch(desc, "[aeiouAEIOU]"))
+                {
+                    DialogResult confirm = MessageBox.Show(
+                        "The product description doesn't seem to contain any vowels. Are you sure this is correct?",
+                        "Unusual Description", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirm == DialogResult.No)
+                    {
+                        txtProdDesc.Focus();
+                        return;
+                    }
                 }
 
                 // Validate Product Quantity
                 if (!int.TryParse(numericUpDown1.Text.Trim(), out int quantity) || quantity <= 0)
                 {
                     MessageBox.Show("Product quantity must be a positive integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    numericUpDown1.Focus();
                     return;
+                }
+
+                // Check if product description shares any word with known products
+                var knownProducts = productTableAdapter.GetData(); // replace with your actual adapter/table
+                bool hasMatch = false;
+
+                // Split the user's description into individual lowercase words
+                var userWords = desc
+                    .ToLower()
+                    .Split(new[] { ' ', '-', ',', '.', '(', ')', '/', '&' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Loop through all products in the database
+                foreach (var row in knownProducts)
+                {
+                    string productName = row.ProductName.ToString().ToLower();
+                    // Split each product into words
+                    var productWords = productName.Split(new[] { ' ', '-', ',', '.', '(', ')', '/', '&' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    // Check for overlap
+                    if (userWords.Any(w => productWords.Contains(w)))
+                    {
+                        hasMatch = true;
+                        break;
+                    }
+                }
+
+                // If no match, ask the user for confirmation
+                if (!hasMatch)
+                {
+                    DialogResult confirm = MessageBox.Show(
+                        "No similar products were found in the database.\nAre you sure you want to add this product description?",
+                        "Unrecognized Product",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (confirm == DialogResult.No)
+                    {
+                        txtProdDesc.Focus();
+                        return;
+                    }
                 }
 
                 // Insert the product into the order
                 clientOrderProductTableAdapter.Insert(
                     globalvar.orderID,
                     globalvar.clientID,
-                    txtProdDesc.Text.Trim(),
-                    Convert.ToInt32(numericUpDown1.Text.Trim()),
+                    desc,
+                    quantity,
                     false
                 );
 
                 MessageBox.Show("Product added to order successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Optionally, you can clear the input fields after adding
+                // Clear input fields after adding
                 txtProdDesc.Clear();
                 numericUpDown1.Value = 0;
 
+                // Refresh data
                 clientOrderProductTableAdapter.FillByOrderID(this.wstGrp22DataSet.ClientOrderProduct, globalvar.orderID);
             }
             else
             {
                 MessageBox.Show("Product addition cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -139,6 +229,9 @@ namespace DnD_Trading
             {
                 MessageBox.Show("Order creation cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            //textBox1.Clear();
+
         }
 
         private void button3_Click(object sender, EventArgs e)

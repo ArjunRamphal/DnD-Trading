@@ -15,7 +15,6 @@ namespace DnD_Trading
 {
     public partial class Parent: Form
     {
-
         public Panel Panel1;
         public MenuStrip MenuStrip1;
         public Parent()
@@ -269,7 +268,9 @@ namespace DnD_Trading
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
+            textBox1.Clear();
             label3.Visible = false;
+            label4.Text = "Verification Question:";
             label4.Visible = false;
             textBox1.Visible = false;
             button2.Visible = false;
@@ -351,11 +352,13 @@ namespace DnD_Trading
             globalvar.paymentID = 0; // Reset payment ID
             lblLogin.Visible = true;
             lblLogin.Text = "Login";
+            label4.Text = "Verification Question:";
             lblLogin.Location = new Point(750, 150); // Adjust the position as needed
             lblReEnter.Visible = false;
             txtUsername.Clear();
             txtPassword.Clear();
             txtReEnterPassword.Clear();
+            textBox1.Clear();
             globalvar.priceTotal = 0; // Reset price total
             globalvar.productID = 0; // Reset product ID
             globalvar.loggedInAs = -1; // Reset logged in status

@@ -47,6 +47,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,9 +59,6 @@
             this.paymentTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentTableAdapter();
             this.paymentFormTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.PaymentFormTableAdapter();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,12 +72,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1006, 9);
+            this.label1.Location = new System.Drawing.Point(1113, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(254, 68);
             this.label1.TabIndex = 1;
@@ -106,11 +106,11 @@
             this.PaymentSurplus,
             this.paymentStatusDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.paymentFormBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1401, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(2269, 1056);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
@@ -177,7 +177,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1258);
             this.pictureBox1.Name = "pictureBox1";
@@ -219,7 +219,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 28);
+            this.textBox1.Location = new System.Drawing.Point(190, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(238, 32);
             this.textBox1.TabIndex = 6;
@@ -236,24 +236,56 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(449, 80);
+            this.groupBox1.Location = new System.Drawing.Point(98, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1439, 666);
+            this.groupBox1.Size = new System.Drawing.Size(2281, 1252);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select a payment record by double clicking";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Location = new System.Drawing.Point(904, 310);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(525, 505);
+            this.panel1.TabIndex = 10;
+            this.panel1.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(203, 432);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(145, 47);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Close help";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(30, 10);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(469, 416);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "·  Search for the client\'s name and select it.\n\n·  Update the amount paid toward " +
+    "the total.\n\n·  When the balance reaches 0, click \"Payment Fulfilled\" to mark it " +
+    "as complete.\n";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Location = new System.Drawing.Point(959, 501);
+            this.groupBox4.Location = new System.Drawing.Point(1818, 31);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(451, 148);
             this.groupBox4.TabIndex = 12;
@@ -264,7 +296,7 @@
             // 
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(696, 501);
+            this.groupBox3.Location = new System.Drawing.Point(1012, 36);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(257, 148);
             this.groupBox3.TabIndex = 11;
@@ -275,7 +307,7 @@
             // 
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Location = new System.Drawing.Point(9, 501);
+            this.groupBox2.Location = new System.Drawing.Point(6, 36);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(671, 84);
             this.groupBox2.TabIndex = 10;
@@ -323,37 +355,6 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(922, 752);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 505);
-            this.panel1.TabIndex = 10;
-            this.panel1.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(203, 432);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 47);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Close help";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(30, 10);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(469, 416);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "·  Search for the client\'s name and select it.\n\n·  Update the amount paid toward " +
-    "the total.\n\n·  When the balance reaches 0, click \"Payment Fulfilled\" to mark it " +
-    "as complete.\n";
             // 
             // dataGridView2
             // 
@@ -435,12 +436,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(2478, 1344);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dataGridView2);
             this.Name = "Payment";
             this.Text = "Payments";
             this.Load += new System.EventHandler(this.Payment_Load);
@@ -449,6 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -457,7 +458,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).EndInit();
             this.ResumeLayout(false);

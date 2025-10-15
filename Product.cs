@@ -358,5 +358,10 @@ namespace DnD_Trading
         {
             textBox1.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
+
+        private void lblProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

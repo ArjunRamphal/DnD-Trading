@@ -35,7 +35,6 @@
             this.userFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userTypeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userOptOutDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
@@ -73,14 +72,13 @@
             this.userFirstNameDataGridViewTextBoxColumn,
             this.userLastNameDataGridViewTextBoxColumn,
             this.userTypeDataGridViewCheckBoxColumn,
-            this.userPasswordDataGridViewTextBoxColumn,
             this.userOptOutDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.userBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 137);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1232, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(2345, 1011);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -112,13 +110,6 @@
             this.userTypeDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.userTypeDataGridViewCheckBoxColumn.Name = "userTypeDataGridViewCheckBoxColumn";
             // 
-            // userPasswordDataGridViewTextBoxColumn
-            // 
-            this.userPasswordDataGridViewTextBoxColumn.DataPropertyName = "UserPassword";
-            this.userPasswordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.userPasswordDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userPasswordDataGridViewTextBoxColumn.Name = "userPasswordDataGridViewTextBoxColumn";
-            // 
             // userOptOutDataGridViewCheckBoxColumn
             // 
             this.userOptOutDataGridViewCheckBoxColumn.DataPropertyName = "UserOptOut";
@@ -148,16 +139,16 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(566, 178);
+            this.groupBox1.Location = new System.Drawing.Point(109, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1303, 874);
+            this.groupBox1.Size = new System.Drawing.Size(2357, 1154);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update opt out by clicking the checkbox";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(333, 593);
+            this.textBox2.Location = new System.Drawing.Point(373, 99);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(359, 32);
             this.textBox2.TabIndex = 5;
@@ -166,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 599);
+            this.label3.Location = new System.Drawing.Point(35, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(296, 26);
             this.label3.TabIndex = 4;
@@ -174,7 +165,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(333, 524);
+            this.textBox1.Location = new System.Drawing.Point(373, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(359, 32);
             this.textBox1.TabIndex = 3;
@@ -183,7 +174,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 527);
+            this.label2.Location = new System.Drawing.Point(34, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(297, 26);
             this.label2.TabIndex = 2;
@@ -241,7 +232,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userFirstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userLastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn userTypeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userPasswordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn userOptOutDataGridViewCheckBoxColumn;
     }
 }

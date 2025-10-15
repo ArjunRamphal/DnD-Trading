@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@
             this.wstGrp22DataSet = new DnD_Trading.WstGrp22DataSet();
             this.userTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.UserTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -92,6 +92,45 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter user details";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(294, 434);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(358, 32);
+            this.textBox4.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(64, 437);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(202, 26);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Verification answer:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "What was your childhood nickname?",
+            "What was the name of your first pet?",
+            "What is your mother\'s maiden name?",
+            "What is your favourite colour?",
+            "What is your favourite fruit?"});
+            this.comboBox1.Location = new System.Drawing.Point(294, 363);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(358, 34);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(64, 366);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(214, 26);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Verification question:";
             // 
             // button1
             // 
@@ -243,7 +282,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(3, 1258);
             this.pictureBox1.Name = "pictureBox1";
@@ -252,45 +291,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 366);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 26);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Verification question:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "What was your childhood nickname?",
-            "What was the name of your first pet?",
-            "What is your mother\'s maiden name?",
-            "What is your favourite colour?",
-            "What is your favourite fruit?"});
-            this.comboBox1.Location = new System.Drawing.Point(294, 363);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(358, 34);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(64, 437);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 26);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Verification answer:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(294, 434);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(358, 32);
-            this.textBox4.TabIndex = 13;
             // 
             // AddUser
             // 

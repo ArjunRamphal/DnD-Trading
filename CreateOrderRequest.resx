@@ -154,4 +154,10 @@ The sales rep should enter a general description of product and quantity (e.g, B
 Click "Create Order" to proceed to the detailed order entry.
 </value>
   </data>
+  <metadata name="productBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>723, 63</value>
+  </metadata>
+  <metadata name="productTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>967, 63</value>
+  </metadata>
 </root>

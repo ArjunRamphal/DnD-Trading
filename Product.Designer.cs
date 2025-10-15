@@ -134,16 +134,17 @@
             this.productNameDataGridViewTextBoxColumn,
             this.productSurchargeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 278);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1269, 602);
+            this.dataGridView1.Size = new System.Drawing.Size(2230, 909);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
+            this.productIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
             this.productIDDataGridViewTextBoxColumn.HeaderText = "Product ID";
             this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -152,13 +153,16 @@
             // 
             // productNameDataGridViewTextBoxColumn
             // 
+            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
             this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
             this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 172;
             // 
             // productSurchargeDataGridViewTextBoxColumn
             // 
+            this.productSurchargeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.productSurchargeDataGridViewTextBoxColumn.DataPropertyName = "ProductSurcharge";
             this.productSurchargeDataGridViewTextBoxColumn.HeaderText = "Product Surcharge";
             this.productSurchargeDataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -178,11 +182,12 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(1017, 28);
+            this.lblProduct.Location = new System.Drawing.Point(1251, 28);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(235, 68);
             this.lblProduct.TabIndex = 1;
             this.lblProduct.Text = "Products";
+            this.lblProduct.Click += new System.EventHandler(this.lblProduct_Click);
             // 
             // cmbSupplier
             // 
@@ -203,7 +208,7 @@
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(262, 114);
+            this.txtProduct.Location = new System.Drawing.Point(262, 143);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(345, 32);
             this.txtProduct.TabIndex = 3;
@@ -212,7 +217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 117);
+            this.label1.Location = new System.Drawing.Point(6, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 26);
             this.label1.TabIndex = 4;
@@ -229,7 +234,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(6, 1225);
             this.pictureBox1.Name = "pictureBox1";
@@ -250,14 +255,14 @@
             // 
             // txtSurcharge
             // 
-            this.txtSurcharge.Location = new System.Drawing.Point(202, 53);
+            this.txtSurcharge.Location = new System.Drawing.Point(218, 56);
             this.txtSurcharge.Name = "txtSurcharge";
-            this.txtSurcharge.Size = new System.Drawing.Size(337, 32);
+            this.txtSurcharge.Size = new System.Drawing.Size(486, 32);
             this.txtSurcharge.TabIndex = 15;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(240, 94);
+            this.btnUpdate.Location = new System.Drawing.Point(315, 135);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 48);
             this.btnUpdate.TabIndex = 16;
@@ -284,7 +289,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 59);
+            this.textBox1.Location = new System.Drawing.Point(170, 59);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(432, 32);
             this.textBox1.TabIndex = 18;
@@ -306,9 +311,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbSupplier);
             this.groupBox1.Controls.Add(this.txtProduct);
-            this.groupBox1.Location = new System.Drawing.Point(32, 678);
+            this.groupBox1.Location = new System.Drawing.Point(32, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 332);
+            this.groupBox1.Size = new System.Drawing.Size(623, 343);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
@@ -335,9 +340,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(1214, 678);
+            this.groupBox2.Location = new System.Drawing.Point(1650, 31);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(613, 396);
+            this.groupBox2.Size = new System.Drawing.Size(613, 355);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add product";
@@ -345,7 +350,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(218, 332);
+            this.linkLabel1.Location = new System.Drawing.Point(218, 318);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(191, 26);
             this.linkLabel1.TabIndex = 27;
@@ -355,14 +360,14 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 220);
+            this.textBox4.Location = new System.Drawing.Point(170, 220);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(432, 32);
             this.textBox4.TabIndex = 26;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 164);
+            this.textBox3.Location = new System.Drawing.Point(170, 164);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(432, 32);
             this.textBox3.TabIndex = 25;
@@ -391,7 +396,7 @@
             this.comboBox1.DisplayMember = "SupplierName";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(161, 114);
+            this.comboBox1.Location = new System.Drawing.Point(170, 112);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(432, 34);
             this.comboBox1.TabIndex = 22;
@@ -417,9 +422,9 @@
             this.groupBox3.Controls.Add(this.lblSurcharge);
             this.groupBox3.Controls.Add(this.txtSurcharge);
             this.groupBox3.Controls.Add(this.btnUpdate);
-            this.groupBox3.Location = new System.Drawing.Point(763, 671);
+            this.groupBox3.Location = new System.Drawing.Point(1546, 45);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(552, 148);
+            this.groupBox3.Size = new System.Drawing.Size(720, 202);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Surcharge";
@@ -468,13 +473,13 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.panel1);
+            this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(495, 99);
+            this.groupBox4.Location = new System.Drawing.Point(102, 99);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1334, 836);
+            this.groupBox4.Size = new System.Drawing.Size(2360, 1204);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Select a product by double clicking it in the table";
@@ -483,7 +488,7 @@
             // 
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(368, 57);
+            this.panel1.Location = new System.Drawing.Point(930, 169);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 673);
             this.panel1.TabIndex = 26;
@@ -491,7 +496,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(270, 617);
+            this.button5.Location = new System.Drawing.Point(236, 617);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(149, 48);
             this.button5.TabIndex = 1;
@@ -514,16 +519,16 @@
             this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Location = new System.Drawing.Point(36, 671);
+            this.groupBox5.Location = new System.Drawing.Point(36, 45);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(721, 142);
+            this.groupBox5.Size = new System.Drawing.Size(888, 227);
             this.groupBox5.TabIndex = 26;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(249, 91);
+            this.button3.Location = new System.Drawing.Point(340, 154);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(210, 48);
             this.button3.TabIndex = 26;
@@ -542,9 +547,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(300, 53);
+            this.textBox2.Location = new System.Drawing.Point(311, 53);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(415, 32);
+            this.textBox2.Size = new System.Drawing.Size(571, 32);
             this.textBox2.TabIndex = 25;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -581,9 +586,9 @@
             this.groupBox6.Controls.Add(this.groupBox1);
             this.groupBox6.Controls.Add(this.groupBox2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(189, 116);
+            this.groupBox6.Location = new System.Drawing.Point(99, 116);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1970, 1125);
+            this.groupBox6.Size = new System.Drawing.Size(2269, 1187);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List of products from suppliers";
@@ -592,7 +597,7 @@
             // 
             this.panel2.Controls.Add(this.richTextBox2);
             this.panel2.Controls.Add(this.button6);
-            this.panel2.Location = new System.Drawing.Point(627, 52);
+            this.panel2.Location = new System.Drawing.Point(902, 285);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(678, 599);
             this.panel2.TabIndex = 26;
@@ -600,6 +605,7 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(31, 24);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(618, 514);
@@ -624,7 +630,7 @@
             this.groupBox7.Controls.Add(this.button4);
             this.groupBox7.Controls.Add(this.textBox5);
             this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Location = new System.Drawing.Point(696, 678);
+            this.groupBox7.Location = new System.Drawing.Point(902, 31);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(486, 234);
             this.groupBox7.TabIndex = 25;
@@ -676,16 +682,17 @@
             this.SupplierName,
             this.supplierProductPriceDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.searchAddProductBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(32, 43);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 392);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1795, 608);
+            this.dataGridView2.Size = new System.Drawing.Size(2246, 776);
             this.dataGridView2.TabIndex = 24;
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
             // 
             // ProductName
             // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.DataPropertyName = "ProductName";
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.MinimumWidth = 8;
@@ -714,7 +721,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1019, 45);
+            this.label6.Location = new System.Drawing.Point(1232, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(264, 68);
             this.label6.TabIndex = 25;
