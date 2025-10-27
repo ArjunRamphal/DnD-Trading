@@ -80,6 +80,7 @@
             this.productSurchargeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ProductTableAdapter();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -184,7 +185,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1902, 596);
+            this.button1.Location = new System.Drawing.Point(1902, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(301, 64);
             this.button1.TabIndex = 6;
@@ -381,7 +382,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1902, 683);
+            this.button3.Location = new System.Drawing.Point(1902, 607);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(301, 64);
             this.button3.TabIndex = 11;
@@ -410,6 +411,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.button3);
@@ -552,6 +554,16 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1902, 683);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(301, 64);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Cancel order request";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // CreateOrderRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -569,6 +581,8 @@
             this.Controls.Add(this.dataGridView5);
             this.Name = "CreateOrderRequest";
             this.Text = "Create Order Request";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateOrderRequest_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateOrderRequest_FormClosed);
             this.Load += new System.EventHandler(this.CreateOrderRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).EndInit();
@@ -649,5 +663,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productSurchargeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button5;
     }
 }

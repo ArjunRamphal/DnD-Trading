@@ -223,7 +223,15 @@ namespace DnD_Trading
 
                 this.paymentTableAdapter.FillByDESC(this.wstGrp22DataSet.Payment);
                 globalvar.paymentID = dataGridView4.Rows[0].Cells[0].Value != null ? Convert.ToInt32(dataGridView4.Rows[0].Cells[0].Value) : 0;
-                globalvar.orderMessage = "Order ID: " + globalvar.orderID + "\n";
+                globalvar.orderMessage = "Order ID: " + globalvar.orderID + "<br/>";
+
+                globalvar.orderMessage +=
+                    "<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;font-family:Arial;font-size:12px;'>" +
+                    "<tr>" +
+                        "<th>Product</th>" +
+                        "<th>Quantity</th>" +
+                        "<th>Price</th>" +
+                    "</tr>";
             }
             else
             {
@@ -236,6 +244,12 @@ namespace DnD_Trading
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 1)
+            {
+                MessageBox.Show("Please add at least one product to the order before finalizing.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             CreateOrder createOrder = new CreateOrder(this);
             createOrder.Show();
             this.Hide();
@@ -245,7 +259,6 @@ namespace DnD_Trading
             groupBox1.Visible = false;
             txtProdDesc.Clear();
             numericUpDown1.Value = 0;
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -269,6 +282,63 @@ namespace DnD_Trading
         private void button4_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void CreateOrderRequest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void CreateOrderRequest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show(
+                "Are you sure you want to exit? Any order in progress will be cancelled.",
+                "Warning",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                orderTableAdapter.DeleteQuery(globalvar.orderID);
+                clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
+                paymentTableAdapter.DeleteQuery(globalvar.orderID);
+            }
+            else
+            {
+                e.Cancel = true; // <— THIS keeps the app open when clicking "No"
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to cancel the order request?", "Cancel Order Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dataGridView1.Rows.Count == 1)
+                {
+                    //MessageBox.Show("No products in the order to cancel.", "No Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //return;
+                }
+                orderTableAdapter.DeleteQuery(globalvar.orderID);
+                clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
+                paymentTableAdapter.DeleteQuery(globalvar.orderID);
+
+                dataGridView1.DataSource = null; // Clear the DataGridView
+                //dataGridView1.DataSource = wstGrp22DataSet.ClientOrderProduct; // Rebind to the updated dataset
+                dataGridView1.Rows.Clear(); // Clear all rows
+                dataGridView1.Refresh();
+                globalvar.priceTotal = 0; // Reset the total price
+                MessageBox.Show("Order cancelled successfully.", "Order Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                globalvar.orderID = 0; // Reset the order ID
+                globalvar.clientID = 0; // Reset the client ID
+                globalvar.clientName = string.Empty; // Reset the client name
+                globalvar.clientEmail = string.Empty; // Reset the client email
+
+                txtProdDesc.Clear();
+                numericUpDown1.Value = 0;
+                groupBox1.Visible = false;
+                groupBox2.Visible = true;
+            }
         }
     }
 

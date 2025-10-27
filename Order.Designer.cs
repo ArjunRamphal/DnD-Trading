@@ -76,6 +76,8 @@
             this.viewOrderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewOrderProductTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ViewOrderProductTableAdapter();
             this.viewOrderProduct1TableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ViewOrderProduct1TableAdapter();
+            this.clientClientOrderProductOrder1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientClientOrderProductOrder1TableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ClientClientOrderProductOrder1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientClientOrderProductOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet1)).BeginInit();
@@ -94,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderProduct1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientClientOrderProductOrder1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -484,6 +487,15 @@
             // 
             this.viewOrderProduct1TableAdapter.ClearBeforeFill = true;
             // 
+            // clientClientOrderProductOrder1BindingSource
+            // 
+            this.clientClientOrderProductOrder1BindingSource.DataMember = "ClientClientOrderProductOrder1";
+            this.clientClientOrderProductOrder1BindingSource.DataSource = this.wstGrp22DataSet1;
+            // 
+            // clientClientOrderProductOrder1TableAdapter
+            // 
+            this.clientClientOrderProductOrder1TableAdapter.ClearBeforeFill = true;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -516,6 +528,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderProduct1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientClientOrderProductOrder1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,5 +588,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderSupplierProductQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierProductPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductSurcharge;
+        private System.Windows.Forms.BindingSource clientClientOrderProductOrder1BindingSource;
+        private WstGrp22DataSetTableAdapters.ClientClientOrderProductOrder1TableAdapter clientClientOrderProductOrder1TableAdapter;
     }
 }

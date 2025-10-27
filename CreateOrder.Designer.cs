@@ -940,6 +940,8 @@
             this.Controls.Add(this.dataGridView8);
             this.Name = "CreateOrder";
             this.Text = "Create Order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateOrder_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateOrder_FormClosed);
             this.Load += new System.EventHandler(this.CreateOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderProduct1BindingSource)).EndInit();

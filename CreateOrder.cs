@@ -75,6 +75,8 @@ namespace DnD_Trading
                 globalvar.orderID
             );
 
+            orderTableAdapter.UpdateStatus(true, globalvar.orderID);
+
             //wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
             MessageBox.Show("Order created successfully.", "Order Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,19 +89,25 @@ namespace DnD_Trading
 
             // Send email notification to client
 
+            globalvar.orderMessage += "</table>";
             globalvar.orderMessage +=
-                "\nTotal Price: " + price.ToString("C2") + "\n" +
-                "Please send proof of payment to the following email address: DNDTrading22@gmail.com";
+                "<br/><br/>" +
+                "<b>Total Price:</b> " + price.ToString("C2") + "<br/><br/>" +
+                "Please send proof of payment to the following email address: " +
+                "<b>DNDTrading22@gmail.com</b>";
 
-            /*
+
+            MessageBox.Show("Disable Global Protect", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Press OK and wait for email to send. A message box will appear soon.", "Wait", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             string to, from, pass, body;
             MailMessage msg = new MailMessage();
             //to = globalvar.clientEmail;
-            to = "arjuunramphal@gmail.com";
+            to = globalvar.clientEmail;
             from = "dndtrading22@gmail.com";
             //pass = "onetwothreefourfive";
             pass = "qyax myny exec tzrb";
-            
+
             body = globalvar.orderMessage;
             msg.To.Add(to);
             msg.From = new MailAddress(from);
@@ -115,99 +123,26 @@ namespace DnD_Trading
             try
             {
                 smtp.Send(msg);
-                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Email requesting proof of payment from client sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error sending email requesting proof of payment from client: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            */
+            MessageBox.Show("Enable Global Protect", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            /*
-            string to = "arjuunramphal@gmail.com";
-            string from = "dndtrading22@gmail.com";
-            // This must be an **App Password**, not your Gmail login password
-            string pass = "qyax myny exec tzrb";
-            string body = globalvar.orderMessage;
+            dataGridView1.DataSource = null; // Clear the DataGridView
+            dataGridView1.DataSource = wstGrp22DataSet.OrderSupplierProduct; // Rebind to the updated dataset
+            dataGridView1.Refresh();
+            globalvar.priceTotal = 0; // Reset the total price
+            MessageBox.Show("Order sent successfully.", "Order Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            globalvar.orderID = 0; // Reset the order ID
+            globalvar.clientID = 0; // Reset the client ID
+            globalvar.clientName = string.Empty; // Reset the client name
+            globalvar.clientEmail = string.Empty; // Reset the client email
+            label4.Text = "Total Price: " + globalvar.priceTotal.ToString("C2"); // Update the total price label
 
-            MailMessage msg = new MailMessage();
-            msg.To.Add(to);
-            msg.From = new MailAddress(from);
-            msg.Body = body;
-
-            string clientName = globalvar.clientName?.Replace("\r", "").Replace("\n", "").Trim();
-            string orderID = globalvar.orderID.ToString().Replace("\r", "").Replace("\n", "").Trim();
-
-            // Limit the length if needed (Gmail supports up to ~998 characters for headers, but stay safe)
-            if (clientName.Length > 100) clientName = clientName.Substring(0, 100);
-            if (orderID.Length > 100) orderID = orderID.Substring(0, 100);
-
-            // Set subject safely
-            msg.Subject = $"Requesting Proof of Payment from {clientName} for Order {orderID}";
-
-            //msg.Subject = "Requesting Proof of Payment from " + globalvar.clientName + " for Order " + globalvar.orderID.ToString();
-           
-            // Replace this line:
-            //string orderID = globalvar.orderID?.ToString().Replace("\r", "").Replace("\n", "").Trim();
-
-            // With this corrected line:
-            
-            msg.IsBodyHtml = true;
-
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(from, pass);
-
-            try
-            {
-                smtp.Send(msg);
-                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            */
-            /*
-            try
-            {
-                var msg = new MailMessage();
-                msg.To.Add("arjuunramphal@gmail.com");
-                msg.From = new MailAddress("dndtrading22@gmail.com", "Email Test");
-                msg.IsBodyHtml = true;
-                msg.Subject = "test";
-                msg.Body = globalvar.orderMessage;
-                msg.Priority = MailPriority.High;
-                var smtp = new SmtpClient("smtp.gmail.com")
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential("dndtrading22@gmail.com", "qyaxmynyexectzrb"),
-                    EnableSsl = true,
-                };
-                smtp.SendCompleted += new SendCompletedEventHandler(smtp_SendCompleted);
-
-                //smtp.SendAsync(msg, null);
-
-                await smtp.SendMailAsync(msg);
-
-
-                MessageBox.Show("Message Sent!");
-            }
-            catch (Exception ex)
-            {
-                string fullError = $"Exception: {ex.Message}";
-                if (ex.InnerException != null)
-                {
-                    fullError += $"\nInner Exception: {ex.InnerException.Message}";
-                }
-
-                MessageBox.Show(fullError, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            */
-            
             createOrderRequestForm.Show();
             //mainForm.Panel1.Visible = true;
             this.Hide();
@@ -351,10 +286,19 @@ namespace DnD_Trading
             dr["OrderSupplierProductStatus"] = false; // Default value for OrderSupplierProductStatus
 
             globalvar.orderMessage +=
-                "Product: " + dataGridView3.CurrentRow.Cells[0].Value.ToString() + "\n" +
-                "Supplier: " + dataGridView3.CurrentRow.Cells[1].Value.ToString() + "\n" +
-                "Quantity: " + numericUpDown1.Text.Trim() + "\n" +
-                "Price: " + ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim()) + "\n";
+                "<tr>" +
+                    "<td>" + dataGridView3.CurrentRow.Cells[0].Value.ToString() + "</td>" +
+                    "<td>" + numericUpDown1.Text.Trim() + "</td>" +
+                    "<td>" +
+                        (
+                            ((decimal)dataGridView3.CurrentRow.Cells[2].Value +
+                            (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value))
+                            * int.Parse(numericUpDown1.Text.Trim())
+                        ).ToString("C2") +
+                    "</td>" +
+                "</tr>";
+
+
 
             wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
@@ -414,6 +358,33 @@ namespace DnD_Trading
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void CreateOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CreateOrder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show(
+                "Are you sure you want to exit? Any order in progress will be cancelled.",
+                "Warning",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                orderTableAdapter.DeleteQuery(globalvar.orderID);
+                clientOrderProductTableAdapter.DeleteQuery(globalvar.orderID);
+                orderSupplierProductTableAdapter.DeleteQuery(globalvar.orderID);
+                paymentTableAdapter.DeleteQuery(globalvar.orderID);
+            }
+            else
+            {
+                e.Cancel = true; // <— THIS keeps the app open when clicking "No"
+            }
         }
     }
 }

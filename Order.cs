@@ -36,6 +36,8 @@ namespace DnD_Trading
 
         private void Order_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wstGrp22DataSet1.ClientClientOrderProductOrder1' table. You can move, or remove it, as needed.
+            //this.clientClientOrderProductOrder1TableAdapter.Fill(this.wstGrp22DataSet1.ClientClientOrderProductOrder1);
             // TODO: This line of code loads data into the 'wstGrp22DataSet3.ViewOrderProduct1' table. You can move, or remove it, as needed.
             this.viewOrderProduct1TableAdapter.Fill(this.wstGrp22DataSet3.ViewOrderProduct1);
             // TODO: This line of code loads data into the 'wstGrp22DataSet1.ViewOrderProduct' table. You can move, or remove it, as needed.
