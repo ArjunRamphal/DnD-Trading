@@ -67,6 +67,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@
             this.productSurchargeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new DnD_Trading.WstGrp22DataSetTableAdapters.ProductTableAdapter();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientOrderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wstGrp22DataSet)).BeginInit();
@@ -428,6 +428,16 @@
             this.groupBox1.Text = "Enter order request";
             this.groupBox1.Visible = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1902, 683);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(301, 64);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Cancel order request";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
@@ -499,6 +509,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(18, 18);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(883, 488);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
@@ -553,16 +564,6 @@
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1902, 683);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(301, 64);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Cancel order request";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // CreateOrderRequest
             // 

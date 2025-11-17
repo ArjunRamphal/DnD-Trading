@@ -61,9 +61,9 @@ namespace DnD_Trading
                 }
 
                 // Validate Product Description Length
-                if (desc.Length < 3 || desc.Length > 100)
+                if (desc.Length < 3 || desc.Length > 70)
                 {
-                    MessageBox.Show("Product description should be between 3 and 100 characters.",
+                    MessageBox.Show("Product description should be between 3 and 70 characters.",
                                     "Invalid Length", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtProdDesc.Focus();
                     return;

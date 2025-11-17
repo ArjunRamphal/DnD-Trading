@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:parent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\createorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:createorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\createorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:createorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|C:\\Users\\arjuu\\source\\repos\\DnD Trading\\createorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:createorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|c:\\users\\arjuu\\source\\repos\\dnd trading\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD0C68E6-632B-44A4-9AB9-FB484C1D4DFD}|DnD Trading.csproj|solutionrelative:order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,45 +46,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Order.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeDocumentMoniker": "Order.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs [Design]",
-              "RelativeToolTip": "Order.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T09:39:00.738Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeDocumentMoniker": "Order.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Order.cs",
-              "RelativeToolTip": "Order.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAmwFgAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T09:29:59.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateOrder.cs",
-              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrder.cs",
-              "RelativeDocumentMoniker": "CreateOrder.cs",
-              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrder.cs",
-              "RelativeToolTip": "CreateOrder.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAuwEwAAAAAAAAAAAAAAA==",
+              "Title": "Parent.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeDocumentMoniker": "Parent.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeToolTip": "Parent.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAMwHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T09:27:16.111Z",
+              "WhenOpened": "2025-11-17T15:31:32.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Parent.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs",
+              "RelativeDocumentMoniker": "Parent.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\Parent.cs [Design]",
+              "RelativeToolTip": "Parent.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:31:24.586Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateOrderRequest.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrderRequest.cs",
+              "RelativeDocumentMoniker": "CreateOrderRequest.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrderRequest.cs",
+              "RelativeToolTip": "CreateOrderRequest.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwEEAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:44:16.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateOrderRequest.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrderRequest.cs",
+              "RelativeDocumentMoniker": "CreateOrderRequest.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrderRequest.cs [Design]",
+              "RelativeToolTip": "CreateOrderRequest.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:44:10.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CreateOrder.cs [Design]",
               "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrder.cs",
               "RelativeDocumentMoniker": "CreateOrder.cs",
@@ -85,6 +103,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-24T09:27:09.241Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateOrder.cs",
+              "DocumentMoniker": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrder.cs",
+              "RelativeDocumentMoniker": "CreateOrder.cs",
+              "ToolTip": "C:\\Users\\arjuu\\source\\repos\\DnD Trading\\CreateOrder.cs",
+              "RelativeToolTip": "CreateOrder.cs",
+              "ViewState": "AgIAALUBAAAAAAAAAAAMwMABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T09:27:16.111Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1367,7 +1367,7 @@ namespace DnD_Trading {
                 this.columnOrderID.AllowDBNull = false;
                 this.columnClientID.AllowDBNull = false;
                 this.columnClientOrderProductName.AllowDBNull = false;
-                this.columnClientOrderProductName.MaxLength = 50;
+                this.columnClientOrderProductName.MaxLength = 70;
                 this.columnClientOrderProductQuantity.AllowDBNull = false;
                 this.columnClientOrderProductStatus.AllowDBNull = false;
             }

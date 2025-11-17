@@ -268,6 +268,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(25, 23);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(657, 366);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "·  Enter the client\'s details in the form.\n\n·  Click \"Add Client\" to save the new" +

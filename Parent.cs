@@ -114,14 +114,15 @@ namespace DnD_Trading
 
                 if (wstGrp22DataSet.User.Rows.Count > 0)
                 {
-                    menuStrip1.Visible = true;
-                    menuStrip1.Items[0].Visible = false;
 
                     if (Convert.ToInt32(wstGrp22DataSet.User.Rows[0]["UserOptOut"]) == 1)
                     {
                         MessageBox.Show("This user has opted out of the system. Please contact support.", "User Opted Out", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return; // Exit the login process if the user has opted out
                     }
+
+                    menuStrip1.Visible = true;
+                    menuStrip1.Items[0].Visible = false;
 
                     globalvar.loggedInAs = Convert.ToInt32(wstGrp22DataSet.User.Rows[0]["UserType"]); // 0 = Sales Rep, 1 = Manager
 

@@ -274,6 +274,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(30, 10);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(469, 416);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "·  Search for the client\'s name and select it.\n\n·  Update the amount paid toward " +

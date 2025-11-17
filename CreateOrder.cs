@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using System.Reflection;
+using static DnD_Trading.WstGrp22DataSet;
 
 namespace DnD_Trading
 {
@@ -46,6 +47,8 @@ namespace DnD_Trading
 
             decimal price = 0;
 
+            Dictionary<int, List<DataGridViewRow>> supplierRows = new Dictionary<int, List<DataGridViewRow>>();
+
             DataRow dr;
             dr = wstGrp22DataSet.OrderSupplierProduct.NewRow();
 
@@ -65,6 +68,13 @@ namespace DnD_Trading
 
                 // Add the price directly
                 price += Convert.ToDecimal(row.Cells[7].Value);
+
+                int supplierID = Convert.ToInt32(row.Cells[2].Value); // Assuming Cell 2 is SupplierID
+                if (!supplierRows.ContainsKey(supplierID))
+                {
+                    supplierRows[supplierID] = new List<DataGridViewRow>();
+                }
+                supplierRows[supplierID].Add(row);
 
                 // Add the row to the dataset
                 //wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
@@ -95,7 +105,6 @@ namespace DnD_Trading
                 "<b>Total Price:</b> " + price.ToString("C2") + "<br/><br/>" +
                 "Please send proof of payment to the following email address: " +
                 "<b>DNDTrading22@gmail.com</b>";
-
 
             MessageBox.Show("Disable Global Protect", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MessageBox.Show("Press OK and wait for email to send. A message box will appear soon.", "Wait", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -129,6 +138,97 @@ namespace DnD_Trading
             {
                 MessageBox.Show("Error sending email requesting proof of payment from client: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // --- NEW: SEND EMAIL TO SUPPLIERS ---
+            MessageBox.Show("Now sending order emails to suppliers...", "Supplier Emails", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            foreach (var entry in supplierRows)
+            {
+                int supplierID = entry.Key;
+                List<DataGridViewRow> rowsForSupplier = entry.Value;
+
+                // 1. Get supplier email and name
+                DataRow supplierDataRow = null;
+                try
+                {
+                    // Find the supplier in the dataset loaded at CreateOrder_Load
+                    supplierDataRow = wstGrp22DataSet2.Supplier.AsEnumerable()
+                                        .FirstOrDefault(s => s.Field<int>("SupplierID") == supplierID);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error finding supplier data for ID {supplierID}: {ex.Message}", "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                if (supplierDataRow == null || supplierDataRow.IsNull("SupplierEmail"))
+                {
+                    MessageBox.Show($"Could not find email for Supplier ID: {supplierID}. Skipping email.", "Supplier Email Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue; // Skip to the next supplier
+                }
+
+                string supplierEmail = supplierDataRow.Field<string>("SupplierEmail");
+                string supplierName = supplierDataRow.Field<string>("SupplierName");
+
+                // 2. Build email body
+                StringBuilder supplierBody = new StringBuilder();
+                supplierBody.Append($"<p>Hello {supplierName},</p>");
+                supplierBody.Append($"<p>We would like to place an order for the following products (Our Order Ref: {globalvar.orderID}):</p>");
+                supplierBody.Append("<table border='1' cellpadding='5' style='border-collapse:collapse; font-family: Arial, sans-serif;'>");
+                supplierBody.Append("<tr style='background-color: #f2f2f2;'><th>Product Name</th><th>Quantity</th></tr>");
+
+                foreach (DataGridViewRow productRow in rowsForSupplier)
+                {
+                    // We need to look up the Product Name from the ProductID
+                    int productID = Convert.ToInt32(productRow.Cells[1].Value);
+                    int quantity = Convert.ToInt32(productRow.Cells[3].Value);
+
+                    string productName = $"Product ID: {productID}"; // Default if not found
+                    try
+                    {
+                        var productInfoRow = wstGrp22DataSet.Product.AsEnumerable()
+                                                .FirstOrDefault(p => p.Field<int>("ProductID") == productID);
+
+                        if (productInfoRow != null)
+                        {
+                            productName = productInfoRow.Field<string>("ProductName");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error finding product name for ID {productID}: {ex.Message}", "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    supplierBody.Append("<tr>");
+                    supplierBody.Append($"<td>{productName}</td>");
+                    supplierBody.Append($"<td style='text-align:center;'>{quantity}</td>");
+                    supplierBody.Append("</tr>");
+                }
+
+                supplierBody.Append("</table>");
+                supplierBody.Append("<br/><p>Please confirm receipt of this order and provide an estimated delivery date.</p>");
+                supplierBody.Append("<p>Thank you,<br/>DnD Trading</p>");
+
+                // 3. Send email (re-using the 'smtp' client)
+                MailMessage supplierMsg = new MailMessage();
+                supplierMsg.To.Add(supplierEmail);
+                supplierMsg.From = new MailAddress(from);
+                supplierMsg.Body = supplierBody.ToString();
+                supplierMsg.Subject = $"DnD Trading - New Product Order (Ref: {globalvar.orderID})";
+                supplierMsg.IsBodyHtml = true;
+
+                try
+                {
+                    smtp.Send(supplierMsg);
+                    // Avoid showing a message box for *every* successful email
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error sending email to {supplierName} ({supplierEmail}): " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            MessageBox.Show("Supplier email requests sent.", "Supplier Emails Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // --- END OF SUPPLIER EMAIL LOGIC ---
 
             MessageBox.Show("Enable Global Protect", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -276,9 +376,32 @@ namespace DnD_Trading
             dr["SupplierID"] = supplierID;
             dr["OrderSupplierProductQuantity"] = int.Parse(numericUpDown1.Text.Trim());
 
-            productTableAdapter.FillByProductSurcharge(wstGrp22DataSet.Product, productID);
+            //productTableAdapter.FillByProductSurcharge(wstGrp22DataSet.Product, productID);
 
-            decimal surcharge = (decimal)Convert.ToDecimal(dataGridView6.CurrentRow.Cells[2].Value)/100;
+            //decimal surcharge = (decimal)Convert.ToDecimal(dataGridView6.CurrentRow.Cells[2].Value)/100;
+
+            decimal surcharge = 0;
+            try
+            {
+                var productInfoRow = wstGrp22DataSet.Product.AsEnumerable()
+                                        .FirstOrDefault(p => p.Field<int>("ProductID") == productID);
+
+                if (productInfoRow != null)
+                {
+                    // We assume the surcharge column is named "ProductSurcharge". 
+                    // If not, please adjust this string to match your column name in the Product table.
+                    // This replaces the old, fragile read from dataGridView6.CurrentRow.Cells[2]
+                    surcharge = productInfoRow.Field<decimal>("ProductSurcharge") / 100;
+                }
+                else
+                {
+                    MessageBox.Show($"Could not find product details for ID {productID} to calculate surcharge.", "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error finding product surcharge for ID {productID}: {ex.Message}", "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             dr["OrderSupplierProductPrice"] = ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim());
             globalvar.priceTotal += ((decimal)dataGridView3.CurrentRow.Cells[2].Value + (surcharge * (decimal)dataGridView3.CurrentRow.Cells[2].Value)) * int.Parse(numericUpDown1.Text.Trim());
@@ -383,7 +506,7 @@ namespace DnD_Trading
             }
             else
             {
-                e.Cancel = true; // <— THIS keeps the app open when clicking "No"
+                e.Cancel = true;
             }
         }
     }
