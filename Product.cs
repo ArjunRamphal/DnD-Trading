@@ -214,10 +214,7 @@ namespace DnD_Trading
                     supplierID, //find matching supplier ID
                     price
                 );
-            }
-
-                // Insert the new product into the database  
-                
+            }    
 
             MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

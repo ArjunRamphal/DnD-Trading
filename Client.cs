@@ -24,7 +24,7 @@ namespace DnD_Trading
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            clientTableAdapter.FillByName(this.wstGrp22DataSet.Client, txtName.Text.Trim());
+            clientTableAdapter.FillByName2(this.wstGrp22DataSet.Client, txtName.Text.Trim());
             txtPhoneNumber.Clear();
             txtEmail.Clear();
         }
@@ -186,6 +186,14 @@ namespace DnD_Trading
 
                 MessageBox.Show("Client opt-out status updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+            txtPhoneNumber.Clear();
+            txtEmail.Clear();
+            clientTableAdapter.Fill(this.wstGrp22DataSet.Client);
         }
     }
 }

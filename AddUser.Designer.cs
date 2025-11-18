@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1037, 84);
+            this.label1.Location = new System.Drawing.Point(1102, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 68);
             this.label1.TabIndex = 0;
@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(755, 199);
+            this.groupBox1.Location = new System.Drawing.Point(847, 202);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(788, 612);
             this.groupBox1.TabIndex = 1;

@@ -45,6 +45,9 @@ namespace DnD_Trading
                 return;
             }
 
+            viewOrderProduct1TableAdapter.FillByOrderID(wstGrp22DataSet3.ViewOrderProduct1, globalvar.orderID);
+            productTableAdapter.Fill(wstGrp22DataSet2.Product);
+
             decimal price = 0;
 
             Dictionary<int, List<DataGridViewRow>> supplierRows = new Dictionary<int, List<DataGridViewRow>>();
@@ -54,7 +57,6 @@ namespace DnD_Trading
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                // Skip the last row if it's the new row placeholder
                 if (row.IsNewRow) continue;
 
                 dr = wstGrp22DataSet.OrderSupplierProduct.NewRow();
@@ -66,10 +68,9 @@ namespace DnD_Trading
                 dr["OrderSupplierProductPrice"] = Convert.ToDecimal(row.Cells[7].Value);
                 dr["OrderSupplierProductStatus"] = false;
 
-                // Add the price directly
                 price += Convert.ToDecimal(row.Cells[7].Value);
 
-                int supplierID = Convert.ToInt32(row.Cells[2].Value); // Assuming Cell 2 is SupplierID
+                int supplierID = Convert.ToInt32(row.Cells[2].Value);
                 if (!supplierRows.ContainsKey(supplierID))
                 {
                     supplierRows[supplierID] = new List<DataGridViewRow>();
@@ -138,8 +139,7 @@ namespace DnD_Trading
             {
                 MessageBox.Show("Error sending email requesting proof of payment from client: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // --- NEW: SEND EMAIL TO SUPPLIERS ---
+            /*
             MessageBox.Show("Now sending order emails to suppliers...", "Supplier Emails", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             foreach (var entry in supplierRows)
@@ -147,11 +147,9 @@ namespace DnD_Trading
                 int supplierID = entry.Key;
                 List<DataGridViewRow> rowsForSupplier = entry.Value;
 
-                // 1. Get supplier email and name
                 DataRow supplierDataRow = null;
                 try
                 {
-                    // Find the supplier in the dataset loaded at CreateOrder_Load
                     supplierDataRow = wstGrp22DataSet2.Supplier.AsEnumerable()
                                         .FirstOrDefault(s => s.Field<int>("SupplierID") == supplierID);
                 }
@@ -160,16 +158,17 @@ namespace DnD_Trading
                     MessageBox.Show($"Error finding supplier data for ID {supplierID}: {ex.Message}", "Data Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
+                this.productTableAdapter.Fill(this.wstGrp22DataSet.Product);
+
                 if (supplierDataRow == null || supplierDataRow.IsNull("SupplierEmail"))
                 {
                     MessageBox.Show($"Could not find email for Supplier ID: {supplierID}. Skipping email.", "Supplier Email Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    continue; // Skip to the next supplier
+                    continue;
                 }
 
                 string supplierEmail = supplierDataRow.Field<string>("SupplierEmail");
                 string supplierName = supplierDataRow.Field<string>("SupplierName");
 
-                // 2. Build email body
                 StringBuilder supplierBody = new StringBuilder();
                 supplierBody.Append($"<p>Hello {supplierName},</p>");
                 supplierBody.Append($"<p>We would like to place an order for the following products (Our Order Ref: {globalvar.orderID}):</p>");
@@ -178,11 +177,10 @@ namespace DnD_Trading
 
                 foreach (DataGridViewRow productRow in rowsForSupplier)
                 {
-                    // We need to look up the Product Name from the ProductID
                     int productID = Convert.ToInt32(productRow.Cells[1].Value);
                     int quantity = Convert.ToInt32(productRow.Cells[3].Value);
 
-                    string productName = $"Product ID: {productID}"; // Default if not found
+                    string productName = $"Product ID: {productID}";
                     try
                     {
                         var productInfoRow = wstGrp22DataSet.Product.AsEnumerable()
@@ -208,7 +206,6 @@ namespace DnD_Trading
                 supplierBody.Append("<br/><p>Please confirm receipt of this order and provide an estimated delivery date.</p>");
                 supplierBody.Append("<p>Thank you,<br/>DnD Trading</p>");
 
-                // 3. Send email (re-using the 'smtp' client)
                 MailMessage supplierMsg = new MailMessage();
                 supplierMsg.To.Add(supplierEmail);
                 supplierMsg.From = new MailAddress(from);
@@ -219,7 +216,6 @@ namespace DnD_Trading
                 try
                 {
                     smtp.Send(supplierMsg);
-                    // Avoid showing a message box for *every* successful email
                 }
                 catch (Exception ex)
                 {
@@ -228,8 +224,7 @@ namespace DnD_Trading
             }
 
             MessageBox.Show("Supplier email requests sent.", "Supplier Emails Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // --- END OF SUPPLIER EMAIL LOGIC ---
-
+            */
             MessageBox.Show("Enable Global Protect", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             dataGridView1.DataSource = null; // Clear the DataGridView
@@ -376,9 +371,9 @@ namespace DnD_Trading
             dr["SupplierID"] = supplierID;
             dr["OrderSupplierProductQuantity"] = int.Parse(numericUpDown1.Text.Trim());
 
-            //productTableAdapter.FillByProductSurcharge(wstGrp22DataSet.Product, productID);
+            productTableAdapter.FillByProductSurcharge(wstGrp22DataSet.Product, productID);
 
-            //decimal surcharge = (decimal)Convert.ToDecimal(dataGridView6.CurrentRow.Cells[2].Value)/100;
+            //decimal surcharge = (decimal)Convert.ToDecimal(dataGridView6.CurrentRow.Cells[2].Value)/100
 
             decimal surcharge = 0;
             try
@@ -388,9 +383,6 @@ namespace DnD_Trading
 
                 if (productInfoRow != null)
                 {
-                    // We assume the surcharge column is named "ProductSurcharge". 
-                    // If not, please adjust this string to match your column name in the Product table.
-                    // This replaces the old, fragile read from dataGridView6.CurrentRow.Cells[2]
                     surcharge = productInfoRow.Field<decimal>("ProductSurcharge") / 100;
                 }
                 else
@@ -421,8 +413,6 @@ namespace DnD_Trading
                     "</td>" +
                 "</tr>";
 
-
-
             wstGrp22DataSet.OrderSupplierProduct.Rows.Add(dr);
             orderSupplierProductTableAdapter.Update(wstGrp22DataSet.OrderSupplierProduct);
             numericUpDown1.Value = 0; // Reset the numericUpDown control after adding the product
@@ -449,15 +439,13 @@ namespace DnD_Trading
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Make sure there are rows and the clicked column is the checkbox column (index 2)
             if (dataGridView2.Rows.Count > 0 && e.ColumnIndex == 2 && e.RowIndex >= 0)
             {
-                // Commit the checkbox value change
                 dataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit);
 
-                int index = e.RowIndex; // Use e.RowIndex for accurate indexing
+                int index = e.RowIndex;
 
-                // Get IDs from the dataset (ensure binding/index match)
+                // Get IDs from the dataset
                 int clientOrderProductID = Convert.ToInt32(wstGrp22DataSet1.ClientOrderProduct.Rows[index]["ClientOrderProductID"]);
                 int orderID = Convert.ToInt32(wstGrp22DataSet1.ClientOrderProduct.Rows[index]["orderID"]);
 
@@ -491,7 +479,7 @@ namespace DnD_Trading
         private void CreateOrder_FormClosing(object sender, FormClosingEventArgs e)
         {
             var result = MessageBox.Show(
-                "Are you sure you want to exit? Any order in progress will be cancelled.",
+                "Are you sure you want to exit? Any order in progress will be cancelled and the application will close.",
                 "Warning",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning

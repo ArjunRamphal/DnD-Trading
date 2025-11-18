@@ -278,8 +278,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(469, 416);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "·  Search for the client\'s name and select it.\n\n·  Update the amount paid toward " +
-    "the total.\n\n·  When the balance reaches 0, click \"Payment Fulfilled\" to mark it " +
-    "as complete.\n";
+    "the total.\n";
             // 
             // groupBox4
             // 

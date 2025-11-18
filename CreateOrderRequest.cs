@@ -43,7 +43,7 @@ namespace DnD_Trading
             {
                 string desc = txtProdDesc.Text.Trim();
 
-                // Validate Product Description - Required
+                // Validate Product Description
                 if (string.IsNullOrWhiteSpace(desc))
                 {
                     MessageBox.Show("Product description is required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -69,7 +69,7 @@ namespace DnD_Trading
                     return;
                 }
 
-                // Reject repetitive or vowel-less nonsense (e.g., "rrrrrr", "qwrty")
+                // Reject repetitive or vowel-less nonsense ("rrrrrr", "qwrty")
                 // Check for 4+ repeated identical letters
                 if (System.Text.RegularExpressions.Regex.IsMatch(desc, @"(.)\1{3,}"))
                 {
@@ -79,7 +79,7 @@ namespace DnD_Trading
                     return;
                 }
 
-                // Check that there's at least one vowel (a, e, i, o, u)
+                // Check that there's at least one vowel
                 if (!System.Text.RegularExpressions.Regex.IsMatch(desc, "[aeiouAEIOU]"))
                 {
                     DialogResult confirm = MessageBox.Show(
@@ -102,7 +102,7 @@ namespace DnD_Trading
                 }
 
                 // Check if product description shares any word with known products
-                var knownProducts = productTableAdapter.GetData(); // replace with your actual adapter/table
+                var knownProducts = productTableAdapter.GetData();
                 bool hasMatch = false;
 
                 // Split the user's description into individual lowercase words
@@ -306,7 +306,7 @@ namespace DnD_Trading
             }
             else
             {
-                e.Cancel = true; // <— THIS keeps the app open when clicking "No"
+                e.Cancel = true;
             }
         }
 

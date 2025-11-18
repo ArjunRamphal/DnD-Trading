@@ -58,10 +58,17 @@ namespace DnD_Trading
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            if (Convert.ToDecimal(textBox1.Text.Trim()) <= 0)
+            try {
+                // Validate that the payment amount is a positive number
+                if (Convert.ToDecimal(textBox1.Text.Trim()) <= 0)
+                {
+                    MessageBox.Show("Payment amount must be a positive number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch (FormatException)
             {
-                MessageBox.Show("Payment amount must be a positive number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid payment amount.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -74,6 +81,12 @@ namespace DnD_Trading
 
             // Validate that a row is selected
             if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a payment to update.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (globalvar.paymentID == 0)
             {
                 MessageBox.Show("Please select a payment to update.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -116,6 +129,8 @@ namespace DnD_Trading
 
             textBox1.Clear();
             textBox2.Clear();
+
+            globalvar.paymentID = 0;
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

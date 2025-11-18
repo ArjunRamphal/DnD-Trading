@@ -730,7 +730,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox2.Location = new System.Drawing.Point(3, 1225);
             this.pictureBox2.Name = "pictureBox2";

@@ -91,8 +91,16 @@ namespace DnD_Trading
                 productForm.WindowState = FormWindowState.Maximized;
             }
 
-            productForm.ComboBox1.DataSource = supplierTableAdapter.GetData();
-            productForm.ComboBox1.DisplayMember = "SupplierName";
+            if (productForm != null)
+            {
+                productForm.ComboBox1.DataSource = supplierTableAdapter.GetData();
+                productForm.ComboBox1.DisplayMember = "SupplierName";
+            }
+
+            // Clear input fields
+            txtSupplierName.Clear();
+            txtSupplierPhoneNumber.Clear();
+            txtSupplierEmail.Clear();
         }
 
         bool IsValidPhoneNumber(string number)

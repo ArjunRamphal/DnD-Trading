@@ -45,8 +45,8 @@ namespace DnD_Trading
         {
             Product product = new Product(this);
             FormSetup(product); // Set up the form as an MDI child
-            product.MdiParent = this; //display the child window //maximize the child window
-            product.WindowState = FormWindowState.Maximized;
+            product.MdiParent = this; //display the child window 
+            product.WindowState = FormWindowState.Maximized; //maximize the child window
             product.Show();
             panel1.Visible = false; // Hide the login panel when navigating to the inventory form
         }
@@ -55,8 +55,8 @@ namespace DnD_Trading
         {
             Reports reports = new Reports(this);
             FormSetup(reports); // Set up the form as an MDI child
-            reports.MdiParent = this; //display the child window //maximize the child window
-            reports.WindowState = FormWindowState.Maximized;
+            reports.MdiParent = this; //display the child window
+            reports.WindowState = FormWindowState.Maximized; //maximize the child window
             reports.Show();
             panel1.Visible = false;
         }
@@ -70,8 +70,8 @@ namespace DnD_Trading
         {
             AddClient addClient = new AddClient(this);
             FormSetup(addClient); // Set up the form as an MDI child
-            addClient.MdiParent = this; //display the child window //maximize the child window
-            addClient.WindowState = FormWindowState.Maximized;
+            addClient.MdiParent = this; //display the child window
+            addClient.WindowState = FormWindowState.Maximized; //maximize the child window
             addClient.Show();
             panel1.Visible = false;
         }
@@ -80,8 +80,8 @@ namespace DnD_Trading
         {
             Client client = new Client(this);
             FormSetup(client); // Set up the form as an MDI child
-            client.MdiParent = this; //display the child window //maximize the child window
-            client.WindowState = FormWindowState.Maximized;
+            client.MdiParent = this; //display the child window
+            client.WindowState = FormWindowState.Maximized; //maximize the child window
             client.Show();
             panel1.Visible = false;
         }
@@ -90,8 +90,8 @@ namespace DnD_Trading
         {
             Order order = new Order(this);
             FormSetup(order); // Set up the form as an MDI child
-            order.MdiParent = this; //display the child window //maximize the child window
-            order.WindowState = FormWindowState.Maximized;
+            order.MdiParent = this; //display the child window
+            order.WindowState = FormWindowState.Maximized; //maximize the child window
             order.Show();
             panel1.Visible = false;
         }
@@ -100,8 +100,8 @@ namespace DnD_Trading
         {
             CreateOrder createOrder = new CreateOrder(this);
             FormSetup(createOrder); // Set up the form as an MDI child
-            createOrder.MdiParent = this; //display the child window //maximize the child window
-            createOrder.WindowState = FormWindowState.Maximized;
+            createOrder.MdiParent = this; //display the child window
+            createOrder.WindowState = FormWindowState.Maximized; //maximize the child window
             createOrder.Show();
             panel1.Visible = false;
         }
@@ -298,8 +298,8 @@ namespace DnD_Trading
         {
             Supplier supplier = new Supplier(this);
             FormSetup(supplier); // Set up the form as an MDI child
-            supplier.MdiParent = this; //display the child window //maximize the child window
-            supplier.WindowState = FormWindowState.Maximized;
+            supplier.MdiParent = this; //display the child window
+            supplier.WindowState = FormWindowState.Maximized; //maximize the child window
             supplier.Show();
             panel1.Visible = false;
         }
@@ -308,8 +308,8 @@ namespace DnD_Trading
         {
             CreateOrderRequest createOrderRequest = new CreateOrderRequest(this);
             FormSetup(createOrderRequest); // Set up the form as an MDI child
-            createOrderRequest.MdiParent = this; //display the child window //maximize the child window
-            createOrderRequest.WindowState = FormWindowState.Maximized;
+            createOrderRequest.MdiParent = this; //display the child window
+            createOrderRequest.WindowState = FormWindowState.Maximized; //maximize the child window
             createOrderRequest.Show();
             panel1.Visible = false;
         }
@@ -318,8 +318,8 @@ namespace DnD_Trading
         {
             Payment payment = new Payment(this);
             FormSetup(payment); // Set up the form as an MDI child
-            payment.MdiParent = this; //display the child window //maximize the child window
-            payment.WindowState = FormWindowState.Maximized;
+            payment.MdiParent = this; //display the child window
+            payment.WindowState = FormWindowState.Maximized; //maximize the child window
             payment.Show();
             panel1.Visible = false;
         }
@@ -371,8 +371,8 @@ namespace DnD_Trading
         {
             AddUser addUser = new AddUser(this);
             FormSetup(addUser); // Set up the form as an MDI child
-            addUser.MdiParent = this; //display the child window //maximize the child window
-            addUser.WindowState = FormWindowState.Maximized;
+            addUser.MdiParent = this; //display the child window
+            addUser.WindowState = FormWindowState.Maximized; //maximize the child window
             addUser.Show();
             panel1.Visible = false;
         }
@@ -381,8 +381,8 @@ namespace DnD_Trading
         {
             User User = new User(this);
             FormSetup(User); // Set up the form as an MDI child
-            User.MdiParent = this; //display the child window //maximize the child window
-            User.WindowState = FormWindowState.Maximized;
+            User.MdiParent = this; //display the child window
+            User.WindowState = FormWindowState.Maximized; //maximize the child window
             User.Show();
             panel1.Visible = false;
         }

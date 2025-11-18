@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(960, 70);
+            this.label1.Location = new System.Drawing.Point(992, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(407, 68);
             this.label1.TabIndex = 0;
@@ -182,7 +182,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DnD_Trading.Properties.Resources.back;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1260);
             this.pictureBox1.Name = "pictureBox1";

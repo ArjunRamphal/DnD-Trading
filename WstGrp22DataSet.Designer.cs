@@ -9178,7 +9178,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[11];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM db" +
@@ -9199,55 +9199,61 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
-                " Client\r\nWHERE (ClientOptOut = 0)";
+                " Client\r\nWHERE (ClientName LIKE \'%\' + @name + \'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
-                " Client\r\nWHERE (ClientPhoneNumber LIKE \'%\' + @phonenumber + \'%\')";
+                " Client\r\nWHERE (ClientOptOut = 0)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phonenumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[Client] ([ClientName], [ClientPhoneNumber], [ClientEmail], [ClientOptOut]) VALUES (@ClientName, @ClientPhoneNumber, @ClientEmail, @ClientOptOut);
-SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM Client WHERE (ClientID = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandText = "SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut\r\nFROM  " +
+                " Client\r\nWHERE (ClientPhoneNumber LIKE \'%\' + @phonenumber + \'%\')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientEmail", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phonenumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE Client\r\nSET       ClientEmail = @ClientEmail\r\nWHERE (ClientID = @ClientID)" +
-                "; \r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FR" +
-                "OM Client WHERE (ClientID = @ClientID)";
+            this._commandCollection[6].CommandText = @"INSERT INTO [dbo].[Client] ([ClientName], [ClientPhoneNumber], [ClientEmail], [ClientOptOut]) VALUES (@ClientName, @ClientPhoneNumber, @ClientEmail, @ClientOptOut);
+SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM Client WHERE (ClientID = SCOPE_IDENTITY())";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientEmail", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE Client\r\nSET       ClientName = @ClientName\r\nWHERE (ClientID = @ClientID); " +
-                "\r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM" +
-                " Client WHERE (ClientID = @ClientID)";
+            this._commandCollection[7].CommandText = "UPDATE Client\r\nSET       ClientEmail = @ClientEmail\r\nWHERE (ClientID = @ClientID)" +
+                "; \r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FR" +
+                "OM Client WHERE (ClientID = @ClientID)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientEmail", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE Client\r\nSET       ClientPhoneNumber = @ClientPhoneNumber\r\nWHERE (ClientID " +
-                "= @ClientID); \r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, Cli" +
-                "entOptOut FROM Client WHERE (ClientID = @ClientID)";
+            this._commandCollection[8].CommandText = "UPDATE Client\r\nSET       ClientName = @ClientName\r\nWHERE (ClientID = @ClientID); " +
+                "\r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM" +
+                " Client WHERE (ClientID = @ClientID)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "UPDATE Client\r\nSET       ClientOptOut = @ClientOptOut\r\nWHERE (ClientID = @ClientI" +
+            this._commandCollection[9].CommandText = "UPDATE Client\r\nSET       ClientPhoneNumber = @ClientPhoneNumber\r\nWHERE (ClientID " +
+                "= @ClientID); \r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, Cli" +
+                "entOptOut FROM Client WHERE (ClientID = @ClientID)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientPhoneNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClientPhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE Client\r\nSET       ClientOptOut = @ClientOptOut\r\nWHERE (ClientID = @ClientI" +
                 "D); \r\nSELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut " +
                 "FROM Client WHERE (ClientID = @ClientID)";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientOptOut", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ClientOptOut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9350,8 +9356,44 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByOptOutFalse(WstGrp22DataSet.ClientDataTable dataTable) {
+        public virtual int FillByName2(WstGrp22DataSet.ClientDataTable dataTable, string name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WstGrp22DataSet.ClientDataTable GetDataBy9(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByOptOutFalse(WstGrp22DataSet.ClientDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -9364,7 +9406,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WstGrp22DataSet.ClientDataTable GetDataBy8() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             WstGrp22DataSet.ClientDataTable dataTable = new WstGrp22DataSet.ClientDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9375,7 +9417,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByPhoneNumber(WstGrp22DataSet.ClientDataTable dataTable, string phonenumber) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((phonenumber == null)) {
                 throw new global::System.ArgumentNullException("phonenumber");
             }
@@ -9394,7 +9436,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WstGrp22DataSet.ClientDataTable GetDataBy2(string phonenumber) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((phonenumber == null)) {
                 throw new global::System.ArgumentNullException("phonenumber");
             }
@@ -9590,7 +9632,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string ClientName, string ClientPhoneNumber, string ClientEmail, bool ClientOptOut) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((ClientName == null)) {
                 throw new global::System.ArgumentNullException("ClientName");
             }
@@ -9632,7 +9674,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateEmail(string ClientEmail, int ClientID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((ClientEmail == null)) {
                 throw new global::System.ArgumentNullException("ClientEmail");
             }
@@ -9662,7 +9704,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateName(string ClientName, int ClientID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((ClientName == null)) {
                 throw new global::System.ArgumentNullException("ClientName");
             }
@@ -9692,7 +9734,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdatePhoneNumber(string ClientPhoneNumber, int ClientID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((ClientPhoneNumber == null)) {
                 throw new global::System.ArgumentNullException("ClientPhoneNumber");
             }
@@ -9722,7 +9764,7 @@ SELECT ClientID, ClientName, ClientPhoneNumber, ClientEmail, ClientOptOut FROM C
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateStatus(bool ClientOptOut, int ClientID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((bool)(ClientOptOut));
             command.Parameters[1].Value = ((int)(ClientID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
