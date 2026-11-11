@@ -1,0 +1,32 @@
+# Visual Studio user settings and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Tt]est[Rr]esults/
+*.pdb
+*.log
+
+# Local database configuration and credentials
+ConnectionStrings.config
+.env
+.env.*
+!.env.example
+
+# Local database files and backups
+*.mdf
+*.ldf
+*.mdb
+*.accdb
+*.bak
+
+# Operating system files
+Thumbs.db
+.DS_Store
