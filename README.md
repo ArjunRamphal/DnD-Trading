@@ -49,8 +49,6 @@ See the [setup guide](docs/SETUP.md) for detailed steps, official downloads and 
 
 Database connection strings are read from the local, ignored `ConnectionStrings.config` file. SMTP credentials are read from the `DND_SMTP_USER` and `DND_SMTP_PASSWORD` environment variables. When email is not configured, the order is saved and the application explains that the payment request was not sent.
 
-Keep real credentials and client data out of commits. Credentials previously committed to the repository must be rotated because they remain in earlier Git history.
-
 ## Team
 
 Horizon Innovations:
