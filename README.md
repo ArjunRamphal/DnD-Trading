@@ -6,11 +6,19 @@ Developed as an **ISTN3AS Group 22** project by **Horizon Innovations**.
 
 ## Application preview
 
-![DnD Trading desktop application login screen](docs/images/login.png)
+Recorded views from the **Horizon Innovations FES Demo** show the desktop application's client, ordering, supplier and reporting workflows.
 
-Preserved login-screen capture from the original desktop application.
+| Client management | Order details |
+| --- | --- |
+| ![Client management screen with client search, contact details and archive status](docs/images/client-management.png) | ![Orders screen with client orders, supplier products and order totals](docs/images/order-details.png) |
+| **Product catalogue** | **Order fulfilment** |
+| ![Product catalogue with supplier prices, product search and product maintenance](docs/images/product-catalogue.png) | ![Order fulfilment screen matching requested products to suppliers and quantities](docs/images/order-fulfilment.png) |
+| **Sales report** | **Login screen** |
+| ![Sales per sales representative report displayed in Crystal Reports](docs/images/sales-report.png) | ![DnD Trading desktop application login screen](docs/images/login.png) |
 
-The original SQL Server database is no longer available. This repository preserves the application source and its existing preview; database-backed workflows require a separately supplied compatible database.
+The five workflow screenshots were extracted from the recorded demonstration and upscaled from **1280 × 720** to **2560 × 1440**. They preserve the original interface and recorded values. The login image is a separately preserved application capture.
+
+The original SQL Server database is no longer available. This repository preserves the application source and recorded previews; running database-backed workflows requires a compatible replacement database.
 
 ## Features
 
@@ -40,7 +48,7 @@ The original SQL Server database is no longer available. This repository preserv
 | `src/DnD.Trading/Properties/` | Application settings and embedded image resources. |
 | `src/DnD.Trading/WstGrp22DataSet.xsd` | DataSet schema, mappings and adapter queries. |
 | `docs/SETUP.md` | Development setup, configuration and troubleshooting. |
-| `docs/images/login.png` | Preserved application login-screen capture. |
+| `docs/images/` | Preserved login capture and five workflow screenshots from the recorded demonstration. |
 
 The WinForms designer files, typed DataSet code and Crystal Reports definitions are retained because the project uses them. Visual Studio caches, personal settings and compiled output are excluded.
 
@@ -67,3 +75,4 @@ Horizon Innovations:
 - Lokadi Naicker
 - Keolin Naicker
 - Zaheera Ganie
+
