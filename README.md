@@ -4,6 +4,14 @@ Sales and order management desktop application developed for **DnD Trading & Gen
 
 Developed as an **ISTN3AS Group 22** project by **Horizon Innovations**.
 
+## Application preview
+
+![DnD Trading desktop application login screen](docs/images/login.png)
+
+Preserved login-screen capture from the original desktop application.
+
+The original SQL Server database is no longer available. This repository preserves the application source and its existing preview; database-backed workflows require a separately supplied compatible database.
+
 ## Features
 
 | Area | Functionality |
@@ -32,18 +40,19 @@ Developed as an **ISTN3AS Group 22** project by **Horizon Innovations**.
 | `src/DnD.Trading/Properties/` | Application settings and embedded image resources. |
 | `src/DnD.Trading/WstGrp22DataSet.xsd` | DataSet schema, mappings and adapter queries. |
 | `docs/SETUP.md` | Development setup, configuration and troubleshooting. |
+| `docs/images/login.png` | Preserved application login-screen capture. |
 
 The WinForms designer files, typed DataSet code and Crystal Reports definitions are retained because the project uses them. Visual Studio caches, personal settings and compiled output are excluded.
 
-## Getting started
+## Building the source
 
 1. On Windows, install Visual Studio with the **.NET desktop development** workload, the **.NET Framework 4.7.2 Developer Pack**, and the compatible **SAP Crystal Reports for Visual Studio** tools and runtime.
 2. Copy `src/DnD.Trading/ConnectionStrings.example.config` to `src/DnD.Trading/ConnectionStrings.config` and enter your database settings.
-3. Open `DnD Trading.sln`, build the solution and run the application.
+3. Open `DnD Trading.sln` and build the solution.
 
 See the [setup guide](docs/SETUP.md) for detailed steps, official downloads and email configuration.
 
-**A compatible SQL Server database is required.** This repository includes the DataSet and adapter queries, but does not include a database backup, database creation script or seeded demo account.
+**A compatible SQL Server database is required for database-backed functionality.** This repository includes the DataSet and adapter queries, but does not include a database backup, database creation script or seeded demo account.
 
 ## Configuration
 
